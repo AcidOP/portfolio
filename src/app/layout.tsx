@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'AcidOP | Homemade Developer',
-  description: 'I love to create things and make them work. I am a developer with a taste for the web and a passion for the cloud.',
+  description:
+    'I love to create things and make them work. I am a developer with a taste for the web and a passion for the cloud.',
 };
 
 export default function RootLayout({
