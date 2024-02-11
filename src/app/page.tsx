@@ -1,3 +1,5 @@
+import config from '@/data/config.json';
+
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
@@ -6,25 +8,22 @@ const body = Inter({ subsets: ['latin'], weight: '700' });
 
 const Homepage = () => {
   return (
-    <div className='h-[80vh] lg:h-screen w-screen flex items-center'>
-      <div className='relative h-[35vh] w-full px-5 lg:h-1/2 lg:w-3/4 mx-auto flex flex-col justify-between'>
+    <div className='flex h-[80vh] w-screen items-center lg:h-screen'>
+      <div className='relative mx-auto flex h-[35vh] w-full flex-col justify-between px-5 lg:h-1/2 lg:w-3/4'>
         <div className={clsx('text-6xl lg:text-8xl', heading.className)}>
           <h1>
             Hey,
-            <br /> I&apos;m AcidOP
+            <br /> I&apos;m {config.name.split(/ /g)[0]}
           </h1>
         </div>
 
         <div
           className={clsx(
-            'absolute bottom-0 right-5 lg:right-0 text-xl lg:text-4xl opacity-85 max-w-[75%] lg:max-w-3xl',
+            'absolute bottom-0 right-5 max-w-[75%] text-xl opacity-85 lg:right-0 lg:max-w-3xl lg:text-4xl',
             body.className,
           )}
         >
-          <p>
-            — a hybrid developer and designer nudging early-stage startups and
-            teams into greatness.
-          </p>
+          <p>— {config.hero}</p>
         </div>
       </div>
     </div>

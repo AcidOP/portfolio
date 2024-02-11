@@ -1,13 +1,17 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
+
+import Navbar from '@/components/Navbar/Navbar';
+import config from '@/data/config.json';
+
+import { Inter } from 'next/font/google';
+
+import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AcidOP | Homemade Developer',
-  description:
-    'I love to create things and make them work. I am a developer with a taste for the web and a passion for the cloud.',
+  title: config.title,
+  description: config.description,
 };
 
 export default function RootLayout({
@@ -17,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
