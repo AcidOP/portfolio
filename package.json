@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "pretty": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "dependencies": {
     "clsx": "^2.1.0",
@@ -18,11 +19,15 @@
     "sharp": "^0.33.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "^14.1.0",
     "eslint-config-prettier": "^9.1.0",
@@ -42,5 +47,10 @@
     "*.{json,html}": [
       "prettier --write --ignore-unknown"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
