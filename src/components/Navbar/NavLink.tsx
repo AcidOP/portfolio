@@ -25,7 +25,7 @@ const NavLink: FC<NavLinkProps> = ({ children, className, ...rest }) => {
   return (
     <Link
       {...rest}
-      className={clsx(isActive ? 'underline' : '', className)}
+      className={clsx(isActive ? 'border-b-4 border-purple-600' : '', className)}
     >
       {children}
     </Link>
