@@ -14,7 +14,8 @@ const Hero: FC = () => {
       )}
     >
       <p className='max-w-4xl text-center text-4xl lg:text-6xl'>
-        This is Zeeshan, a fullstack developer focused on creating.
+        This is Zeeshan, a fullstack developer focused on
+        creating.
       </p>
     </div>
   );
