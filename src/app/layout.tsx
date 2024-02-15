@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={clsx(' overflow-x-hidden', inter.className)}>
+      <body className={clsx('max-w-[calc(100vw-2.5rem)] lg:max-w-[calc(100vw-8rem)] mx-auto overflow-x-hidden', inter.className)}>
         <Navbar />
         {children}
       </body>
