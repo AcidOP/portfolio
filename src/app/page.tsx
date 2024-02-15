@@ -8,7 +8,7 @@ const body = Inter({ subsets: ['latin'], weight: '700' });
 
 const Homepage = () => {
   return (
-    <div className='flex h-[70vh] lg:h-[calc(100vh-5rem)] w-full items-center justify-center'>
+    <div className='flex h-[70vh] w-full items-center justify-center lg:h-[calc(100vh-5rem)]'>
       <div className='relative flex h-[32vh] w-full flex-col justify-between px-5 lg:h-1/2 lg:w-5/6'>
         <div className={clsx('text-6xl lg:text-8xl', heading.className)}>
           <h1>
