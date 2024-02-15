@@ -13,6 +13,7 @@ const Homepage = () => {
         <div className={clsx('text-6xl lg:text-8xl', heading.className)}>
           <h1>
             Hey,
+            <span className='text-5xl opacity-90 lg:text-7xl'>Hey,</span>
             <br /> I&apos;m {config.name.split(/ /g)[0]}
           </h1>
         </div>
