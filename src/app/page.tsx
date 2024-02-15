@@ -12,7 +12,7 @@ const Homepage = () => {
       <div className='relative mx-auto flex h-[32vh] w-full flex-col justify-between px-5 lg:h-1/2 lg:w-3/4'>
         <div className={clsx('text-6xl lg:text-8xl', heading.className)}>
           <h1>
-            <span className='text-5xl opacity-90 lg:text-7xl'>Hey,</span>
+            <span className='text-5xl opacity-90 lg:text-7xl'>Hello,</span>
             <br /> I&apos;m {config.name.split(/ /g)[0]}
           </h1>
         </div>
