@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar/Navbar';
 import config from '@/data/config.json';
 
+import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
 import type { Metadata } from 'next';
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={clsx(' overflow-x-hidden', inter.className)}>
         <Navbar />
         {children}
       </body>
