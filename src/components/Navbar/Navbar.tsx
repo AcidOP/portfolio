@@ -10,7 +10,7 @@ const body = Suez_One({ subsets: ['latin'], weight: '400' });
 
 const Navbar = () => {
   return (
-    <nav className='fixed top-0 flex h-20 w-screen items-center justify-between px-5 lg:px-16'>
+    <nav className='sticky top-0 mx-auto flex h-20 w-screen items-center justify-between px-5 lg:px-16'>
       <div className='text-3xl font-bold'>
         <Link href='/'>{config.name}</Link>
       </div>
