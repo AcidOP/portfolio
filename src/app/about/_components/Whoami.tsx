@@ -13,7 +13,7 @@ const body = Suez_One({ subsets: ['latin'], weight: '400' });
 const Whoami: FC = () => {
   return (
     <div className='my-16 flex flex-col lg:flex-row'>
-      <div className='flex lg:w-2/5 flex-col items-center justify-center'>
+      <div className='flex flex-col items-center justify-center lg:w-2/5'>
         <Image
           src={aboutMe}
           alt='About me'
@@ -56,23 +56,23 @@ const Whoami: FC = () => {
         </div>
       </div>
 
-      <div className='lg:w-3/5 mt-16 lg:mt-0 px-5'>
-        {
-          config.about.map((about, index) => {
-            return (
-              <div key={index} className='mb-12'>
-                <h3
-                  className={clsx('font-bold opacity-85 text-xl lg:text-base', body.className)}
-                >
-                  {about.title}
-                </h3>
+      <div className='mt-16 px-5 lg:mt-0 lg:w-3/5'>
+        {config.about.map((about, index) => {
+          return (
+            <div key={index} className='mb-12'>
+              <h3
+                className={clsx(
+                  'text-xl font-bold opacity-85 lg:text-base',
+                  body.className,
+                )}
+              >
+                {about.title}
+              </h3>
 
-                <p className='mt-3 max-w-2xl'>{about.content}</p>
-              </div>
-            )
-          }
-          )
-        }
+              <p className='mt-3 max-w-2xl'>{about.content}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

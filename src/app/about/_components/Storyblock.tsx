@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Storyblock: FC = () => {
   return (
-    <div className='mx-auto mb-16 flex w-full flex-col justify-between rounded-3xl bg-violet-700 p-16 lg:flex-row border-2 border-black'>
+    <div className='mx-auto mb-16 flex w-full flex-col justify-between rounded-3xl border-2 border-black bg-violet-700 p-16 lg:flex-row'>
       <div className='flex flex-col justify-between text-white'>
         <h2 className='mb-10 text-[2.75rem] font-bold'>
           But first, let me tell you a story first
@@ -36,7 +36,7 @@ const Storyblock: FC = () => {
         </div>
       </div>
 
-      <div className='lg:w-1/4 border-2 border-black'>
+      <div className='border-2 border-black lg:w-1/4'>
         <Image src={picassoImage} alt='Picasso Painting' />
       </div>
     </div>
