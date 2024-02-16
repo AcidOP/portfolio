@@ -1,6 +1,6 @@
 import NavLink from './NavLink';
 
-import config from '@/data/config.json';
+import config from '@/data/config';
 
 import clsx from 'clsx';
 import { Suez_One } from 'next/font/google';
