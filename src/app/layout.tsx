@@ -1,7 +1,7 @@
 import './globals.css';
 
 import Navbar from '@/components/Navbar/Navbar';
-import config from '@/data/config.json';
+import config from '@/data/config';
 
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
