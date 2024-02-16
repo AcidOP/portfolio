@@ -12,7 +12,7 @@ const body = Suez_One({ subsets: ['latin'], weight: '400' });
 
 const Whoami: FC = () => {
   return (
-    <div className='my-16 flex flex-col lg:flex-row'>
+    <div className='my-32 flex flex-col lg:flex-row'>
       <div className='flex flex-col items-center justify-center lg:w-2/5'>
         <Image
           src={aboutMe}
