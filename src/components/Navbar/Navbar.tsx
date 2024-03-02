@@ -2,21 +2,17 @@ import NavLink from './NavLink';
 
 import config from '@/data/config';
 
-import clsx from 'clsx';
-import { Suez_One } from 'next/font/google';
 import Link from 'next/link';
-
-const body = Suez_One({ subsets: ['latin'], weight: '400' });
 
 const Navbar = () => {
   return (
-    <nav className='sticky top-0 mx-auto flex h-20 w-full items-center justify-between'>
+    <nav className='sticky top-0 z-40 mx-auto flex h-20 w-full items-center justify-between'>
       <div className='text-3xl font-bold'>
         <Link href='/'>{config.name}</Link>
       </div>
 
-      <div className='hidden text-xl lg:block'>
-        <ul className='flex space-x-10'>
+      <div className='hidden text-xl font-medium lg:block'>
+        <ul className='flex space-x-6'>
           <li>
             <NavLink href='/'>Home</NavLink>
           </li>
@@ -36,14 +32,12 @@ const Navbar = () => {
       </div>
 
       <div>
-        <button
-          className={clsx(
-            'rounded-3xl border-2 border-black bg-gray-300 px-6 py-2 font-semibold transition-all duration-200 hover:bg-purple-600 hover:text-white',
-            body.className,
-          )}
-        >
-          Contact Me
-        </button>
+        <Link href='/contact' className='border-2 border-black group relative h-12 overflow-hidden overflow-x-hidden bg-white text-black px-6 py-2'>
+          <span className='relative z-10 font-medium transition-all duration-300 group-hover:text-white'>Contact Me</span>
+          <span className='absolute inset-0 overflow-hidden'>
+            <span className='absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-violet-600 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150'></span>
+          </span>
+        </Link>
       </div>
     </nav>
   );

@@ -25,12 +25,21 @@ const NavLink: FC<NavLinkProps> = ({ children, className, ...rest }) => {
   return (
     <Link
       {...rest}
+      // https://buttons.ibelick.com/
       className={clsx(
-        isActive ? 'border-b-4 border-purple-600' : '',
+        'group relative h-12 px-4 text-neutral-950',
+        isActive ? 'font-semibold text-violet-900' : 'opacity-80',
         className,
       )}
     >
-      {children}
+      <span className='relative inline-flex overflow-hidden'>
+        <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12'>
+          {children}
+        </div>
+        <div className='absolute translate-y-[110%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
+          {children}
+        </div>
+      </span>
     </Link>
   );
 };

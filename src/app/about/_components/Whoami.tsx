@@ -5,30 +5,29 @@ import aboutMe from '../../../../public/images/about-me.png';
 import config from '@/data/config';
 
 import clsx from 'clsx';
-import { Suez_One } from 'next/font/google';
+import { Inter, Suez_One } from 'next/font/google';
 import Image from 'next/image';
 
-const body = Suez_One({ subsets: ['latin'], weight: '400' });
+const suez = Suez_One({ subsets: ['latin'], weight: '400' });
+const inter = Inter({ subsets: ['latin'], weight: '500' });
 
 const Whoami: FC = () => {
   return (
-    <div className='my-8 lg:my-32 flex flex-col lg:flex-row'>
+    <div className='my-8 flex flex-col lg:my-32 lg:flex-row'>
       <div className='flex flex-col items-center justify-center lg:w-2/5'>
         <Image
           src={aboutMe}
           alt='About me'
-          className='w-44 rounded-full border-2 border-black'
+          className='w-64 rounded-full border-2 border-black'
         />
 
-        <h2
-          className={clsx('pb-3 pt-6 text-3xl font-bold', body.className)}
-        >
+        <h2 className={clsx('pb-3 pt-4 text-4xl', suez.className)}>
           {config.name}
         </h2>
 
         {config.jobTitles.map((jobTitle, index) => {
           return (
-            <p key={index} className='text-sm font-bold opacity-80'>
+            <p key={index} className='font-bold opacity-60'>
               {jobTitle}
             </p>
           );
@@ -42,12 +41,12 @@ const Whoami: FC = () => {
                 href={social.url}
                 target='_blank'
                 rel='noreferrer'
-                className='hover:text-violet-600'
+                className='hover:text-violet-600 hover:opacity-75'
               >
                 <Image
                   src={`/icons/${social.name}.svg`}
-                  width={20}
-                  height={20}
+                  width={24}
+                  height={24}
                   alt={social.name}
                 />
               </a>
@@ -62,14 +61,22 @@ const Whoami: FC = () => {
             <div key={index} className='mb-12'>
               <h3
                 className={clsx(
-                  'text-xl font-bold opacity-85 lg:text-base',
-                  body.className,
+                  'text-2xl font-bold opacity-85',
+                  suez.className,
                 )}
               >
-                {about.title}
+                {about.title}{' '}
+                <span className='text-3xl text-violet-600'>?</span>
               </h3>
 
-              <p className='mt-3 max-w-2xl'>{about.content}</p>
+              <p
+                className={clsx(
+                  'mt-3 max-w-2xl text-lg opacity-60',
+                  inter.className,
+                )}
+              >
+                {about.content}
+              </p>
             </div>
           );
         })}
