@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero/Hero';
 import WhatIDo from '@/components/Hero/WhatIDo';
+import Testimonials from '@/components/Testimonials';
 import Works from '@/components/Works';
 
 const Homepage = () => {
@@ -8,6 +9,7 @@ const Homepage = () => {
       <Hero />
       <WhatIDo />
       <Works />
+      <Testimonials />
     </>
   );
 };
