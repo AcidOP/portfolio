@@ -13,11 +13,12 @@
   },
   "dependencies": {
     "clsx": "^2.1.0",
-    "framer-motion": "^11.0.5",
+    "framer-motion": "^11.0.8",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.2",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.6.0",

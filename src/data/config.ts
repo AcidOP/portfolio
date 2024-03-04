@@ -37,7 +37,7 @@ const config = {
         "I'm currently upskilling myself in the field of UI/UX and also learning about the latest technologies in the field of web development.",
     },
   ],
-  works: [
+  skills: [
     {
       title: 'Web Development',
       description:
@@ -59,6 +59,23 @@ const config = {
         'On-Page Optimization',
         'SEO Audits & Analysis',
       ],
+    },
+  ],
+  displayedWorks: [
+    {
+      title: 'Anshumaan Art',
+      tags: ['Development'],
+      description: 'A portfolio website for a Graphic Designer.',
+      // image: '/works/anshumaan-art.jpg',
+      image: '/works/anshumaan.png',
+    },
+    {
+      title: 'Yentarirah',
+      tags: ['Development', 'Design'],
+      description:
+        'Yentarirah is a startup that focuses on providing customizable and affordable custom clothing.',
+      // image: '/works/yentarirah.jpg',
+      image: '/works/yenti.png',
     },
   ],
 };
