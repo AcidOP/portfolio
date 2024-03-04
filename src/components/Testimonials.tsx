@@ -10,7 +10,7 @@ const workBody = Inter({ subsets: ['latin'], weight: '500' });
 
 const Testimonials: FC = () => {
   return (
-    <div className='mb-[200vh]'>
+    <div className='mb-24'>
       <h1
         className={cn(
           'sticky top-[5rem] mb-16 items-stretch text-7xl font-black',
