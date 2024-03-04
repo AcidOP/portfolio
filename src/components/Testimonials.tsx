@@ -26,24 +26,31 @@ const Testimonials: FC = () => {
             key={testimonial.title}
             className='relative sticky top-[5rem] flex flex-col gap-y-6 overflow-hidden rounded-lg bg-violet-100 p-6 lg:p-10 2xl:gap-y-10'
           >
-            <p className={cn('text-xl lg:text-3xl opacity-70 max-w-2xl', workBody.className)}>
-              <span className='text-2xl lg:text-4xl opacity-90'>&#8220;</span>
+            <p
+              className={cn(
+                'max-w-2xl text-xl opacity-70 lg:text-3xl',
+                workBody.className,
+              )}
+            >
+              <span className='text-2xl opacity-90 lg:text-4xl'>
+                &#8220;
+              </span>
               {testimonial.content}
-              <span className='text-2xl lg:text-4xl opacity-90'>&#8221;</span>
+              <span className='text-2xl opacity-90 lg:text-4xl'>
+                &#8221;
+              </span>
             </p>
 
             <div className='flex items-center space-x-6'>
-              <div className='w-16 h-16 bg-violet-600 rounded-full' />
+              <div className='h-16 w-16 rounded-full bg-violet-600' />
 
               <div>
-                <h3
-                  className='text-xl lg:text-2xl font-medium opacity-70'
-                >
+                <h3 className='text-xl font-medium opacity-70 lg:text-2xl'>
                   {testimonial.name}
                 </h3>
                 <p
                   className={cn(
-                    'lg:text-lg opacity-60',
+                    'opacity-60 lg:text-lg',
                     workBody.className,
                   )}
                 >
@@ -52,7 +59,7 @@ const Testimonials: FC = () => {
               </div>
             </div>
 
-            <div className='absolute right-0 translate-x-1/3 w-[700px] h-[700px] bg-violet-600 opacity-10 rounded-full' />
+            <div className='absolute right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-violet-600 opacity-10' />
           </div>
         ))}
       </div>
