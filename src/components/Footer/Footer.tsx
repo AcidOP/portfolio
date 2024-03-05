@@ -25,10 +25,12 @@ const Footer: FC = () => {
         </div>
 
         <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
-          <div>
+          <div className='w-full'>
             <h2 className={cn('text-xl', heading.className)}>
               Navigation
             </h2>
+
+            <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='mt-6 space-y-2'>
               <li>
@@ -49,8 +51,10 @@ const Footer: FC = () => {
             </ul>
           </div>
 
-          <div>
+          <div className='w-full'>
             <h2 className={cn('text-xl', heading.className)}>Socials</h2>
+
+            <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='mt-6 space-y-2'>
               {config.socials.map(social => (
@@ -63,8 +67,10 @@ const Footer: FC = () => {
             </ul>
           </div>
 
-          <div>
+          <div className='w-full'>
             <h2 className={cn('text-xl', heading.className)}>Misc</h2>
+
+            <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='mt-6 space-y-2'>
               <li>
