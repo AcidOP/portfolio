@@ -13,13 +13,15 @@ const heading = Suez_One({ subsets: ['latin'], weight: ['400'] });
 
 const Footer: FC = () => {
   return (
-    <footer className='my-24'>
+    <footer className='relative my-24'>
       <ContactLink />
+
+      <div className='absolute inset-0 -z-10 h-[550px] w-[550px] transform rounded-full bg-violet-500  opacity-40 blur-[64px]' />
 
       <div className='my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
           <h1 className={cn('mb-6 text-3xl font-bold', heading.className)}>
-            Newsletter
+            Newsletter 📰
           </h1>
           <Newsletter />
         </div>
