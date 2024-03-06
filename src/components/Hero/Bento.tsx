@@ -7,6 +7,7 @@ import { cn } from '@/utils/cn';
 
 import { Inter, Suez_One } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const suez = Suez_One({ subsets: ['latin'], weight: '400' });
 const heading = Inter({ subsets: ['latin'], weight: '700' });
@@ -31,24 +32,27 @@ const About: FC = () => {
       {/* Second column */}
       <div className='flex w-full flex-col space-y-6 lg:max-w-md'>
         <div className='flex space-x-6 text-lg lg:max-w-md'>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-300'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
             20+ Clients
           </div>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-300'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
             30+ Projects
           </div>
         </div>
 
         <div className='flex space-x-6 text-lg lg:max-w-md'>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-300'>
-            1000+ Hours
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
+            4000+ Hours
           </div>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-300'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
             2 Awards
           </div>
         </div>
 
-        <button className='group relative h-1/3 overflow-hidden overflow-x-hidden border-2 border-black bg-black px-10 py-6 text-white lg:py-2'>
+        <Link
+          href='/about'
+          className='group relative grid h-1/3 place-content-center overflow-hidden overflow-x-hidden border-2 border-black bg-black px-10 py-6 text-white lg:py-2'
+        >
           <span
             className={cn(
               'relative z-10 text-5xl font-medium text-white transition-all duration-300 lg:text-6xl',
@@ -60,7 +64,7 @@ const About: FC = () => {
           <span className='absolute inset-0 overflow-hidden'>
             <span className='absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-violet-600 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150'></span>
           </span>
-        </button>
+        </Link>
 
         <div className='relative hidden h-2/3 w-full max-w-md space-x-6 object-cover text-lg saturate-0 transition-all duration-300 hover:saturate-100 lg:flex'>
           <Image

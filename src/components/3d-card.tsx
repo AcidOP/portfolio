@@ -51,7 +51,7 @@ export const CardContainer = ({
     >
       <div
         className={cn(
-          'flex items-center justify-center py-20',
+          'flex h-full w-full items-center justify-center pt-10 transition-all duration-200 ease-linear',
           containerClassName,
         )}
         style={{

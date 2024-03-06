@@ -65,16 +65,15 @@ const config = {
     {
       title: 'Anshumaan Art',
       tags: ['Development'],
-      description: 'A portfolio website for a Graphic Designer.',
-      // image: '/works/anshumaan-art.jpg',
+      description:
+        'Anshumaan is a freelance motion designer who needed a portfolio website to showcase his artistic work and to show his clients his previous works.',
       image: '/works/anshumaan.png',
     },
     {
       title: 'Yentarirah',
       tags: ['Development', 'Design'],
       description:
-        'Yentarirah is a startup that focuses on providing customizable and affordable custom clothing.',
-      // image: '/works/yentarirah.jpg',
+        'Yentarirah is a startup that focuses on providing customizable and affordable custom clothing to the masses. They needed a website to showcase their products and to provide an easy way for their customers to buy their products.',
       image: '/works/yenti.png',
     },
   ],

@@ -13,7 +13,7 @@ const Testimonials: FC = () => {
     <div className='mb-24'>
       <h1
         className={cn(
-          'sticky top-[5rem] mb-16 items-stretch text-7xl font-black',
+          'mb-16 items-stretch text-7xl font-black',
           heading.className,
         )}
       >

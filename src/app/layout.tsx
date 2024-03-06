@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={clsx(
-          'mx-auto max-w-[calc(100vw-2.5rem)] overflow-x-hidden lg:max-w-[calc(100vw-8rem)]',
+          'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
           inter.className,
         )}
       >
