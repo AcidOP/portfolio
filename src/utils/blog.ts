@@ -21,8 +21,8 @@ export const allBlogsMeta = () => {
 
     const markdownWithMetadata = readFileSync(
       path.join(blogDirectory, file),
-      'utf-8'
-    )
+      'utf-8',
+    );
 
     const { data } = matter(markdownWithMetadata);
 
