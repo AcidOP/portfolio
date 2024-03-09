@@ -21,7 +21,8 @@ export const allBlogsMeta = () => {
 
     const markdownWithMetadata = readFileSync(
       path.join(blogDirectory, file),
-    ).toString();
+      'utf-8'
+    )
 
     const { data } = matter(markdownWithMetadata);
 
@@ -53,8 +54,6 @@ export const getBlogBySlug = (slug: string) => {
 };
 
 export const getAllBlogSlugs = () => {
-  const files = readdirSync(blogDirectory);
-  return files
-    .filter(file => file.endsWith('.mdx'))
-    .map(file => file.replace('.mdx', ''));
+  const blogs = allBlogsMeta();
+  return blogs.map(blog => blog.slug);
 };
