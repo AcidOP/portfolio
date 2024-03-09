@@ -9,7 +9,9 @@ import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
-interface Props {
+import type { Metadata } from 'next';
+
+interface PageProps {
   params: { slug: string };
 }
 
@@ -18,7 +20,33 @@ export const generateStaticParams = async () => {
   return slugs.map(slug => ({ slug }));
 };
 
-const page: FC<Props> = ({ params: { slug } }) => {
+export const generateMetadata = async ({
+  params: { slug },
+}: PageProps): Promise<Metadata> => {
+  const blog = getBlogBySlug(slug);
+
+  if (!blog) {
+    return {};
+  }
+
+  return {
+    title: blog.data.title,
+    description: blog.data.description,
+    openGraph: {
+      title: blog.data.title,
+      description: blog.data.description,
+      type: 'article',
+      url: process.env.SITE_URL + '/blogs/' + slug,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: blog.data.title,
+      description: blog.data.description,
+    },
+  };
+};
+
+const page: FC<PageProps> = ({ params: { slug } }) => {
   const blog = getBlogBySlug(slug);
   if (!blog) notFound();
 
