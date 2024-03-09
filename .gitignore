@@ -36,5 +36,6 @@ yarn-error.log*
 next-env.d.ts
 
 
-# Contentlayer
-.contentlayer
+# Generate fresh robots and sitemap files
+robots.txt
+sitemap*.xml
