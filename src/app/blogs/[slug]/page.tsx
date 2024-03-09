@@ -32,17 +32,17 @@ export const generateMetadata = async ({
   return {
     title: blog.data.title,
     description: blog.data.description,
-    openGraph: {
-      title: blog.data.title,
-      description: blog.data.description,
-      type: 'article',
-      url: process.env.SITE_URL + '/blogs/' + slug,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: blog.data.title,
-      description: blog.data.description,
-    },
+    // openGraph: {
+    //   title: blog.data.title,
+    //   description: blog.data.description,
+    //   type: 'article',
+    //   url: process.env.SITE_URL + '/blogs/' + slug,
+    // },
+    // twitter: {
+    //   card: 'summary_large_image',
+    //   title: blog.data.title,
+    //   description: blog.data.description,
+    // },
   };
 };
 
