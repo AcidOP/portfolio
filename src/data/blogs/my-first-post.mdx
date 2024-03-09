@@ -13,3 +13,27 @@ date: 2023-10-10
 | baz | bim |      1 |
 | baz | bim |      2 |
 | baz | bim |      3 |
+
+```typescript
+export const allBlogsMeta = () => {
+  const files = readdirSync(blogDirectory);
+  const mdxFiles = files.filter(file => file.endsWith('.mdx'));
+
+  const parsedBlogs = mdxFiles.map(file => {
+    const slug = file.replace('.mdx', '');
+
+    const markdownWithMetadata = readFileSync(
+      path.join(blogDirectory, file),
+    ).toString();
+
+    const { data } = matter(markdownWithMetadata);
+
+    return {
+      slug,
+      data,
+    };
+  });
+
+  return sortBlogsByDate(parsedBlogs);
+};
+```
