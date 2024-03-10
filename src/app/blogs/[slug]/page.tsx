@@ -1,13 +1,9 @@
 import { FC } from 'react';
 
+import Mdx from '@/components/mdx/Mdx';
 import { getAllBlogSlugs, getBlogBySlug } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
-import Markdown from 'react-markdown';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
 
 import type { Metadata } from 'next';
 
@@ -51,26 +47,11 @@ const page: FC<PageProps> = ({ params: { slug } }) => {
   if (!blog) notFound();
 
   return (
-    <div className='prose mx-auto w-full max-w-5xl'>
+    <div className='mx-auto w-full max-w-5xl'>
       <h1>{blog.data.title}</h1>
-      <Markdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[
-          rehypeSlug,
-          [
-            rehypeAutolinkHeadings,
-            {
-              behavior: 'wrap',
-            },
-          ],
-          [
-            rehypeExternalLinks,
-            { content: { type: 'text', value: '🔗' } },
-          ],
-        ]}
-      >
-        {blog.content}
-      </Markdown>
+      <article className='prose mx-auto'>
+        <Mdx content={blog.content} />
+      </article>
     </div>
   );
 };
