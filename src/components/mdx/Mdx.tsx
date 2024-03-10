@@ -3,8 +3,8 @@ import { FC } from 'react';
 import { components } from './MDXComponents';
 
 import Markdown from 'react-markdown';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeSanitize from 'rehype-sanitize';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
@@ -19,7 +19,7 @@ const Mdx: FC<MarkdownProps> = ({ content }) => {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[
         rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        rehypeSanitize,
         [rehypeExternalLinks, { content: { type: 'text', value: '🔗' } }],
       ]}
     >

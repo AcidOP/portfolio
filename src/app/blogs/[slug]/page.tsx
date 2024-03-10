@@ -49,7 +49,7 @@ const page: FC<PageProps> = ({ params: { slug } }) => {
   return (
     <div className='mx-auto w-full max-w-5xl'>
       <h1>{blog.data.title}</h1>
-      <article className='prose mx-auto'>
+      <article className='prose mx-auto prose-a:no-underline'>
         <Mdx content={blog.content} />
       </article>
     </div>
