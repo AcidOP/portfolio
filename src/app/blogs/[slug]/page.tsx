@@ -47,9 +47,9 @@ const page: FC<PageProps> = ({ params: { slug } }) => {
   if (!blog) notFound();
 
   return (
-    <div className='mx-auto w-full max-w-5xl'>
+    <div className='mx-auto w-full max-w-3xl'>
       <h1>{blog.data.title}</h1>
-      <article className='prose mx-auto prose-a:no-underline'>
+      <article className='prose mx-auto w-full max-w-3xl prose-a:no-underline'>
         <Mdx content={blog.content} />
       </article>
     </div>
