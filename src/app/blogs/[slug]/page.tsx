@@ -1,5 +1,8 @@
 import { FC } from 'react';
 
+import GoBackButton from './_components/GoBackButton';
+import Header from './_components/Header';
+
 import Mdx from '@/components/mdx/Mdx';
 import { getAllBlogSlugs, getBlogBySlug } from '@/utils/blog';
 
@@ -7,14 +10,14 @@ import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
 
-interface PageProps {
-  params: { slug: string };
-}
-
 export const generateStaticParams = async () => {
   const slugs = getAllBlogSlugs();
   return slugs.map(slug => ({ slug }));
 };
+
+interface PageProps {
+  params: { slug: string };
+}
 
 export const generateMetadata = async ({
   params: { slug },
@@ -42,13 +45,18 @@ export const generateMetadata = async ({
   };
 };
 
-const page: FC<PageProps> = ({ params: { slug } }) => {
+const BlogPage: FC<PageProps> = ({ params: { slug } }) => {
   const blog = getBlogBySlug(slug);
+
   if (!blog) notFound();
 
   return (
     <div className='mx-auto w-full max-w-3xl'>
-      <h1>{blog.data.title}</h1>
+      <GoBackButton />
+
+      {/* @ts-ignore */}
+      <Header {...blog.data} />
+
       <article className='prose mx-auto w-full max-w-3xl prose-a:no-underline'>
         <Mdx content={blog.content} />
       </article>
@@ -56,4 +64,4 @@ const page: FC<PageProps> = ({ params: { slug } }) => {
   );
 };
 
-export default page;
+export default BlogPage;

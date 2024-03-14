@@ -32,7 +32,10 @@ export const allBlogsMeta = () => {
     };
   });
 
-  return sortBlogsByDate(parsedBlogs);
+  const removeDrafts = parsedBlogs.filter(blog => !blog.data.draft);
+  const sortedBlogs = sortBlogsByDate(removeDrafts);
+
+  return sortedBlogs;
 };
 
 export const getBlogBySlug = (slug: string) => {
