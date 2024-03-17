@@ -1,7 +1,6 @@
-import Hero from './_components/Hero';
-import Storyblock from './_components/Storyblock';
-import Whoami from './_components/Whoami';
-import WorkPrinciples from './_components/Work/WorkPrinciples';
+import Hero from './_components/hero';
+import Storyblock from './_components/storyblock';
+import Whoami from './_components/whoami';
 
 const page = () => {
   return (
@@ -9,7 +8,6 @@ const page = () => {
       <Hero />
       <Storyblock />
       <Whoami />
-      <WorkPrinciples />
     </>
   );
 };

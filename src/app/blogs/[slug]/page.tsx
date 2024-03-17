@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import GoBackButton from './_components/GoBackButton';
-import Header from './_components/Header';
+import GoBackButton from './_components/back-button';
+import Header from './_components/header';
 
 import Mdx from '@/components/mdx/mdx';
 import config from '@/data/config';
