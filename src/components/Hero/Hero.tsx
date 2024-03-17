@@ -1,6 +1,6 @@
 'use client';
 
-import { BackgroundBeams } from './Backgound';
+import { BackgroundBeams } from './backgound';
 
 import config from '@/data/config';
 

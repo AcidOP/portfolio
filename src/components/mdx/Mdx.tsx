@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { components } from './MDXComponents';
+import { components } from './mdx-components';
 
 import Markdown from 'react-markdown';
 import rehypeExternalLinks from 'rehype-external-links';

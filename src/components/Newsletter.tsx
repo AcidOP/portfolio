@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import AnimatedTooltip from './AnimatedTooltip';
+import AnimatedTooltip from './animated-tooltip';
 
 const Newsletter: FC = () => {
   const people = [

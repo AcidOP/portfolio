@@ -1,4 +1,4 @@
-import StackedCard from './StackedCard';
+import StackedCard from './stacked-card';
 
 import config from '@/data/config';
 

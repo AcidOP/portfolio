@@ -3,7 +3,7 @@ import { FC } from 'react';
 import GoBackButton from './_components/GoBackButton';
 import Header from './_components/Header';
 
-import Mdx from '@/components/mdx/Mdx';
+import Mdx from '@/components/mdx/mdx';
 import config from '@/data/config';
 import { getAllBlogSlugs, getBlogBySlug } from '@/utils/blog';
 

@@ -1,8 +1,8 @@
-import Bento from '@/components/hero/Bento';
-import Hero from '@/components/hero/Hero';
-import WhatIDo from '@/components/hero/WhatIDo';
-import Testimonials from '@/components/Testimonials';
-import Works from '@/components/Works';
+import Bento from '@/components/hero/bento';
+import Hero from '@/components/hero/hero';
+import WhatIDo from '@/components/hero/what-i-do';
+import Testimonials from '@/components/testimonials';
+import Works from '@/components/works';
 
 const Homepage = () => {
   return (

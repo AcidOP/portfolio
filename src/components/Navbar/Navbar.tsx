@@ -1,4 +1,4 @@
-import NavLink from './NavLink';
+import NavLink from './nav-link';
 
 import config from '@/data/config';
 

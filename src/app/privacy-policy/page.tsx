@@ -1,4 +1,4 @@
-import Mdx from '@/components/mdx/Mdx';
+import Mdx from '@/components/mdx/mdx';
 import { privacy } from '@/utils/markdown';
 
 import { format } from 'date-fns';

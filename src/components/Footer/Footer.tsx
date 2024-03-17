@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import Newsletter from '../Newsletter';
-import ContactLink from './ContactLink';
+import Newsletter from '../newsletter';
+import ContactLink from './contact-link';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
