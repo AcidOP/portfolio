@@ -14,6 +14,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: config.title,
   description: config.description,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? ''),
 };
 
 export default function RootLayout({
