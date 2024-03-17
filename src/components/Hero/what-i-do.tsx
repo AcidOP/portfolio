@@ -24,7 +24,7 @@ const WhatIDo = () => {
 
         <h3
           className={clsx(
-            'mt-6 text-xl opacity-60 lg:mt-0 lg:max-w-2xl lg:text-3xl',
+            'mt-7 text-xl opacity-60 lg:mt-0 lg:max-w-2xl lg:text-3xl',
             body.className,
           )}
         >
