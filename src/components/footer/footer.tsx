@@ -13,96 +13,102 @@ const heading = Suez_One({ subsets: ['latin'], weight: ['400'] });
 
 const Footer: FC = () => {
   return (
-    <footer className='relative my-24'>
-      <ContactLink />
+    <>
+      <footer className='relative my-24'>
+        <ContactLink />
 
-      <div className='absolute inset-0 -z-10 h-[550px] w-[550px] transform rounded-full bg-violet-500  opacity-40 blur-[64px]' />
+        {/* ERROR: Causes an overflow idk why */}
 
-      <div className='my-24 flex flex-col lg:flex-row'>
-        <div className='max-w-md'>
-          <h1 className={cn('mb-6 text-3xl font-bold', heading.className)}>
-            Newsletter 📰
-          </h1>
-          <Newsletter />
-        </div>
+        {/* <div className='absolute inset-0 -z-10 h-[550px] w-[550px] rounded-full bg-violet-500 opacity-40 blur-[64px] overflow-x-hidden' /> */}
 
-        <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
-          <div className='w-full'>
-            <h2 className={cn('text-xl', heading.className)}>
-              Navigation
-            </h2>
-
-            <hr className='my-6 w-[80%] border border-gray-300' />
-
-            <ul className='mt-6 space-y-2'>
-              <li>
-                <Link href='/'>Home</Link>
-              </li>
-              <li>
-                <Link href='/about'>About</Link>
-              </li>
-              <li>
-                <Link href='/projects'>Projects</Link>
-              </li>
-              <li>
-                <Link href='/blogs'>Blogs</Link>
-              </li>
-              <li>
-                <Link href='/contact'>Contact</Link>
-              </li>
-            </ul>
+        <div className='my-24 flex flex-col lg:flex-row'>
+          <div className='max-w-md'>
+            <h1
+              className={cn('mb-6 text-3xl font-bold', heading.className)}
+            >
+              Newsletter 📰
+            </h1>
+            <Newsletter />
           </div>
 
-          <div className='w-full'>
-            <h2 className={cn('text-xl', heading.className)}>Socials</h2>
+          <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
+            <div className='w-full'>
+              <h2 className={cn('text-xl', heading.className)}>
+                Navigation
+              </h2>
 
-            <hr className='my-6 w-[80%] border border-gray-300' />
+              <hr className='my-6 w-[80%] border border-gray-300' />
 
-            <ul className='mt-6 space-y-2'>
-              {config.socials.map(social => (
-                <li key={social.name}>
-                  <Link href={social.url} className='capitalize'>
-                    {social.name}
+              <ul className='mt-6 space-y-2'>
+                <li>
+                  <Link href='/'>Home</Link>
+                </li>
+                <li>
+                  <Link href='/about'>About</Link>
+                </li>
+                <li>
+                  <Link href='/projects'>Projects</Link>
+                </li>
+                <li>
+                  <Link href='/blogs'>Blogs</Link>
+                </li>
+                <li>
+                  <Link href='/contact'>Contact</Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className='w-full'>
+              <h2 className={cn('text-xl', heading.className)}>Socials</h2>
+
+              <hr className='my-6 w-[80%] border border-gray-300' />
+
+              <ul className='mt-6 space-y-2'>
+                {config.socials.map(social => (
+                  <li key={social.name}>
+                    <Link href={social.url} className='capitalize'>
+                      {social.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className='w-full'>
+              <h2 className={cn('text-xl', heading.className)}>Misc</h2>
+
+              <hr className='my-6 w-[80%] border border-gray-300' />
+
+              <ul className='mt-6 space-y-2'>
+                <li>
+                  <Link href='/privacy-policy'>Privacy Policy</Link>
+                </li>
+                <li>
+                  <Link href='/terms-and-conditions'>
+                    Terms & Conditions
                   </Link>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className='w-full'>
-            <h2 className={cn('text-xl', heading.className)}>Misc</h2>
-
-            <hr className='my-6 w-[80%] border border-gray-300' />
-
-            <ul className='mt-6 space-y-2'>
-              <li>
-                <Link href='/privacy-policy'>Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href='/terms-and-conditions'>
-                  Terms & Conditions
-                </Link>
-              </li>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className='text-center'>
-        <p className='my-6 text-[7rem] font-black leading-[60%] opacity-85'>
-          © {new Date().getFullYear()}
-        </p>
+        <div className='text-center'>
+          <p className='my-6 text-6xl font-black leading-[0%] opacity-85 lg:text-[7rem] lg:leading-[30%]'>
+            © {new Date().getFullYear()}
+          </p>
 
-        <h3
-          className={cn(
-            'text-9xl font-black leading-[70%] opacity-85',
-            heading.className,
-          )}
-        >
-          {config.name}.
-        </h3>
-      </div>
-    </footer>
+          <h3
+            className={cn(
+              'text-8xl font-black opacity-85 lg:text-[17rem]',
+              heading.className,
+            )}
+          >
+            {config.name}.
+          </h3>
+        </div>
+      </footer>
+    </>
   );
 };
 

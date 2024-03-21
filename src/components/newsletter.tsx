@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import AnimatedTooltip from './animated-tooltip';
 
+import Link from 'next/link';
+
 const Newsletter: FC = () => {
   const people = [
     {
@@ -61,7 +63,7 @@ const Newsletter: FC = () => {
           className='h-10 w-2/3 border-2 border-violet-600 p-3'
         />
 
-        <button className='group relative ml-3 h-10 w-1/3 overflow-hidden overflow-x-hidden border-2 border-black bg-violet-600 px-6 text-center text-white transition-all duration-200 hover:bg-violet-500'>
+        <button className='group relative ml-3 h-10 border-2 border-black bg-violet-600 px-6 font-medium text-white transition-all duration-300 hover:bg-black'>
           Subscribe
         </button>
       </div>
@@ -74,7 +76,7 @@ const Newsletter: FC = () => {
         </p>
       </div>
 
-      {/* <p className='my-4 w-full max-w-md text-xs'>
+      <p className='mt-4 w-full max-w-md text-xs'>
         By subscribing you agree to with our{' '}
         <Link
           href='/privacy-policy'
@@ -82,8 +84,8 @@ const Newsletter: FC = () => {
         >
           Privacy Policy
         </Link>{' '}
-        and provide consent to receive updates from our company.
-      </p> */}
+        and provide consent to receive updates from me.
+      </p>
     </div>
   );
 };
