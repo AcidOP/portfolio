@@ -1,11 +1,11 @@
+import Heading from '../heading';
 import StackedCard from './stacked-card';
 
 import config from '@/data/config';
+import { cn } from '@/utils/cn';
 
-import clsx from 'clsx';
-import { Inter, Suez_One } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const heading = Suez_One({ subsets: ['latin'], weight: '400' });
 const body = Inter({ subsets: ['latin'], weight: '700' });
 
 const WhatIDo = () => {
@@ -13,17 +13,10 @@ const WhatIDo = () => {
   return (
     <div className='mb-36'>
       <div className='flex flex-col justify-between pb-12 lg:flex-row'>
-        <h1
-          className={clsx(
-            'text-7xl font-black lg:text-8xl',
-            heading.className,
-          )}
-        >
-          WHAT I DO.
-        </h1>
+        <Heading text='What I Do.' />
 
         <h3
-          className={clsx(
+          className={cn(
             'mt-7 text-xl opacity-60 lg:mt-0 lg:max-w-2xl lg:text-3xl',
             body.className,
           )}

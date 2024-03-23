@@ -1,24 +1,21 @@
 import { FC } from 'react';
 
+import Heading from './heading';
+
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
-import { Inter, Suez_One } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const heading = Suez_One({ subsets: ['latin'], weight: '400' });
 const workBody = Inter({ subsets: ['latin'], weight: '500' });
 
 const Testimonials: FC = () => {
   return (
     <div className='mb-24'>
-      <h1
-        className={cn(
-          'mb-16 items-stretch text-7xl font-black',
-          heading.className,
-        )}
-      >
-        DON&apos;T JUST TAKE MY WORD FOR IT.
-      </h1>
+      <Heading
+        text="DON'T JUST TAKE MY WORD FOR IT."
+        className='mb-16 items-stretch text-7xl'
+      />
 
       <div className='flex flex-col gap-y-10'>
         {config.testimonials.map(testimonial => (

@@ -1,3 +1,5 @@
+import Heading from './heading';
+
 import { CardBody, CardContainer, CardItem } from '@/components/3d-card';
 import config from '@/data/config';
 
@@ -12,14 +14,7 @@ const Works = () => {
 
   return (
     <div className='my-24'>
-      <h1
-        className={clsx(
-          'text-7xl font-black lg:text-8xl',
-          heading.className,
-        )}
-      >
-        SELECTED WORKS.
-      </h1>
+      <Heading text='Selected Works.' className='uppercase' />
 
       {/* {https://ui.aceternity.com/components/3d-card-effect } */}
       <div className='flex flex-col lg:flex-row lg:space-x-10'>
