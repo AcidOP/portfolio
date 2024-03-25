@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 const Storyblock: FC = () => {
   return (
-    <div className='mx-auto mb-16 flex w-full flex-col justify-between rounded-3xl border-2 border-black bg-violet-700 p-16 lg:flex-row'>
+    <div className='mx-auto mb-16 flex w-full flex-col justify-between rounded-3xl border-2 border-black bg-violet-700 p-8 lg:flex-row lg:p-16'>
       <div className='flex flex-col justify-between text-white'>
-        <h2 className='mb-10 text-2xl font-bold lg:text-[2.75rem]'>
+        <h2 className=' mb-5 text-2xl font-bold lg:mb-10 lg:text-[2.75rem]'>
           But first, let me tell you a story first
         </h2>
 
