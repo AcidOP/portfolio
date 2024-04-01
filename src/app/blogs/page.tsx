@@ -15,6 +15,7 @@ interface BlogPostProps {
 }
 
 // https://www.hyperui.dev/components/marketing/blog-cards
+// TODO: Add cover image in mobile view
 const BlogCard: FC<BlogPostProps> = ({
   cover,
   date,
@@ -29,7 +30,7 @@ const BlogCard: FC<BlogPostProps> = ({
           dateTime='2022-10-10'
           className='flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900'
         >
-          <span>{format(new Date(date), 'Y')}</span>
+          <span>{format(new Date(date), 'y')}</span>
           <span className='w-px flex-1 bg-gray-900/10'></span>
           <span>
             {format(new Date(date), 'MMM-d').replaceAll('-', ' ')}
@@ -63,7 +64,7 @@ const BlogCard: FC<BlogPostProps> = ({
         <div className='sm:flex sm:items-end sm:justify-end'>
           <Link
             href={`/blogs/${slug}`}
-            className='block bg-violet-700 px-5 py-3 text-center text-xs font-bold uppercase  text-white transition hover:scale-125 hover:bg-black'
+            className='block bg-violet-700 px-5 py-3 text-center text-xs font-bold uppercase  text-white transition hover:bg-black lg:hover:scale-125'
           >
             Read Blog
           </Link>
@@ -77,7 +78,7 @@ const BlogPage = () => {
   const blogs = allBlogsMeta();
 
   return (
-    <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
+    <div className='grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-6'>
       {blogs.map(blog => {
         return <BlogCard key={blog.data.slug} {...blog.data} />;
       })}

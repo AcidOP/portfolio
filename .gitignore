@@ -39,3 +39,5 @@ next-env.d.ts
 # Generate fresh robots and sitemap files
 robots.txt
 sitemap*.xml
+
+analyze/*
