@@ -14,40 +14,62 @@ interface BlogPostProps {
   description: string;
 }
 
+// https://www.hyperui.dev/components/marketing/blog-cards
 const BlogCard: FC<BlogPostProps> = ({
-  date,
-  slug,
-  description,
-  title,
   cover,
+  date,
+  description,
+  slug,
+  title,
 }) => {
   return (
-    <div className='m-2 flex flex-col justify-between rounded-md bg-violet-100 p-3'>
-      <Image
-        src={cover}
-        alt={title}
-        width={1920}
-        height={1080}
-        className='aspect-video rounded-xl'
-      />
+    <article className='flex bg-white transition hover:scale-105 hover:shadow-xl'>
+      <div className='rotate-180 p-2 [writing-mode:_vertical-lr]'>
+        <time
+          dateTime='2022-10-10'
+          className='flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900'
+        >
+          <span>{format(new Date(date), 'Y')}</span>
+          <span className='w-px flex-1 bg-gray-900/10'></span>
+          <span>
+            {format(new Date(date), 'MMM-d').replaceAll('-', ' ')}
+          </span>
+        </time>
+      </div>
 
-      <h1 className='mt-4 line-clamp-2 text-3xl font-extrabold'>
-        <Link href={`/blogs/${slug}`}>{title}</Link>
-      </h1>
+      <div className='hidden sm:block sm:basis-56'>
+        <Image
+          alt={title}
+          width={1740}
+          height={1740}
+          src={cover}
+          className='aspect-square h-full w-full object-cover'
+        />
+      </div>
 
-      <p className='my-3 text-sm opacity-60'>
-        {format(date, 'yyyy-MMM-dd-E')}
-      </p>
+      <div className='flex flex-1 flex-col justify-between'>
+        <div className='border-s border-gray-900/10 px-4 sm:border-l-transparent sm:px-6'>
+          <Link href={`/blogs/${slug}`}>
+            <h3 className='text-xl font-bold uppercase text-gray-900'>
+              {title}
+            </h3>
+          </Link>
 
-      <p className='line-clamp-4'>{description}</p>
+          <p className='mt-2 line-clamp-3 text-sm/relaxed text-gray-700'>
+            {description}
+          </p>
+        </div>
 
-      <Link
-        href={`/blogs/${slug}`}
-        className='mb-2 mt-6 w-min text-nowrap text-violet-600 hover:underline'
-      >
-        Read more
-      </Link>
-    </div>
+        <div className='sm:flex sm:items-end sm:justify-end'>
+          <Link
+            href={`/blogs/${slug}`}
+            className='block bg-violet-700 px-5 py-3 text-center text-xs font-bold uppercase  text-white transition hover:scale-125 hover:bg-black'
+          >
+            Read Blog
+          </Link>
+        </div>
+      </div>
+    </article>
   );
 };
 
@@ -55,7 +77,7 @@ const BlogPage = () => {
   const blogs = allBlogsMeta();
 
   return (
-    <div className='grid grid-cols-4'>
+    <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
       {blogs.map(blog => {
         return <BlogCard key={blog.data.slug} {...blog.data} />;
       })}
