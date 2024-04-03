@@ -3,6 +3,7 @@ import { FC } from 'react';
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
 
+import { getXRecentBlogs } from '@/utils/blog';
 import { cn } from '@/utils/cn';
 
 import { Inter, Suez_One } from 'next/font/google';
@@ -12,7 +13,10 @@ import Link from 'next/link';
 const suez = Suez_One({ subsets: ['latin'], weight: '400' });
 const heading = Inter({ subsets: ['latin'], weight: '700' });
 
+const LATEST_BLOGS = 2;
+
 const About: FC = () => {
+  const recentBlogs = getXRecentBlogs(LATEST_BLOGS);
   return (
     <div
       className={cn(
@@ -25,26 +29,26 @@ const About: FC = () => {
         <Image
           src={authorImage}
           alt='Author Image'
-          className='rounded-2xl border-2 border-black'
+          className='rounded-2xl border-2 border-black transition duration-200 hover:scale-105'
         />
       </div>
 
       {/* Second column */}
       <div className='flex w-full flex-col space-y-6 lg:max-w-md'>
         <div className='flex space-x-6 text-lg lg:max-w-md'>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:rotate-3 hover:scale-110'>
             20+ Clients
           </div>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:-rotate-6 hover:scale-110'>
             30+ Projects
           </div>
         </div>
 
         <div className='flex space-x-6 text-lg lg:max-w-md'>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:-rotate-3 hover:scale-110'>
             4000+ Hours
           </div>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium'>
+          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:rotate-6 hover:scale-110'>
             2 Awards
           </div>
         </div>
@@ -71,18 +75,23 @@ const About: FC = () => {
             src={lamps}
             fill
             alt='Author Image'
-            className='rounded-xl border-2 border-black object-cover'
+            className='rounded-xl border-2 border-black object-cover transition duration-200 hover:scale-105'
           />
         </div>
       </div>
 
       <div className='hidden w-full flex-col space-y-6 lg:flex lg:max-w-md'>
-        <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>
-          The Ultimate Linux Cheat Code Handbook 🔗
-        </div>
-        <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>
-          Beautify Your GitHub Profile like a Pro 🔗
-        </div>
+        {recentBlogs.map(blog => (
+          <Link
+            key={blog.data.slug}
+            href={`/blogs/${blog.data.slug}`}
+            className='h-full transition duration-200 hover:scale-105'
+          >
+            <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>
+              {blog.data.title} 🔗
+            </div>
+          </Link>
+        ))}
       </div>
 
       <div className='absolute bottom-0 right-0 -z-10 flex h-[600px] w-[600px] -translate-x-1/2 translate-y-1/3 items-center justify-center rounded-full bg-violet-500 opacity-35 blur-[64px]' />

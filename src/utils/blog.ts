@@ -66,3 +66,8 @@ export const getAllBlogSlugs = () => {
   const blogs = allBlogsMeta();
   return blogs.map(blog => blog.slug);
 };
+
+export const getXRecentBlogs = (x: number) => {
+  const blogs = allBlogsMeta();
+  return blogs.slice(0, x);
+};
