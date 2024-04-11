@@ -1,5 +1,5 @@
 import Mdx from '@/components/mdx/mdx';
-import { privacy } from '@/utils/markdown';
+import { privacy } from '@/utils/works';
 
 import { format } from 'date-fns';
 

@@ -20,6 +20,7 @@ const config = {
       url: 'https://instagram.com/acidop.codes',
     },
   ],
+  // About in /about page
   about: [
     {
       title: "WHERE I'M FROM",
@@ -37,6 +38,7 @@ const config = {
         "I'm currently upskilling myself in the field of UI/UX and also learning about the latest technologies in the field of web development.",
     },
   ],
+  // In skills card in Homepage hero section
   skills: [
     {
       title: 'Web Development',
@@ -59,22 +61,6 @@ const config = {
         'On-Page Optimization',
         'SEO Audits & Analysis',
       ],
-    },
-  ],
-  displayedWorks: [
-    {
-      title: 'Anshumaan Art',
-      tags: ['Development'],
-      description:
-        'Anshumaan is a freelance motion designer who needed a portfolio website to showcase his artistic work and to show his clients his previous works.',
-      image: '/works/anshumaan.png',
-    },
-    {
-      title: 'Yentarirah',
-      tags: ['Development', 'Design'],
-      description:
-        'Yentarirah is a startup that focuses on providing customizable and affordable custom clothing to the masses. They needed a website to showcase their products and to provide an easy way for their customers to buy their products.',
-      image: '/works/yenti.png',
     },
   ],
   testimonials: [

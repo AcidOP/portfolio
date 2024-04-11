@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
-import GoBackButton from './_components/back-button';
-import Header from './_components/header';
-
+import GoBackButton from '@/components/mdx/back-button';
+import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
 import config from '@/data/config';
 import { getAllBlogSlugs, getBlogBySlug } from '@/utils/blog';

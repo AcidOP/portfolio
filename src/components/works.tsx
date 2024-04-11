@@ -1,55 +1,45 @@
 import Heading from './heading';
 
-import { CardBody, CardContainer, CardItem } from '@/components/3d-card';
-import config from '@/data/config';
+import { works } from '@/utils/works';
 
-import clsx from 'clsx';
-import { Suez_One } from 'next/font/google';
 import Image from 'next/image';
-
-const heading = Suez_One({ subsets: ['latin'], weight: '400' });
+import Link from 'next/link';
 
 const Works = () => {
-  const { displayedWorks } = config;
+  const worksData = works();
+
+  const firstWork = worksData[0];
+  const otherWorks = worksData.slice(1);
 
   return (
     <div className='my-24'>
       <Heading text='Selected Works.' className='uppercase' />
 
-      {/* {https://ui.aceternity.com/components/3d-card-effect } */}
-      <div className='flex flex-col lg:flex-row lg:space-x-10'>
-        {displayedWorks.map((work, index) => (
-          <CardContainer key={index} className='inter-var h-[32rem]'>
-            <CardBody className='group/card relative h-full w-full rounded-xl border border-black/[0.1] bg-violet-100 p-6 dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] sm:w-[30rem]'>
-              <CardItem translateZ='100' className='w-full'>
-                <Image
-                  src={work.image}
-                  width={3000}
-                  height={3000}
-                  className='h-64 w-full rounded-xl object-cover group-hover/card:shadow-xl'
-                  alt='thumbnail'
-                />
-              </CardItem>
+      <Link href={`/works/${firstWork.data.slug}`}>
+        <Image
+          src={firstWork.data.image}
+          alt=''
+          width={1920}
+          height={1080}
+          className='mt-6 rounded-xl border-2 border-black transition-all duration-200 hover:scale-[1.02]'
+        />
+      </Link>
 
-              <CardItem
-                translateZ='50'
-                className={clsx(
-                  'mt-6 text-3xl font-bold opacity-80 dark:text-white',
-                  heading.className,
-                )}
-              >
-                {work.title}
-              </CardItem>
-
-              <CardItem
-                as='p'
-                translateZ='60'
-                className='mt-4 max-w-md opacity-70 dark:text-neutral-300'
-              >
-                {work.description}
-              </CardItem>
-            </CardBody>
-          </CardContainer>
+      <div className='mt-6 flex flex-col gap-6 lg:flex-row'>
+        {otherWorks.map(work => (
+          <Link
+            href={`/works/${work.data.slug}`}
+            key={work.data.slug}
+            className='flex-1'
+          >
+            <Image
+              src={work.data.image}
+              alt=''
+              width={1920}
+              height={1080}
+              className='hover:cursor rounded-xl border-2 border-black transition-all duration-200 hover:scale-105'
+            />
+          </Link>
         ))}
       </div>
     </div>

@@ -64,7 +64,7 @@ export const getBlogBySlug = (slug: string) => {
 
 export const getAllBlogSlugs = () => {
   const blogs = allBlogsMeta();
-  return blogs.map(blog => blog.slug);
+  return blogs.map(blog => blog.data.slug);
 };
 
 export const getXRecentBlogs = (x: number) => {

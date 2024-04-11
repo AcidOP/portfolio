@@ -41,7 +41,7 @@ const Testimonials: FC = () => {
 
             <div className='flex items-center space-x-6'>
               <Image
-                src='/testimonials/julie-pattyn.jpg'
+                src={testimonial.image}
                 width={70}
                 height={70}
                 alt={testimonial.name}
