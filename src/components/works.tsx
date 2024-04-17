@@ -18,7 +18,7 @@ const Works = () => {
       <Link href={`/works/${firstWork.data.slug}`}>
         <Image
           src={firstWork.data.image}
-          alt=''
+          alt={firstWork.data.title}
           width={1920}
           height={1080}
           className='mt-6 rounded-xl border-2 border-black transition-all duration-200 hover:scale-[1.02]'
@@ -34,7 +34,7 @@ const Works = () => {
           >
             <Image
               src={work.data.image}
-              alt=''
+              alt={work.data.title}
               width={1920}
               height={1080}
               className='hover:cursor rounded-xl border-2 border-black transition-all duration-200 hover:scale-105'
