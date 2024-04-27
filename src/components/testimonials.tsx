@@ -22,7 +22,7 @@ const Testimonials: FC = () => {
         {config.testimonials.map(testimonial => (
           <div
             key={testimonial.title}
-            className='sticky top-[5rem] flex flex-col gap-y-6 overflow-hidden rounded-lg bg-violet-700 p-6 lg:p-10 2xl:gap-y-10'
+            className='sticky top-[5rem] flex flex-col gap-y-6 overflow-hidden rounded-lg border-2 border-black bg-violet-600 p-6 lg:p-10 2xl:gap-y-10'
           >
             <p
               className={cn(
@@ -49,7 +49,7 @@ const Testimonials: FC = () => {
               />
 
               <div>
-                <h3 className='text-xl font-medium text-white opacity-80 lg:text-2xl'>
+                <h3 className='text-xl font-medium text-white lg:text-2xl'>
                   {testimonial.name}
                 </h3>
                 <p
@@ -63,7 +63,7 @@ const Testimonials: FC = () => {
               </div>
             </div>
 
-            <div className='absolute right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-violet-300 opacity-10' />
+            <div className='absolute right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-violet-300 opacity-20' />
           </div>
         ))}
       </div>
