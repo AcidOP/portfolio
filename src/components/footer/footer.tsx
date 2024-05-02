@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { suez_400 } from '../fonts';
+import links from '../navbar/navlinks';
 import Newsletter from '../newsletter';
 import ContactLink from './contact-link';
 
@@ -38,21 +39,13 @@ const Footer: FC = () => {
               <hr className='my-6 w-[80%] border border-gray-300' />
 
               <ul className='mt-6 space-y-2'>
-                <li>
-                  <Link href='/'>Home</Link>
-                </li>
-                <li>
-                  <Link href='/about'>About</Link>
-                </li>
-                <li>
-                  <Link href='/projects'>Projects</Link>
-                </li>
-                <li>
-                  <Link href='/blogs'>Blogs</Link>
-                </li>
-                <li>
-                  <Link href='/contact'>Contact</Link>
-                </li>
+                {links.map(link => (
+                  <li key={link.url}>
+                    <Link href={link.url} className='capitalize'>
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
