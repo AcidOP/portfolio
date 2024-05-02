@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
+import { suez_400 } from './fonts';
+
 import { cn } from '@/utils/cn';
-
-import { Suez_One } from 'next/font/google';
-
-const font = Suez_One({ subsets: ['latin'], weight: '400' });
 
 interface HeadingProps {
   className?: string;
@@ -16,7 +14,7 @@ const Heading: FC<HeadingProps> = ({ text, className }) => {
     <h1
       className={cn(
         'text-6xl font-black lg:text-8xl',
-        font.className,
+        suez_400.className,
         className,
       )}
     >

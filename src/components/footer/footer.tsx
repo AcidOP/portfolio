@@ -1,15 +1,13 @@
 import { FC } from 'react';
 
+import { suez_400 } from '../fonts';
 import Newsletter from '../newsletter';
 import ContactLink from './contact-link';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
-import { Suez_One } from 'next/font/google';
 import Link from 'next/link';
-
-const heading = Suez_One({ subsets: ['latin'], weight: ['400'] });
 
 const Footer: FC = () => {
   return (
@@ -24,7 +22,7 @@ const Footer: FC = () => {
         <div className='my-24 flex flex-col lg:flex-row'>
           <div className='max-w-md'>
             <h1
-              className={cn('mb-6 text-3xl font-bold', heading.className)}
+              className={cn('mb-6 text-3xl font-bold', suez_400.className)}
             >
               Newsletter 📰
             </h1>
@@ -33,7 +31,7 @@ const Footer: FC = () => {
 
           <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
             <div className='w-full'>
-              <h2 className={cn('text-xl', heading.className)}>
+              <h2 className={cn('text-xl', suez_400.className)}>
                 Navigation
               </h2>
 
@@ -59,7 +57,9 @@ const Footer: FC = () => {
             </div>
 
             <div className='w-full'>
-              <h2 className={cn('text-xl', heading.className)}>Socials</h2>
+              <h2 className={cn('text-xl', suez_400.className)}>
+                Socials
+              </h2>
 
               <hr className='my-6 w-[80%] border border-gray-300' />
 
@@ -75,7 +75,7 @@ const Footer: FC = () => {
             </div>
 
             <div className='w-full'>
-              <h2 className={cn('text-xl', heading.className)}>Misc</h2>
+              <h2 className={cn('text-xl', suez_400.className)}>Misc</h2>
 
               <hr className='my-6 w-[80%] border border-gray-300' />
 
@@ -101,7 +101,7 @@ const Footer: FC = () => {
           <h3
             className={cn(
               'text-8xl font-black opacity-85 lg:text-[17rem]',
-              heading.className,
+              suez_400.className,
             )}
           >
             {config.name}.

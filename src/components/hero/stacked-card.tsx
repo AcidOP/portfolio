@@ -1,12 +1,8 @@
 import { FC } from 'react';
 
+import { inter_600, inter_900, suez_400 } from '../fonts';
+
 import { cn } from '@/utils/cn';
-
-import { Inter, Suez_One } from 'next/font/google';
-
-const heading = Suez_One({ subsets: ['latin'], weight: '400' });
-const body = Inter({ subsets: ['latin'], weight: '600' });
-const workBody = Inter({ subsets: ['latin'], weight: '900' });
 
 interface StackedCardProps {
   image?: string;
@@ -31,7 +27,7 @@ const StackedCard: FC<StackedCardProps> = ({
         <h1
           className={cn(
             'pb-6 text-4xl opacity-90 lg:text-6xl',
-            heading.className,
+            suez_400.className,
           )}
         >
           {title}
@@ -39,7 +35,7 @@ const StackedCard: FC<StackedCardProps> = ({
         <h3
           className={cn(
             'max-w-xl pt-6 text-lg opacity-50 lg:text-2xl',
-            body.className,
+            inter_600.className,
           )}
         >
           {description}
@@ -53,7 +49,7 @@ const StackedCard: FC<StackedCardProps> = ({
               key={index}
               className={cn(
                 'pb-3 text-xl font-bold opacity-70 lg:text-5xl',
-                workBody.className,
+                inter_900.className,
               )}
             >
               — {work}

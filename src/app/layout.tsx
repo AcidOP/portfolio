@@ -1,3 +1,5 @@
+import { inter_500 } from '@/components/fonts';
+
 import './globals.css';
 
 import Footer from '@/components/footer/footer';
@@ -5,11 +7,7 @@ import Navbar from '@/components/navbar/navbar';
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
-import { Inter } from 'next/font/google';
-
 import type { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: config.title,
@@ -27,7 +25,7 @@ export default function RootLayout({
       <body
         className={cn(
           'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
-          inter.className,
+          inter_500.className,
         )}
       >
         <Navbar />

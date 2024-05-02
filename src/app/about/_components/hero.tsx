@@ -1,17 +1,14 @@
 import { FC } from 'react';
 
+import { suez_400 } from '@/components/fonts';
 import { cn } from '@/utils/cn';
-
-import { Suez_One } from 'next/font/google';
-
-const body = Suez_One({ subsets: ['latin'], weight: '400' });
 
 const Hero: FC = () => {
   return (
     <div
       className={cn(
         'flex h-[80vh] items-center justify-center',
-        body.className,
+        suez_400.className,
       )}
     >
       <p className='max-w-4xl text-center text-4xl lg:text-6xl'>

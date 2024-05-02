@@ -1,11 +1,9 @@
 import image404 from '@/../public/images/404/404.svg';
+import { suez_400 } from '@/components/fonts';
 import { cn } from '@/utils/cn';
 
-import { Suez_One } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const suez = Suez_One({ subsets: ['latin'], weight: '400' });
 
 const NotFound = () => {
   return (
@@ -22,7 +20,7 @@ const NotFound = () => {
         <h1
           className={cn(
             'mb-3 text-6xl drop-shadow-lg lg:text-9xl lg:text-white',
-            suez.className,
+            suez_400.className,
           )}
         >
           Lost in space?
@@ -35,7 +33,7 @@ const NotFound = () => {
           <span
             className={cn(
               'relative z-10 text-nowrap text-3xl font-medium text-white transition-all duration-300 group-hover:text-black lg:text-6xl',
-              suez.className,
+              suez_400.className,
             )}
           >
             Come home.

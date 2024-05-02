@@ -1,14 +1,12 @@
 import { FC } from 'react';
 
+import { inter_400 } from './fonts';
 import Heading from './heading';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
-import { Inter } from 'next/font/google';
 import Image from 'next/image';
-
-const workBody = Inter({ subsets: ['latin'], weight: '400' });
 
 const Testimonials: FC = () => {
   return (
@@ -27,7 +25,7 @@ const Testimonials: FC = () => {
             <p
               className={cn(
                 'max-w-2xl text-white lg:text-3xl',
-                workBody.className,
+                inter_400.className,
               )}
             >
               <span className='text-2xl opacity-90 lg:text-4xl'>
@@ -55,7 +53,7 @@ const Testimonials: FC = () => {
                 <p
                   className={cn(
                     'text-white opacity-80 lg:text-lg',
-                    workBody.className,
+                    inter_400.className,
                   )}
                 >
                   {testimonial.title}

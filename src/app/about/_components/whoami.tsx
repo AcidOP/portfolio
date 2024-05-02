@@ -2,14 +2,11 @@ import { FC } from 'react';
 
 import aboutMe from '../../../../public/images/about-me.png';
 
+import { inter_500, suez_400 } from '@/components/fonts';
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
-import { Inter, Suez_One } from 'next/font/google';
 import Image from 'next/image';
-
-const suez = Suez_One({ subsets: ['latin'], weight: '400' });
-const inter = Inter({ subsets: ['latin'], weight: '500' });
 
 const Whoami: FC = () => {
   return (
@@ -21,7 +18,7 @@ const Whoami: FC = () => {
           className='w-64 rounded-full border-2 border-black'
         />
 
-        <h2 className={cn('pb-3 pt-4 text-4xl', suez.className)}>
+        <h2 className={cn('pb-3 pt-4 text-4xl', suez_400.className)}>
           {config.name}
         </h2>
 
@@ -62,7 +59,7 @@ const Whoami: FC = () => {
               <h3
                 className={cn(
                   'text-2xl font-bold opacity-85',
-                  suez.className,
+                  suez_400.className,
                 )}
               >
                 {about.title}{' '}
@@ -72,7 +69,7 @@ const Whoami: FC = () => {
               <p
                 className={cn(
                   'mt-3 max-w-2xl text-lg opacity-60',
-                  inter.className,
+                  inter_500.className,
                 )}
               >
                 {about.content}

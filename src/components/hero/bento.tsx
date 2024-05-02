@@ -2,16 +2,13 @@ import { FC } from 'react';
 
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
+import { inter_700, suez_400 } from '../fonts';
 
 import { getXRecentBlogs } from '@/utils/blog';
 import { cn } from '@/utils/cn';
 
-import { Inter, Suez_One } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const suez = Suez_One({ subsets: ['latin'], weight: '400' });
-const heading = Inter({ subsets: ['latin'], weight: '700' });
 
 const LATEST_BLOGS = 2;
 
@@ -21,7 +18,7 @@ const About: FC = () => {
     <div
       className={cn(
         'relative mb-32 mt-16 flex flex-col gap-6 rounded-3xl lg:flex-row',
-        heading.className,
+        inter_700.className,
       )}
     >
       {/* First Column */}
@@ -60,7 +57,7 @@ const About: FC = () => {
           <span
             className={cn(
               'relative z-0 text-5xl font-medium text-white transition-all duration-300 lg:text-6xl',
-              suez.className,
+              suez_400.className,
             )}
           >
             About Me

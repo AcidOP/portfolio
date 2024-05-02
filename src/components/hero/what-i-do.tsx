@@ -1,12 +1,9 @@
+import { inter_700 } from '../fonts';
 import Heading from '../heading';
 import StackedCard from './stacked-card';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
-
-import { Inter } from 'next/font/google';
-
-const body = Inter({ subsets: ['latin'], weight: '700' });
 
 const WhatIDo = () => {
   const { skills } = config;
@@ -18,7 +15,7 @@ const WhatIDo = () => {
         <h3
           className={cn(
             'mt-7 text-xl opacity-60 lg:mt-0 lg:max-w-2xl lg:text-3xl',
-            body.className,
+            inter_700.className,
           )}
         >
           My obsession is to deliver a digital experience that not only
