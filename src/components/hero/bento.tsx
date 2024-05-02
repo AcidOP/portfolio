@@ -59,7 +59,7 @@ const About: FC = () => {
         >
           <span
             className={cn(
-              'relative z-10 text-5xl font-medium text-white transition-all duration-300 lg:text-6xl',
+              'relative z-0 text-5xl font-medium text-white transition-all duration-300 lg:text-6xl',
               suez.className,
             )}
           >
