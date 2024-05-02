@@ -3,8 +3,8 @@ import { FC } from 'react';
 import aboutMe from '../../../../public/images/about-me.png';
 
 import config from '@/data/config';
+import { cn } from '@/utils/cn';
 
-import clsx from 'clsx';
 import { Inter, Suez_One } from 'next/font/google';
 import Image from 'next/image';
 
@@ -21,7 +21,7 @@ const Whoami: FC = () => {
           className='w-64 rounded-full border-2 border-black'
         />
 
-        <h2 className={clsx('pb-3 pt-4 text-4xl', suez.className)}>
+        <h2 className={cn('pb-3 pt-4 text-4xl', suez.className)}>
           {config.name}
         </h2>
 
@@ -60,7 +60,7 @@ const Whoami: FC = () => {
           return (
             <div key={index} className='mb-12'>
               <h3
-                className={clsx(
+                className={cn(
                   'text-2xl font-bold opacity-85',
                   suez.className,
                 )}
@@ -70,7 +70,7 @@ const Whoami: FC = () => {
               </h3>
 
               <p
-                className={clsx(
+                className={cn(
                   'mt-3 max-w-2xl text-lg opacity-60',
                   inter.className,
                 )}

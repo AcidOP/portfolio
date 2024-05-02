@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import clsx from 'clsx';
+import { cn } from '@/utils/cn';
+
 import { Inter, Suez_One } from 'next/font/google';
 
 const heading = Suez_One({ subsets: ['latin'], weight: '400' });
@@ -28,7 +29,7 @@ const StackedCard: FC<StackedCardProps> = ({
     >
       <div className='w-full pt-6 lg:w-1/2'>
         <h1
-          className={clsx(
+          className={cn(
             'pb-6 text-4xl opacity-90 lg:text-6xl',
             heading.className,
           )}
@@ -36,7 +37,7 @@ const StackedCard: FC<StackedCardProps> = ({
           {title}
         </h1>
         <h3
-          className={clsx(
+          className={cn(
             'max-w-xl pt-6 text-lg opacity-50 lg:text-2xl',
             body.className,
           )}
@@ -50,7 +51,7 @@ const StackedCard: FC<StackedCardProps> = ({
           {works.map((work, index) => (
             <li
               key={index}
-              className={clsx(
+              className={cn(
                 'pb-3 text-xl font-bold opacity-70 lg:text-5xl',
                 workBody.className,
               )}

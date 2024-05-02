@@ -3,8 +3,8 @@ import './globals.css';
 import Footer from '@/components/footer/footer';
 import Navbar from '@/components/navbar/navbar';
 import config from '@/data/config';
+import { cn } from '@/utils/cn';
 
-import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
 import type { Metadata } from 'next';
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={clsx(
+        className={cn(
           'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
           inter.className,
         )}

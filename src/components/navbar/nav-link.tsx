@@ -1,6 +1,7 @@
 'use client';
 
-import clsx from 'clsx';
+import { cn } from '@/utils/cn';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -26,7 +27,7 @@ const NavLink: FC<NavLinkProps> = ({ children, className, ...rest }) => {
     <Link
       {...rest}
       // https://buttons.ibelick.com/
-      className={clsx(
+      className={cn(
         'group relative h-12 px-4 text-neutral-950',
         isActive ? 'font-semibold text-violet-900' : 'opacity-80',
         className,

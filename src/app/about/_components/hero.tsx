@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import clsx from 'clsx';
+import { cn } from '@/utils/cn';
+
 import { Suez_One } from 'next/font/google';
 
 const body = Suez_One({ subsets: ['latin'], weight: '400' });
@@ -8,7 +9,7 @@ const body = Suez_One({ subsets: ['latin'], weight: '400' });
 const Hero: FC = () => {
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex h-[80vh] items-center justify-center',
         body.className,
       )}
