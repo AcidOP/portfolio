@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className='sticky top-0 z-10 mx-auto flex h-20 w-full items-center justify-between'>
+    <nav className='sticky top-0 z-50 mx-auto flex h-20 w-full items-center justify-between'>
       <div className='text-3xl font-bold'>
         <Link href='/'>{config.name}</Link>
       </div>
