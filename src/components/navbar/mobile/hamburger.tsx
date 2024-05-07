@@ -25,6 +25,7 @@ const AnimatedHamburgerButton: FC<HamburgerProps> = ({
         animate={isOpen ? 'open' : 'closed'}
         onClick={toggle}
         className='relative h-20 w-10'
+        aria-label='Toggle menu'
       >
         <motion.span
           variants={VARIANTS.top}
