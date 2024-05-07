@@ -1,10 +1,8 @@
-import { FC } from 'react';
-
 import picassoImage from '../../../../public/images/woman-painting.jpeg';
 
 import Image from 'next/image';
 
-const Storyblock: FC = () => {
+const Storyblock = () => {
   return (
     <div className='mx-auto mb-16 flex w-full flex-col justify-between rounded-3xl border-2 border-black bg-violet-700 p-8 lg:flex-row lg:p-16'>
       <div className='flex flex-col justify-between text-white'>

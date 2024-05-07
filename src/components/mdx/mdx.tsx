@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { components } from './mdx-components';
 
 import Markdown from 'react-markdown';
@@ -12,7 +10,7 @@ interface MarkdownProps {
   content: string;
 }
 
-const Mdx: FC<MarkdownProps> = ({ content }) => {
+const Mdx = ({ content }: MarkdownProps) => {
   return (
     <Markdown
       components={components}

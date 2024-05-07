@@ -1,12 +1,10 @@
-import { FC } from 'react';
-
 import { suez_400 } from '../fonts';
 
 import { cn } from '@/utils/cn';
 
 import Link from 'next/link';
 
-const ContactLink: FC = () => {
+const ContactLink = () => {
   return (
     <div className='mx-auto w-min'>
       <h1

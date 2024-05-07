@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,13 +10,13 @@ interface HeaderProps {
   cover: string;
 }
 
-const Header: FC<HeaderProps> = ({
+const Header = ({
   date,
   description,
   title,
   cover,
   tags,
-}) => {
+}: HeaderProps) => {
   return (
     <>
       <h1 className='mt-10 text-4xl font-black lg:text-5xl'>{title}</h1>

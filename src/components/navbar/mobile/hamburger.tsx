@@ -1,7 +1,5 @@
 'use client';
 
-import { FC } from 'react';
-
 import { motion, MotionConfig } from 'framer-motion';
 
 interface HamburgerProps {
@@ -9,10 +7,7 @@ interface HamburgerProps {
   toggle: () => void;
 }
 
-const AnimatedHamburgerButton: FC<HamburgerProps> = ({
-  isOpen,
-  toggle,
-}) => {
+const AnimatedHamburgerButton = ({ isOpen, toggle }: HamburgerProps) => {
   return (
     <MotionConfig
       transition={{

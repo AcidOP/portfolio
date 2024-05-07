@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { inter_600, inter_900, suez_400 } from '../fonts';
 
 import { cn } from '@/utils/cn';
@@ -12,12 +10,12 @@ interface StackedCardProps {
   works: string[];
 }
 
-const StackedCard: FC<StackedCardProps> = ({
+const StackedCard = ({
   index,
   description,
   title,
   works,
-}) => {
+}: StackedCardProps) => {
   return (
     <div
       style={{ top: `calc(5rem + ${index * 5}rem)`, zIndex: 0 + index }}

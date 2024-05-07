@@ -1,9 +1,7 @@
-import { FC } from 'react';
-
 import { suez_400 } from '@/components/fonts';
 import { cn } from '@/utils/cn';
 
-const Hero: FC = () => {
+const Hero = () => {
   return (
     <div
       className={cn(

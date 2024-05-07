@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { motion } from 'framer-motion';
 
@@ -8,7 +8,7 @@ interface TemplateProps {
   children: ReactNode;
 }
 
-const Template: FC<TemplateProps> = ({ children }) => {
+const Template = ({ children }: TemplateProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

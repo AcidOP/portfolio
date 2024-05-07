@@ -1,10 +1,8 @@
 'use client';
 
-import { FC } from 'react';
-
 import { useRouter } from 'next/navigation';
 
-const GoBackButton: FC = () => {
+const GoBackButton = () => {
   const router = useRouter();
   const previousUrl = router.back;
 

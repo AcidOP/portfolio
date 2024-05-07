@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import aboutMe from '../../../../public/images/about-me.png';
 
 import { inter_500, suez_400 } from '@/components/fonts';
@@ -8,7 +6,7 @@ import { cn } from '@/utils/cn';
 
 import Image from 'next/image';
 
-const Whoami: FC = () => {
+const Whoami = () => {
   return (
     <div className='my-8 flex flex-col lg:my-32 lg:flex-row'>
       <div className='flex flex-col items-center justify-center lg:w-2/5'>

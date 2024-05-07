@@ -1,10 +1,8 @@
-import { FC } from 'react';
-
 import AnimatedTooltip from './animated-tooltip';
 
 import Link from 'next/link';
 
-const Newsletter: FC = () => {
+const Newsletter = () => {
   const people = [
     {
       id: 1,

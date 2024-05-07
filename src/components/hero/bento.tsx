@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
 import { inter_700, suez_400 } from '../fonts';
@@ -12,7 +10,7 @@ import Link from 'next/link';
 
 const LATEST_BLOGS = 2;
 
-const About: FC = () => {
+const About = () => {
   const recentBlogs = getXRecentBlogs(LATEST_BLOGS);
   return (
     <div

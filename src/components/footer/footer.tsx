@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { suez_400 } from '../fonts';
 import links from '../navbar/navlinks';
 import Newsletter from '../newsletter';
@@ -10,7 +8,7 @@ import { cn } from '@/utils/cn';
 
 import Link from 'next/link';
 
-const Footer: FC = () => {
+const Footer = () => {
   return (
     <>
       <footer className='relative my-24'>

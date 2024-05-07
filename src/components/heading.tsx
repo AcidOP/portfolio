@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { suez_400 } from './fonts';
 
 import { cn } from '@/utils/cn';
@@ -9,7 +7,7 @@ interface HeadingProps {
   text: string;
 }
 
-const Heading: FC<HeadingProps> = ({ text, className }) => {
+const Heading = ({ text, className }: HeadingProps) => {
   return (
     <h1
       className={cn(

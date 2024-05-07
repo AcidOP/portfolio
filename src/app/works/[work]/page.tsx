@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
@@ -16,7 +14,7 @@ export const generateStaticParams = async () => {
   return slugs.map(slug => ({ work: slug }));
 };
 
-const Work: FC<PageProps> = ({ params: { work } }) => {
+const Work = ({ params: { work } }: PageProps) => {
   const workData = getWorkBySlug(work);
 
   if (!workData) notFound();

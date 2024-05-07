@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { inter_400 } from './fonts';
 import Heading from './heading';
 
@@ -8,7 +6,7 @@ import { cn } from '@/utils/cn';
 
 import Image from 'next/image';
 
-const Testimonials: FC = () => {
+const Testimonials = () => {
   return (
     <div className='mb-24'>
       <Heading

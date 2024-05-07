@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import Image from 'next/image';
 
 interface CalendlyProps {
@@ -7,7 +5,7 @@ interface CalendlyProps {
   name: string;
 }
 
-const Calendly: FC<CalendlyProps> = ({ url, name }) => {
+const Calendly = ({ url, name }: CalendlyProps) => {
   return (
     <div className='flex flex-col items-center lg:w-1/3'>
       <a
