@@ -7,14 +7,14 @@ const ContactPage = () => {
 
   return (
     <>
-      <section className='my-60 flex items-start justify-between'>
-        <div className='w-3/5 font-medium'>
+      <section className='my-28 flex flex-col items-start justify-between lg:my-60 lg:flex-row'>
+        <div className='w-full font-medium lg:w-3/5'>
           <p className='text-3xl'>
             I&apos;d love to get to know about you, your business, project
             or idea — feel free to drop a line or give a call.
           </p>
 
-          <div className='mt-16 flex justify-between'>
+          <div className='my-16 flex flex-col justify-between space-y-8 lg:flex-row lg:space-y-0'>
             <div>
               <h2 className='text-xl font-semibold opacity-60'>Email</h2>
               <a href='mailto:acid@acidop.codes' className='text-3xl'>
