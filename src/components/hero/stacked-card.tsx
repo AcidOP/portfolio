@@ -32,14 +32,14 @@ const StackedCard: FC<StackedCardProps> = ({
         >
           {title}
         </h1>
-        <h3
+        <p
           className={cn(
-            'max-w-xl pt-6 text-lg opacity-50 lg:text-2xl',
+            'max-w-xl pt-6 text-lg opacity-60 lg:text-2xl',
             inter_600.className,
           )}
         >
           {description}
-        </h3>
+        </p>
       </div>
 
       <div className='relative w-full max-w-2xl pt-6 lg:w-1/2'>
@@ -57,7 +57,9 @@ const StackedCard: FC<StackedCardProps> = ({
           ))}
         </ul>
 
-        <div className='absolute bottom-0 right-0 text-9xl font-black leading-none text-violet-600 opacity-10 lg:text-[15rem]'>
+        <div
+          className='absolute bottom-0 right-0 text-9xl font-black leading-none text-violet-600 opacity-10 lg:text-[15rem]'
+        >
           0{index + 1}.
         </div>
       </div>

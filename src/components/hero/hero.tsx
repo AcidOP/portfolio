@@ -11,7 +11,12 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <div className='flex h-[70vh] w-full items-center justify-center lg:h-[calc(100vh-5rem)]'>
-      <motion.div className='absolute top-0 -z-10 h-full w-full'>
+      <motion.div
+        initial={{ x: '-200%', scale: '0%' }}
+        animate={{ x: 0, scale: '100%' }}
+        transition={{ duration: 1, ease: 'backInOut' }}
+        className='absolute top-0 -z-10 h-full w-full'
+      >
         <div className='absolute bottom-auto left-auto right-0 top-0 h-[600px] w-[600px] -translate-x-[20%] translate-y-[20%] rounded-full bg-violet-400 opacity-50 blur-[90px]' />
       </motion.div>
 

@@ -47,9 +47,9 @@ const Testimonials: FC = () => {
               />
 
               <div>
-                <h3 className='text-xl font-medium text-white lg:text-2xl'>
+                <p className='text-xl font-medium text-white lg:text-2xl'>
                   {testimonial.name}
-                </h3>
+                </p>
                 <p
                   className={cn(
                     'text-white opacity-80 lg:text-lg',

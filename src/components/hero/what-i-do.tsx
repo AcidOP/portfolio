@@ -12,16 +12,16 @@ const WhatIDo = () => {
       <div className='flex flex-col justify-between pb-12 lg:flex-row'>
         <Heading text='What I Do.' />
 
-        <h3
+        <h2
           className={cn(
-            'mt-7 text-xl opacity-60 lg:mt-0 lg:max-w-2xl lg:text-3xl',
+            'mt-7 text-xl opacity-70 lg:mt-0 lg:max-w-2xl lg:text-3xl',
             inter_700.className,
           )}
         >
           My obsession is to deliver a digital experience that not only
           serves a great purpose, but give your business an unfair
           advantage.
-        </h3>
+        </h2>
       </div>
 
       <div className='space-y-24'>
