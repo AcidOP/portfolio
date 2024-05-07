@@ -57,9 +57,7 @@ const StackedCard: FC<StackedCardProps> = ({
           ))}
         </ul>
 
-        <div
-          className='absolute bottom-0 right-0 text-9xl font-black leading-none text-violet-600 opacity-10 lg:text-[15rem]'
-        >
+        <div className='absolute bottom-0 right-0 text-9xl font-black leading-none text-violet-600 opacity-10 lg:text-[15rem]'>
           0{index + 1}.
         </div>
       </div>
