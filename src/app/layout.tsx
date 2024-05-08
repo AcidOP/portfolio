@@ -8,7 +8,6 @@ import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
 import type { Metadata } from 'next';
-import UmamiScript from '@/components/analytics/Umami';
 
 export const metadata: Metadata = {
   title: config.title,
@@ -24,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
-        <UmamiScript />
+        <script
+          defer
+          src='https://eu.umami.is/script.js'
+          data-website-id='250028b4-b3d2-4b39-8140-57b7cc9edb1b'
+        />
       </head>
       <body
         className={cn(
