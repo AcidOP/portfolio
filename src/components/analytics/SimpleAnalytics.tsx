@@ -1,19 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
+import Script from 'next/script';
+
 const SimpleAnalytics = () => {
   return (
     <>
-      <script
-        async
-        defer
-        src='https://scripts.simpleanalyticscdn.com/latest.js'
+      {/* Track pages */}
+      <Script
+        strategy='lazyOnload'
+        src='https://api.acidop.codes/latest.js'
       />
-      <noscript>
-        <img
-          src='https://queue.simpleanalyticscdn.com/noscript.gif'
-          alt=''
-          referrerPolicy='no-referrer-when-downgrade'
-        />
-      </noscript>
+
+      {/* Track events */}
+      <Script
+        strategy='lazyOnload'
+        src='https://api.acidop.codes/auto-events.js'
+      />
     </>
   );
 };
