@@ -2,7 +2,7 @@ import { inter_500 } from '@/components/fonts';
 
 import './globals.css';
 
-import Umami from '@/components/analytics/Umami';
+import Analytics from '@/components/analytics';
 import Footer from '@/components/footer/footer';
 import Navbar from '@/components/navbar/navbar';
 import config from '@/data/config';
@@ -21,8 +21,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <head>
-        <Umami />
+        <Analytics />
       </head>
+
       <body
         className={cn(
           'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
