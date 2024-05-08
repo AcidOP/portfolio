@@ -8,6 +8,7 @@ import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
 import type { Metadata } from 'next';
+import UmamiScript from '@/components/analytics/Umami';
 
 export const metadata: Metadata = {
   title: config.title,
@@ -22,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        <UmamiScript />
+      </head>
       <body
         className={cn(
           'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
