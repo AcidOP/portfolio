@@ -2,12 +2,14 @@ import { inter_500 } from '@/components/fonts';
 
 import './globals.css';
 
+import Umami from '@/components/analytics/Umami';
 import Footer from '@/components/footer/footer';
 import Navbar from '@/components/navbar/navbar';
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: config.title,
@@ -15,19 +17,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? ''),
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <head>
-        <script
-          defer
-          src='https://eu.umami.is/script.js'
-          data-website-id='250028b4-b3d2-4b39-8140-57b7cc9edb1b'
-        />
+        <Umami />
       </head>
       <body
         className={cn(
