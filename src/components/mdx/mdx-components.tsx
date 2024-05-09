@@ -30,7 +30,7 @@ const CustomH1 = ({ ...rest }) => {
     return (
       <Link href={`#${rest.id}`}>
         <h1 {...rest} className='mt-16 lg:mt-32'>
-          {rest.children} <span className='text-violet-600'>#</span>
+          <span className='text-violet-600'>#</span> {rest.children}
         </h1>
       </Link>
     );

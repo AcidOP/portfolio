@@ -51,7 +51,7 @@ const Header = ({
         />
       )}
 
-      <p className='mt-6 opacity-75'>{description}</p>
+      <p className='mt-6 text-xl opacity-75'>{description}</p>
 
       <hr className='mt-10 w-full border border-violet-200' />
     </>
