@@ -1,5 +1,6 @@
 import SimpleAnalytics from './SimpleAnalytics';
 import Umami from './Umami';
+import VercelAnalytics from './VercelAnalytics';
 
 const Analytics = () => {
   const isProduction = process.env.NODE_ENV === 'production';
@@ -10,6 +11,7 @@ const Analytics = () => {
     <>
       <SimpleAnalytics />
       <Umami />
+      <VercelAnalytics />
     </>
   );
 };
