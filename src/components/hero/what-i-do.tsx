@@ -2,11 +2,34 @@ import { inter_700 } from '../fonts';
 import Heading from '../heading';
 import StackedCard from './stacked-card';
 
-import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
 const WhatIDo = () => {
-  const { skills } = config;
+  const skills = [
+    {
+      title: 'Web Development',
+      description:
+        'I create unique, custom-coded websites that are tailored to your brand. I focus on scalability, performance, accessibility, and engaging animations for a memorable experience.',
+      works: ['CMS Integration', 'Motion & Animations', 'Accessibility'],
+    },
+    {
+      title: 'Web Design',
+      description:
+        'I design user-centric websites that enhance your brand and drive business goals. Clean typography and minimal layouts has my full attention to create a compelling online presence.',
+      works: ['Responsive Design', 'Wireframing', 'UI/UX Design'],
+    },
+    {
+      title: 'SEO',
+      description:
+        'Beyond crafting visually memorable websites, I also optimize your online presence to elevate your visibility in search rankings so your voices can be heard in the digital landscape.',
+      works: [
+        'Technical SEO',
+        'On-Page Optimization',
+        'SEO Audits & Analysis',
+      ],
+    },
+  ];
+
   return (
     <div className='mb-36'>
       <div className='flex flex-col justify-between pb-12 lg:flex-row'>

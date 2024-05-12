@@ -1,10 +1,26 @@
 import { inter_400 } from './fonts';
 import Heading from './heading';
 
-import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
 import Image from 'next/image';
+
+const testimonials = [
+  {
+    name: 'Julie Pattyn',
+    title: 'Founder, Yentarirah',
+    content:
+      'AcidOP is a great developer and designer with a great eye for detail. He is also very patient and understanding. I would recommend him to anyone who is looking for a smooth experience.',
+    image: '/testimonials/julie-pattyn.jpg',
+  },
+  {
+    name: 'Anshumaan',
+    title: 'Freelance Motion Designer',
+    content:
+      'Acid is exceptional — clear communication, punctual, and a design visionary. He immediately knows what the client needs. A pleasure to work with!',
+    image: '/testimonials/anshumaan.jpg',
+  },
+];
 
 const Testimonials = () => {
   return (
@@ -15,7 +31,7 @@ const Testimonials = () => {
       />
 
       <div className='flex flex-col gap-y-10'>
-        {config.testimonials.map(testimonial => (
+        {testimonials.map(testimonial => (
           <div
             key={testimonial.title}
             className='sticky top-[5rem] flex flex-col gap-y-6 overflow-hidden rounded-lg border-2 border-black bg-violet-600 p-6 lg:p-10 2xl:gap-y-10'

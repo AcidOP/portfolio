@@ -29,7 +29,10 @@ const Hero = () => {
             inter_700.className,
           )}
         >
-          <p>— {config.hero}</p>
+          <p>
+            — a hybrid developer and designer nudging early-stage startups
+            and teams into greatness.
+          </p>
         </div>
       </div>
       <BackgroundBeams />

@@ -7,6 +7,25 @@ import { cn } from '@/utils/cn';
 import Image from 'next/image';
 
 const Whoami = () => {
+  const jobTitles = ['Full Stack Developer 🐛', 'Cybersecurity Geek 🛡️'];
+  const about = [
+    {
+      title: "WHERE I'M FROM",
+      content:
+        'Born and raised in India, and since my early years I knew that computer was my passion. From cybersecurity to web development, I started my journey.',
+    },
+    {
+      title: 'WHY I DO WHAT I DO',
+      content:
+        'I have always been fascinated about the way I can create something from scratch by programming and command the computer to make life easier. I believe that the combination of these two skills can create a powerful impact on the world.',
+    },
+    {
+      title: "WHERE I'M CURRENTLY",
+      content:
+        "I'm currently upskilling myself in the field of UI/UX and also learning about the latest technologies in the field of web development.",
+    },
+  ];
+
   return (
     <div className='my-8 flex flex-col lg:my-32 lg:flex-row'>
       <div className='flex flex-col items-center justify-center lg:w-2/5'>
@@ -20,7 +39,7 @@ const Whoami = () => {
           {config.name}
         </h2>
 
-        {config.jobTitles.map((jobTitle, index) => {
+        {jobTitles.map((jobTitle, index) => {
           return (
             <p key={index} className='font-bold opacity-60'>
               {jobTitle}
@@ -51,7 +70,7 @@ const Whoami = () => {
       </div>
 
       <div className='mt-16 px-5 lg:mt-0 lg:w-3/5'>
-        {config.about.map((about, index) => {
+        {about.map((about, index) => {
           return (
             <div key={index} className='mb-12'>
               <h3
