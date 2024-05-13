@@ -18,6 +18,9 @@ const config = {
       url: 'https://instagram.com/acidop.codes',
     },
   ],
+  newsletter: {
+    provider: 'emailoctopus', // available: buttondown, mailchimp, emailoctopus
+  },
 };
 
 export default config;

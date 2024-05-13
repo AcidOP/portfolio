@@ -1,4 +1,5 @@
-import AnimatedTooltip from './animated-tooltip';
+import AnimatedTooltip from '../animated-tooltip';
+import SubscribeBox from './subscribe-box';
 
 import Link from 'next/link';
 
@@ -54,20 +55,11 @@ const Newsletter = () => {
         Join our newsletter to get updates on new things in our community.
       </p>
 
-      <div className='flex'>
-        <input
-          type='email'
-          placeholder='Enter your email'
-          className='h-10 w-2/3 border-2 border-violet-600 p-3'
-        />
-
-        <button className='group relative ml-3 h-10 border-2 border-black bg-violet-600 px-6 font-medium text-white transition-all duration-300 hover:bg-black'>
-          Subscribe
-        </button>
-      </div>
+      <SubscribeBox />
 
       <div className='my-3 flex w-full flex-row items-center'>
         <AnimatedTooltip items={people} />
+
         <p className='pl-6'>
           and <span className='font-semibold text-violet-600'>136+ </span>
           others are subscribed
