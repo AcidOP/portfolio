@@ -18,8 +18,11 @@ const config = {
       url: 'https://instagram.com/acidop.codes',
     },
   ],
+  analytics: {},
   newsletter: {
     provider: 'emailoctopus', // available: buttondown, mailchimp, emailoctopus
+    api_key: process.env.EMAIL_OCTOPUS_API_KEY,
+    list_id: process.env.EMAILOCTOPUS_LIST_ID,
   },
 };
 

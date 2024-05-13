@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const VercelAnalytics = () => {
   const isEnabled = process.env.VERCEL_ANALYTICS === 'true';
