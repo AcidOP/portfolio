@@ -11,9 +11,7 @@ const SubscribeBox = () => {
   const [email, setEmail] = useState('');
   const [showConfetti, setShowConfetti] = useState(false);
 
-
   const handleSubscribe = async () => {
-
     if (!isValidEmail(email)) {
       return alert('Please enter a valid email address');
     }
