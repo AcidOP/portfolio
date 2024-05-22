@@ -31,7 +31,7 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <Calendly name={name} url='https://calendly.com/acidop/30min' />
+        <Calendly name={name} url={config.calendlyUrl} />
       </section>
     </>
   );
