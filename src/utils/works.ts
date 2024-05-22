@@ -14,7 +14,7 @@ export const privacy = readFile(
 
 export const works = () => {
   const worksDirectory = path.join(process.cwd(), 'src', 'data', 'works');
-  const workFiles = readdirSync(worksDirectory).slice(0, 3);
+  const workFiles = readdirSync(worksDirectory);
 
   const works = workFiles.map(workFile => {
     const filePath = path.join(worksDirectory, workFile);

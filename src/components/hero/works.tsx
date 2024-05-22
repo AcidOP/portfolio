@@ -1,4 +1,4 @@
-import Heading from './heading';
+import Heading from '../heading';
 
 import { works } from '@/utils/works';
 
@@ -9,11 +9,11 @@ const Works = () => {
   const worksData = works();
 
   const firstWork = worksData[0];
-  const otherWorks = worksData.slice(1);
+  const otherWorks = worksData.slice(1, 3);
 
   return (
-    <div className='my-24'>
-      <Heading text='Selected Works.' className='uppercase' />
+    <>
+      <Heading text='Selected Works.' className='my-24 uppercase' />
 
       <Link href={`/works/${firstWork.data.slug}`}>
         <Image
@@ -25,7 +25,7 @@ const Works = () => {
         />
       </Link>
 
-      <div className='mt-6 flex flex-col gap-6 lg:flex-row'>
+      <div className='mb-24 mt-6 flex flex-col gap-6 lg:flex-row'>
         {otherWorks.map(work => (
           <Link
             href={`/works/${work.data.slug}`}
@@ -42,7 +42,7 @@ const Works = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

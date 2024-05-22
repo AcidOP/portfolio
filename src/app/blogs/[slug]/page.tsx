@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
@@ -36,6 +34,7 @@ export const generateMetadata = async ({
       description: blog.data.description,
       type: 'article',
       url: process.env.NEXT_PUBLIC_SITE_URL + `/blogs/${slug}`,
+      locale: 'en_US',
       authors: config.name,
       images: [
         {
@@ -55,7 +54,7 @@ export const generateMetadata = async ({
   };
 };
 
-const BlogPage: FC<PageProps> = ({ params: { slug } }) => {
+const BlogPage = ({ params: { slug } }: PageProps) => {
   const blog = getBlogBySlug(slug);
 
   if (!blog) notFound();
