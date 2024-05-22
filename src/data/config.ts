@@ -21,7 +21,7 @@ const config = {
   newsletter: {
     provider: 'emailoctopus', // available: buttondown, mailchimp, emailoctopus
   },
-  calendlyUrl: 'https://calendly.com/acidop/30min'
+  calendlyUrl: 'https://calendly.com/acidop/30min',
 };
 
 export default config;
