@@ -3,7 +3,7 @@ import path from 'path';
 import { compareDesc } from 'date-fns';
 import matter from 'gray-matter';
 
-const blogDirectory = path.join(process.cwd(), 'src', 'data', 'blogs');
+const BLOG_DIR = path.join(process.cwd(), 'src', 'data', 'blogs');
 
 const sortBlogsByDate = (blogs: any[]) => {
   return blogs.sort((a, b) => {
@@ -13,14 +13,14 @@ const sortBlogsByDate = (blogs: any[]) => {
 
 // Returns only the frontmatter/metadata
 export const allBlogsMeta = () => {
-  const files = readdirSync(blogDirectory);
+  const files = readdirSync(BLOG_DIR);
   const mdxFiles = files.filter(file => file.endsWith('.mdx'));
 
   const parsedBlogs = mdxFiles.map(file => {
     const slug = file.replace('.mdx', '');
 
     const markdownWithMetadata = readFileSync(
-      path.join(blogDirectory, file),
+      path.join(BLOG_DIR, file),
       'utf-8',
     );
 
@@ -46,7 +46,7 @@ export const allBlogsMeta = () => {
 
 export const getBlogBySlug = (slug: string) => {
   const file = slug + '.mdx';
-  const filePath = path.join(blogDirectory, file);
+  const filePath = path.join(BLOG_DIR, file);
 
   if (!existsSync(filePath)) {
     return null;
@@ -70,4 +70,16 @@ export const getAllBlogSlugs = () => {
 export const getXRecentBlogs = (x: number) => {
   const blogs = allBlogsMeta();
   return blogs.slice(0, x);
+};
+
+export const allBlogs = allBlogsMeta();
+export const POSTS_PER_PAGE = 6;
+export const TOTAL_PAGES = Math.ceil(allBlogs.length / POSTS_PER_PAGE);
+
+export const blogsPerPage = (current: number) => {
+  const startIndex = POSTS_PER_PAGE * (current - 1);
+  const endIndex = POSTS_PER_PAGE * current;
+
+  const slicedBlogs = allBlogs.slice(startIndex, endIndex);
+  return slicedBlogs;
 };

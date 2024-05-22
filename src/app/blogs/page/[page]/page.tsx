@@ -1,6 +1,7 @@
 import BlogCard from '../../_components/BlogCard';
+import Pagination from '../../_components/Pagination';
 
-import { allBlogsMeta } from '@/utils/blog';
+import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
 
@@ -8,12 +9,8 @@ interface BlogPageProps {
   params: { page: string };
 }
 
-const BLOGS = allBlogsMeta();
-const POSTS_PER_PAGE = 6;
-
 export const generateStaticParams = async () => {
-  const totalPages = Math.ceil(BLOGS.length / POSTS_PER_PAGE);
-  const paths = Array.from({ length: totalPages }, (_, i) => ({
+  const paths = Array.from({ length: TOTAL_PAGES }, (_, i) => ({
     page: (i + 1).toString(),
   }));
 
@@ -22,20 +19,20 @@ export const generateStaticParams = async () => {
 
 const BlogPage = ({ params: { page } }: BlogPageProps) => {
   const currentPage = parseInt(page);
-
-  const startIndex = POSTS_PER_PAGE * (currentPage - 1);
-  const endIndex = POSTS_PER_PAGE * currentPage;
-
-  const blogs = BLOGS.slice(startIndex, endIndex);
+  const blogs = blogsPerPage(currentPage);
 
   if (blogs.length === 0) return notFound();
 
   return (
-    <div className='grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-6'>
-      {blogs.map(blog => {
-        return <BlogCard key={blog.data.slug} {...blog.data} />;
-      })}
-    </div>
+    <>
+      <div className='grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-6'>
+        {blogs.map(blog => {
+          return <BlogCard key={blog.data.slug} {...blog.data} />;
+        })}
+      </div>
+
+      <Pagination current={currentPage} total={TOTAL_PAGES} />
+    </>
   );
 };
 
