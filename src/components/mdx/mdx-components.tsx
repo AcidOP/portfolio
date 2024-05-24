@@ -57,7 +57,17 @@ const BetterLink = ({ ...rest }) => {
 };
 
 const BetterImage = ({ ...rest }) => {
-  return <NextImage src={rest.src} alt={rest.alt} {...rest} />;
+  return (
+    <NextImage
+      src={rest.src}
+      alt={rest.alt}
+      {...rest}
+      width={0}
+      height={0}
+      sizes='100vw'
+      className='mx-auto h-auto w-auto'
+    />
+  );
 };
 
 const Pre = ({ ...rest }) => <div className='not-prose' {...rest} />;
