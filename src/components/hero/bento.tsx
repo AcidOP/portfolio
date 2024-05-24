@@ -23,6 +23,8 @@ const About = () => {
       <div className='rounded-3xl saturate-0 transition-all duration-200 hover:saturate-100 lg:w-1/3'>
         <Image
           src={authorImage}
+          placeholder='blur'
+          priority
           alt='Author Image'
           className='rounded-2xl border-2 border-black transition duration-200 hover:scale-105'
         />

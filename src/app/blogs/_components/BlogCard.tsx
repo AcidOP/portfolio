@@ -1,3 +1,5 @@
+import { getPlaceholder } from '@/utils/image';
+
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,18 +14,20 @@ interface BlogPostProps {
 
 // https://www.hyperui.dev/components/marketing/blog-cards
 // TODO: Add cover image in mobile view
-const BlogCard = ({
+const BlogCard = async ({
   cover,
   date,
   description,
   slug,
   title,
 }: BlogPostProps) => {
+  const image = await getPlaceholder(cover);
+
   return (
     <article className='flex bg-white transition hover:scale-105 hover:shadow-xl'>
       <div className='rotate-180 p-2 [writing-mode:_vertical-lr]'>
         <time
-          dateTime='2022-10-10'
+          dateTime={date}
           className='flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900'
         >
           <span>{format(new Date(date), 'y')}</span>
@@ -36,10 +40,12 @@ const BlogCard = ({
 
       <div className='hidden sm:block sm:basis-56'>
         <Image
+          src={image.src}
           alt={title}
           width={1740}
           height={1740}
-          src={cover}
+          placeholder='blur'
+          blurDataURL={image.placeholder}
           className='aspect-square h-full w-full object-cover'
         />
       </div>
