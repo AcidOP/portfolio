@@ -1,6 +1,5 @@
 import Pagination from '../../_components/Pagination';
 
-import BlogCard from '@/components/cards/BlogCard';
 import ListBlogs from '@/components/cards/ListBlogs';
 import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
 
@@ -12,7 +11,7 @@ interface BlogPageProps {
 
 export const generateStaticParams = async () => {
   const paths = Array.from({ length: TOTAL_PAGES }, (_, i) => ({
-    page: (i + 1).toString(),
+    page: `${i + 1}`,
   }));
 
   return paths;
