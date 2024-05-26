@@ -27,29 +27,29 @@ export const generateMetadata = async ({
   }
 
   return {
-    title: blog.data.title,
-    description: blog.data.description,
+    title: blog.title,
+    description: blog.description,
     openGraph: {
-      title: blog.data.title,
-      description: blog.data.description,
+      title: blog.title,
+      description: blog.description,
       type: 'article',
       url: process.env.NEXT_PUBLIC_SITE_URL + `/blogs/${slug}`,
       locale: 'en_US',
       authors: config.name,
       images: [
         {
-          url: blog.data.cover,
+          url: blog.cover,
           width: 1200,
           height: 630,
-          alt: blog.data.title,
+          alt: blog.title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: blog.data.title,
-      description: blog.data.description,
-      images: [{ url: blog.data.cover }],
+      title: blog.title,
+      description: blog.description,
+      images: [{ url: blog.cover }],
     },
   };
 };
@@ -63,12 +63,9 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
     <div className='mx-auto w-full max-w-4xl'>
       <GoBackButton />
 
-      {/* @ts-ignore */}
-      <Header {...blog.data} />
+      <Header {...blog} />
 
-      <article className='prose prose-xl mx-auto w-full max-w-4xl prose-a:no-underline'>
-        <Mdx content={blog.content} />
-      </article>
+      <Mdx content={blog.content} />
     </div>
   );
 };

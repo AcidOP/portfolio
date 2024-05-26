@@ -1,7 +1,7 @@
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
-import { inter_700, suez_400 } from '../fonts';
 
+import { inter_700, suez_400 } from '@/components/fonts';
 import { getXRecentBlogs } from '@/utils/blog';
 import { cn } from '@/utils/cn';
 
@@ -12,6 +12,7 @@ const LATEST_BLOGS = 2;
 
 const About = () => {
   const recentBlogs = getXRecentBlogs(LATEST_BLOGS);
+
   return (
     <div
       className={cn(
@@ -80,12 +81,12 @@ const About = () => {
       <div className='hidden w-full flex-col space-y-6 lg:flex lg:max-w-md'>
         {recentBlogs.map(blog => (
           <Link
-            key={blog.data.slug}
-            href={`/blogs/${blog.data.slug}`}
+            key={blog.slug}
+            href={`/blogs/${blog.slug}`}
             className='h-full transition duration-200 hover:scale-105'
           >
             <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>
-              {blog.data.title} 🔗
+              {blog.title} 🔗
             </div>
           </Link>
         ))}

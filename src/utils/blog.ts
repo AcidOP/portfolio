@@ -7,7 +7,7 @@ const BLOG_DIR = path.join(process.cwd(), 'src', 'data', 'blogs');
 
 const sortBlogsByDate = (blogs: any[]) => {
   return blogs.sort((a, b) => {
-    return compareDesc(a.data.date, b.data.date);
+    return compareDesc(a.date, b.date);
   });
 };
 
@@ -33,12 +33,10 @@ export const allBlogsMeta = () => {
         'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     }
 
-    return {
-      data,
-    };
+    return { ...data };
   });
 
-  const removeDrafts = parsedBlogs.filter(blog => !blog.data.draft);
+  const removeDrafts = parsedBlogs.filter(blog => !blog.draft);
   const sortedBlogs = sortBlogsByDate(removeDrafts);
 
   return sortedBlogs;
@@ -57,22 +55,35 @@ export const getBlogBySlug = (slug: string) => {
   const { data, content } = matter(markdownWithMetadata);
 
   return {
-    data,
+    title: data.title,
+    description: data.description,
+    cover: data.cover,
+    tags: data.tags,
+    ...data,
     content,
+    slug,
   };
 };
 
 export const getAllBlogSlugs = () => {
-  const blogs = allBlogsMeta();
-  return blogs.map(blog => blog.data.slug);
+  return allBlogs.map(blog => blog.slug);
 };
 
-export const getXRecentBlogs = (x: number) => {
-  const blogs = allBlogsMeta();
-  return blogs.slice(0, x);
+export const getAllBlogTags = () => {
+  const allTags = allBlogs.map(blog => blog.tags);
+
+  const flattened = allTags.filter(tag => tag !== undefined).flat();
+  const uniqueTags = new Set(flattened);
+  return Array.from(uniqueTags);
+};
+
+export const getBlogsByTag = (tag: string) => {
+  return allBlogs.filter(blog => blog.tags && blog.tags.includes(tag));
 };
 
 export const allBlogs = allBlogsMeta();
+export const getXRecentBlogs = (x: number) => allBlogs.slice(0, x);
+
 export const POSTS_PER_PAGE = 6;
 export const TOTAL_PAGES = Math.ceil(allBlogs.length / POSTS_PER_PAGE);
 
