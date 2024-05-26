@@ -62,9 +62,7 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
   return (
     <div className='mx-auto w-full max-w-4xl'>
       <GoBackButton />
-
       <Header {...blog} />
-
       <Mdx content={blog.content} />
     </div>
   );

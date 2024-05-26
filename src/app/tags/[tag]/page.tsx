@@ -1,4 +1,4 @@
-import BlogCard from '@/components/BlogCard';
+import ListBlogs from '@/components/cards/ListBlogs';
 import { getAllBlogTags, getBlogsByTag } from '@/utils/blog';
 
 interface TagPageParams {
@@ -13,13 +13,7 @@ export const generateStaticParams = async () => {
 const Tag = ({ params: { tag } }: TagPageParams) => {
   const blogs = getBlogsByTag(tag);
 
-  return (
-    <div className='grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-6'>
-      {blogs.map(blog => {
-        return <BlogCard key={blog.slug} {...blog} />;
-      })}
-    </div>
-  );
+  return <ListBlogs blogs={blogs} />;
 };
 
 export default Tag;

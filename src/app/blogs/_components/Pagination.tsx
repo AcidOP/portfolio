@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
 interface PaginationProps {
-  current: number;
   total: number;
+  current: number;
 }
 
+// https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/main/layouts/ListLayout.tsx
 const Pagination = ({ current, total }: PaginationProps) => {
   const prevPage = current - 1 > 0;
   const nextPage = current + 1 <= total;

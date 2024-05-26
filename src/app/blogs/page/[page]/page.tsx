@@ -1,6 +1,7 @@
 import Pagination from '../../_components/Pagination';
 
-import BlogCard from '@/components/BlogCard';
+import BlogCard from '@/components/cards/BlogCard';
+import ListBlogs from '@/components/cards/ListBlogs';
 import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
@@ -25,12 +26,7 @@ const BlogPage = ({ params: { page } }: BlogPageProps) => {
 
   return (
     <>
-      <div className='grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-6'>
-        {blogs.map(blog => {
-          return <BlogCard key={blog.slug} {...blog} />;
-        })}
-      </div>
-
+      <ListBlogs blogs={blogs} />
       <Pagination current={currentPage} total={TOTAL_PAGES} />
     </>
   );
