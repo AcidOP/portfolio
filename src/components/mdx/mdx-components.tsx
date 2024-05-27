@@ -27,22 +27,17 @@ export const CodeBlock = ({ ...rest }) => {
 
 const CustomH1 = ({ ...rest }) => {
   const slug = rest.children
-    .replace(/[^a-zA-Z0-9 ]+/g, '')
-    .replace(/\s+/g, '-')
+    .replace(/[^a-zA-Z0-9 ]+/g, '') // Remove all special characters
+    .replace(/\s+/g, '-') // Replace all spaces
     .toLowerCase();
-  console.log(slug);
 
-  if (rest.id) {
-    return (
-      <Link href={`#${slug}`}>
-        {/* <Link href={`#${rest.id}`}> */}
-        <h1 id={slug} className='mt-16 lg:mt-32'>
-          <span className='text-violet-600'>#</span> {rest.children}
-        </h1>
-      </Link>
-    );
-  }
-  return <h1 {...rest} />;
+  return (
+    <Link href={`#${slug}`}>
+      <h1 id={slug} {...rest} className='mt-16 lg:mt-32'>
+        <span className='text-violet-600'>#</span> {rest.children}
+      </h1>
+    </Link>
+  );
 };
 
 const BetterLink = ({ ...rest }) => {
