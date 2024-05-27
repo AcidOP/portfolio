@@ -25,7 +25,7 @@ const Mdx = ({ content }: MarkdownProps) => {
           rehypeMinifyAttrEnumerated,
           [
             rehypeExternalLinks,
-            { content: { type: 'text', value: '🔗' } },
+            { content: { type: 'text', value: '🌐' } },
           ],
         ]}
       >
