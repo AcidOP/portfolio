@@ -22,9 +22,7 @@ export const generateMetadata = async ({
 }: PageProps): Promise<Metadata> => {
   const blog = getBlogBySlug(slug);
 
-  if (!blog) {
-    return {};
-  }
+  if (!blog) return {};
 
   return {
     title: blog.title,
