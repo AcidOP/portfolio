@@ -3,6 +3,7 @@ import { inter_500 } from '@/components/fonts';
 import './globals.css';
 
 import Analytics from '@/components/analytics';
+import Favicon from '@/components/favicon';
 import Footer from '@/components/footer/footer';
 import Navbar from '@/components/navbar/navbar';
 import config from '@/data/config';
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <head>
+        <Favicon />
         <Analytics />
       </head>
 
