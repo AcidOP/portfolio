@@ -1,16 +1,22 @@
+import { suez_400 } from '../fonts';
 import MobileNav from './mobile';
 import NavLink from './nav-link';
 import links from './navlinks';
 
 import config from '@/data/config';
+import logo from '@/data/logo.png';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Navbar = () => {
   return (
     <nav className='sticky top-0 z-50 mx-auto flex h-20 w-full items-center justify-between'>
       <div className='text-3xl font-bold'>
-        <Link href='/'>{config.name}</Link>
+        <Link href='/' className='flex items-center'>
+          <Image src={logo} width={50} height={50} alt='logo' />
+          <span className={suez_400.className}>{config.name}</span>
+        </Link>
       </div>
 
       <div className='hidden text-xl font-medium lg:block'>

@@ -16,6 +16,10 @@ const links = [
     text: 'Blogs',
   },
   {
+    url: '/tags',
+    text: 'Tags',
+  },
+  {
     url: '/contact',
     text: 'Contact',
   },
