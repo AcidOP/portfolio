@@ -7,7 +7,7 @@ export const CodeBlock = ({ ...rest }) => {
   // Inline code
   if (!rest.className?.startsWith('language')) {
     return (
-      <code className='not-prose rounded-md bg-slate-200 px-2 py-1 font-bold text-violet-600'>
+      <code className='not-prose rounded-md bg-slate-200 p-1 font-bold text-violet-600'>
         `{rest.children}`
       </code>
     );
@@ -26,10 +26,17 @@ export const CodeBlock = ({ ...rest }) => {
 };
 
 const CustomH1 = ({ ...rest }) => {
+  const slug = rest.children
+    .replace(/[^a-zA-Z0-9 ]+/g, '')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+  console.log(slug);
+
   if (rest.id) {
     return (
-      <Link href={`#${rest.id}`}>
-        <h1 {...rest} className='mt-16 lg:mt-32'>
+      <Link href={`#${slug}`}>
+        {/* <Link href={`#${rest.id}`}> */}
+        <h1 id={slug} className='mt-16 lg:mt-32'>
           <span className='text-violet-600'>#</span> {rest.children}
         </h1>
       </Link>

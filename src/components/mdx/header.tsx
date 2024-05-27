@@ -37,7 +37,7 @@ const Header = ({
         )}
 
         {date && (
-          <h3 className='opacity-70'>{format(date, 'yyyy-MMM-dd')}</h3>
+          <time className='opacity-70'>{format(date, 'yyyy-MMM-dd')}</time>
         )}
       </div>
 

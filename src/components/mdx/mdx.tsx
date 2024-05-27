@@ -6,7 +6,6 @@ import rehypeMinifyAttrWhitespace from 'rehype-minify-attribute-whitespace';
 import rehypeMinifyAttrEnumerated from 'rehype-minify-attribute-whitespace';
 import rehypeMinifyWhitespaces from 'rehype-minify-whitespace';
 import rehypeSanitize from 'rehype-sanitize';
-import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 interface MarkdownProps {
@@ -20,7 +19,6 @@ const Mdx = ({ content }: MarkdownProps) => {
         components={components}
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[
-          rehypeSlug,
           rehypeSanitize,
           rehypeMinifyWhitespaces,
           rehypeMinifyAttrWhitespace,
