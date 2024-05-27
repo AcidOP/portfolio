@@ -1,8 +1,8 @@
-import { suez_400 } from '../fonts';
 import MobileNav from './mobile';
 import NavLink from './nav-link';
 import links from './navlinks';
 
+import { suez_400 } from '@/components/fonts';
 import config from '@/data/config';
 import logo from '@/data/logo.png';
 
