@@ -1,3 +1,5 @@
+import { H1, H2, H3, H4, H5, H6 } from './text-headings';
+
 import NextImage from 'next/image';
 import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -22,21 +24,6 @@ export const CodeBlock = ({ ...rest }) => {
     >
       {rest.children}
     </SyntaxHighlighter>
-  );
-};
-
-const CustomH1 = ({ ...rest }) => {
-  const slug = rest.children
-    .replace(/[^a-zA-Z0-9 ]+/g, '') // Remove all special characters
-    .replace(/\s+/g, '-') // Replace all spaces
-    .toLowerCase();
-
-  return (
-    <Link href={`#${slug}`}>
-      <h1 id={slug} {...rest} className='mt-16 lg:mt-32'>
-        <span className='text-violet-600'>#</span> {rest.children}
-      </h1>
-    </Link>
   );
 };
 
@@ -78,6 +65,11 @@ export const components = {
   a: BetterLink,
   pre: Pre,
   code: CodeBlock,
-  h1: CustomH1,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
   img: BetterImage,
 };
