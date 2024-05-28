@@ -8,16 +8,10 @@ const SimpleAnalytics = () => {
   return (
     <>
       {/* Track pages */}
-      <Script
-        strategy='lazyOnload'
-        src='https://scripts.simpleanalyticscdn.com/latest.js'
-      />
+      <Script strategy='lazyOnload' src='/sa/latest.js' />
 
       {/* Track events */}
-      <Script
-        strategy='lazyOnload'
-        src='https://scripts.simpleanalyticscdn.com/auto-events.js'
-      />
+      <Script strategy='lazyOnload' src='/sa/auto-events.js' />
     </>
   );
 };

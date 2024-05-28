@@ -3,6 +3,10 @@
     {
       "source": "/stats/:match*",
       "destination": "https://eu.umami.is/:match*"
+    },
+    {
+      "source": "/sa/:match*",
+      "destination": "https://scripts.simpleanalyticscdn.com/:match*"
     }
   ]
 }
