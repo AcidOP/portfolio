@@ -1,4 +1,4 @@
-import SubscribeBox from './_components/subscribe-box';
+import SubscribeBox from './SubscribeBox';
 
 import { suez_400 } from '@/components/fonts';
 import { cn } from '@/utils/cn';

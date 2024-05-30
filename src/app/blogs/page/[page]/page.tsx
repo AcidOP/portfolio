@@ -1,4 +1,4 @@
-import Pagination from '../../_components/Pagination';
+import Pagination from '../../Pagination';
 
 import ListBlogs from '@/components/cards/ListBlogs';
 import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';

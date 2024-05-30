@@ -1,6 +1,6 @@
-import Hero from './_components/hero';
-import Storyblock from './_components/storyblock';
-import Whoami from './_components/whoami';
+import Hero from './Hero';
+import Storyblock from './Storyblock';
+import Whoami from './Whoami';
 
 const AboutPage = () => {
   return (
