@@ -7,7 +7,7 @@ interface TagPageParams {
 
 export const generateStaticParams = async () => {
   const allTags = getAllBlogTags();
-  return allTags.map(tag => ({ tag }));
+  return Object.keys(allTags).map(tag => ({ tag }));
 };
 
 const Tag = ({ params: { tag } }: TagPageParams) => {

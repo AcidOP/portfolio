@@ -30,14 +30,16 @@ const Header = ({
                 key={tag}
                 className='rounded-md bg-violet-100 px-2 py-1 font-medium text-violet-600'
               >
-                {tag}
+                #{tag}
               </Link>
             ))}
           </div>
         )}
 
         {date && (
-          <time className='opacity-70'>{format(date, 'yyyy-MMM-dd')}</time>
+          <time className='opacity-70'>
+            📅 {format(date, 'yyyy-MMM-dd')}
+          </time>
         )}
       </div>
 

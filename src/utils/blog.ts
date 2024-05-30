@@ -65,16 +65,30 @@ export const getBlogBySlug = (slug: string) => {
   };
 };
 
-export const getAllBlogSlugs = () => {
+export const getAllBlogSlugs = (): string[] => {
   return allBlogs.map(blog => blog.slug);
 };
 
-export const getAllBlogTags = () => {
-  const allTags = allBlogs.map(blog => blog.tags);
+interface TagCount {
+  [tag: string]: number;
+}
 
-  const flattened = allTags.filter(tag => tag !== undefined).flat();
-  const uniqueTags = new Set(flattened);
-  return Array.from(uniqueTags);
+export const getAllBlogTags = () => {
+  const tagCount: TagCount = {};
+
+  allBlogs.forEach(blog => {
+    if (!blog.tags) return;
+
+    blog.tags.forEach((tag: string) => {
+      if (tagCount[tag]) {
+        tagCount[tag]++;
+      } else {
+        tagCount[tag] = 1;
+      }
+    });
+  });
+
+  return tagCount;
 };
 
 export const getBlogsByTag = (tag: string) => {
