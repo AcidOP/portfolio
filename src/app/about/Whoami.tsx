@@ -1,4 +1,4 @@
-import aboutMe from '../../../../public/images/about-me.png';
+import aboutMe from '../../../public/images/about-me.png';
 
 import { inter_500, suez_400 } from '@/components/fonts';
 import config from '@/data/config';

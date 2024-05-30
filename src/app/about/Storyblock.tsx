@@ -1,4 +1,4 @@
-import picassoImage from '../../../../public/images/woman-painting.jpeg';
+import picassoImage from '../../../public/images/woman-painting.jpeg';
 
 import Image from 'next/image';
 
