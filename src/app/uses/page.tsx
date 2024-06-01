@@ -3,8 +3,6 @@ import ProductCard from './ProductCard';
 
 import uses from '@/data/uses';
 
-export const revalidate = 0;
-
 const Uses = () => {
   return (
     <div>

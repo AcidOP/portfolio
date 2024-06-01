@@ -1,3 +1,5 @@
+import calculateReadingTime from './reading-time';
+
 import { existsSync, readdirSync, readFileSync } from 'fs';
 import path from 'path';
 import { compareDesc } from 'date-fns';
@@ -54,6 +56,8 @@ export const getBlogBySlug = (slug: string) => {
 
   const { data, content } = matter(markdownWithMetadata);
 
+  const time = calculateReadingTime(content);
+
   return {
     title: data.title,
     description: data.description,
@@ -62,6 +66,7 @@ export const getBlogBySlug = (slug: string) => {
     ...data,
     content,
     slug,
+    time,
   };
 };
 

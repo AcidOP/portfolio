@@ -8,6 +8,7 @@ interface HeaderProps {
   date?: string;
   tags?: string[];
   cover: string;
+  time: number;
 }
 
 const Header = ({
@@ -16,6 +17,7 @@ const Header = ({
   title,
   cover,
   tags,
+  time,
 }: HeaderProps) => {
   return (
     <>
@@ -38,24 +40,24 @@ const Header = ({
 
         {date && (
           <time className='opacity-70'>
-            📅 {format(date, 'yyyy-MMM-dd')}
+            📅 {format(date, 'dd-MMM-yyyy').replaceAll('-', ' ')}
           </time>
         )}
+
+        <p className='opacity-70'>⏳ {time} min read</p>
       </div>
 
-      {cover && (
-        <Image
-          src={cover}
-          alt='blog image cover'
-          width={1920}
-          height={1080}
-          className='mt-7 aspect-video rounded-md object-cover'
-        />
-      )}
+      <Image
+        src={cover}
+        alt='blog image cover'
+        width={1920}
+        height={1080}
+        className='mt-7 aspect-video rounded-md object-cover'
+      />
 
       <p className='mt-6 text-xl opacity-75'>{description}</p>
 
-      <hr className='mt-10 w-full border border-violet-200' />
+      <hr className='mt-10 w-full border border-violet-100' />
     </>
   );
 };
