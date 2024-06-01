@@ -24,14 +24,16 @@ export const generateMetadata = async ({
 
   if (!blog) return {};
 
+  const url = `/blogs/${slug}`;
+
   return {
     title: blog.title,
     description: blog.description,
     openGraph: {
+      url,
       title: blog.title,
       description: blog.description,
       type: 'article',
-      url: process.env.NEXT_PUBLIC_SITE_URL + `/blogs/${slug}`,
       locale: 'en_US',
       authors: config.name,
       images: [
@@ -48,6 +50,9 @@ export const generateMetadata = async ({
       title: blog.title,
       description: blog.description,
       images: [{ url: blog.cover }],
+    },
+    alternates: {
+      canonical: url,
     },
   };
 };
