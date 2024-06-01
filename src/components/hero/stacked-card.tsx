@@ -22,14 +22,14 @@ const StackedCard = ({
       className='sticky flex w-full flex-col justify-between border-t-2 border-black/20 bg-white lg:flex-row'
     >
       <div className='w-full pt-6 lg:w-1/2'>
-        <h1
+        <h4
           className={cn(
             'pb-6 text-4xl opacity-90 lg:text-6xl',
             suez_400.className,
           )}
         >
           {title}
-        </h1>
+        </h4>
         <p
           className={cn(
             'max-w-xl pt-6 text-lg opacity-60 lg:text-2xl',

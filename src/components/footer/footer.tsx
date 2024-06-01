@@ -17,19 +17,19 @@ const Footer = () => {
 
       <div className='my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
-          <h1
+          <h4
             className={cn('mb-6 text-3xl font-bold', suez_400.className)}
           >
             Newsletter 📰
-          </h1>
+          </h4>
           <Newsletter />
         </div>
 
         <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
           <div className='w-full'>
-            <h2 className={cn('text-xl', suez_400.className)}>
+            <h3 className={cn('text-xl', suez_400.className)}>
               Navigation
-            </h2>
+            </h3>
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           <div className='w-full'>
-            <h2 className={cn('text-xl', suez_400.className)}>Socials</h2>
+            <h3 className={cn('text-xl', suez_400.className)}>Socials</h3>
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           <div className='w-full'>
-            <h2 className={cn('text-xl', suez_400.className)}>Misc</h2>
+            <h3 className={cn('text-xl', suez_400.className)}>Misc</h3>
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
@@ -84,14 +84,14 @@ const Footer = () => {
           © {new Date().getFullYear()}
         </p>
 
-        <h3
+        <h4
           className={cn(
             'text-8xl font-black opacity-85 lg:text-[17rem]',
             suez_400.className,
           )}
         >
           {config.name}.
-        </h3>
+        </h4>
       </div>
     </footer>
   );

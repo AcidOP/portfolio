@@ -12,15 +12,13 @@ const Hero = () => {
 
       <div className='relative flex h-[32vh] w-full flex-col justify-between lg:h-1/2 lg:px-5'>
         <div className={cn('text-6xl lg:text-[7rem]', suez_400.className)}>
-          <h1>
-            <span className='text-4xl font-medium opacity-90 lg:text-7xl'>
-              Hello 👋🏻
-            </span>
-            <br />{' '}
-            <span className={cn('text-nowrap', inter_700.className)}>
-              I&apos;m {config.name.split(/ /g)[0]}
-            </span>
-          </h1>
+          <span className='text-4xl font-medium opacity-90 lg:text-7xl'>
+            Hello 👋🏻
+          </span>
+          <br />{' '}
+          <span className={cn('text-nowrap', inter_700.className)}>
+            I&apos;m {config.name.split(/ /g)[0]}
+          </span>
         </div>
 
         <div

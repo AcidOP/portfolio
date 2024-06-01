@@ -9,7 +9,7 @@ interface HeadingProps {
 
 const Heading = ({ text, className }: HeadingProps) => {
   return (
-    <h1
+    <h2
       className={cn(
         'text-6xl font-black lg:text-8xl',
         suez_400.className,
@@ -17,7 +17,7 @@ const Heading = ({ text, className }: HeadingProps) => {
       )}
     >
       {text}
-    </h1>
+    </h2>
   );
 };
 

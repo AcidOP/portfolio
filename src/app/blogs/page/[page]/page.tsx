@@ -1,6 +1,7 @@
 import Pagination from '../../Pagination';
 
 import ListBlogs from '@/components/cards/ListBlogs';
+import config from '@/data/config';
 import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
@@ -8,6 +9,11 @@ import { notFound } from 'next/navigation';
 interface BlogPageProps {
   params: { page: string };
 }
+
+export const metadata = {
+  title: `Blogs | ${config.name}`,
+  alternatives: { canonical: './' },
+};
 
 export const generateStaticParams = async () => {
   const paths = Array.from({ length: TOTAL_PAGES }, (_, i) => ({

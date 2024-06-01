@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: config.title,
   description: config.description,
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? ''),
+  alternates: { canonical: './' },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
