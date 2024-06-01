@@ -47,13 +47,16 @@ const Header = ({
         <p className='opacity-70'>⏳ {time} min read</p>
       </div>
 
-      <Image
-        src={cover}
-        alt='blog image cover'
-        width={1920}
-        height={1080}
-        className='mt-7 aspect-video rounded-md object-cover'
-      />
+      <picture>
+        <Image
+          src={cover}
+          alt='blog image cover'
+          width={1920}
+          height={1080}
+          priority
+          className='mt-7 aspect-video rounded-md object-cover'
+        />
+      </picture>
 
       <p className='mt-6 text-xl opacity-75'>{description}</p>
 

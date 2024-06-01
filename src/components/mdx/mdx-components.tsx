@@ -37,10 +37,10 @@ const BetterLink = ({ ...rest }) => {
 
   return (
     <a
+      {...rest}
       target='_blank'
       rel='noopener noreferrer'
       className={styles}
-      {...rest}
     />
   );
 };
