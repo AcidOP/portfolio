@@ -1,3 +1,5 @@
+import { getPlaceholder } from '@/utils/image';
+
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +13,7 @@ interface HeaderProps {
   time: number;
 }
 
-const Header = ({
+const Header = async ({
   date,
   description,
   title,
@@ -19,6 +21,8 @@ const Header = ({
   tags,
   time,
 }: HeaderProps) => {
+  const blurUrl = await getPlaceholder(cover);
+
   return (
     <>
       <h1 className='mt-10 text-4xl font-black lg:text-5xl'>{title}</h1>
@@ -47,16 +51,17 @@ const Header = ({
         <p className='opacity-70'>⏳ {time} min read</p>
       </div>
 
-      <picture>
+      <div className='relative mt-7 aspect-video'>
         <Image
-          src={cover}
-          alt='blog image cover'
-          width={1920}
-          height={1080}
+          src={blurUrl.src}
+          alt={title}
+          fill
           priority
-          className='mt-7 aspect-video rounded-md object-cover'
+          placeholder='blur'
+          blurDataURL={blurUrl.placeholder}
+          className='rounded-md object-cover'
         />
-      </picture>
+      </div>
 
       <p className='mt-6 text-xl opacity-75'>{description}</p>
 
