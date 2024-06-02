@@ -1,73 +1,53 @@
+import { generateJsonLd } from '../Schema';
+import { generateSeoTags } from '../SEO';
+
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
-import config from '@/data/config';
 import { getAllBlogSlugs, getBlogBySlug } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
 
+interface PageProps {
+  params: { slug: string };
+}
+
 export const generateStaticParams = async () => {
   const slugs = getAllBlogSlugs();
   return slugs.map(slug => ({ slug }));
 };
 
-interface PageProps {
-  params: { slug: string };
-}
-
 export const generateMetadata = async ({
-  params: { slug },
+  params,
 }: PageProps): Promise<Metadata> => {
-  const blog = getBlogBySlug(slug);
+  const blog = getBlogBySlug(params.slug);
 
   if (!blog) return {};
 
-  const url = `/blogs/${slug}`;
-
-  return {
-    title: blog.title,
-    description: blog.description,
-    openGraph: {
-      url,
-      title: blog.title,
-      description: blog.description,
-      type: 'article',
-      locale: 'en_US',
-      authors: config.name,
-      images: [
-        {
-          url: blog.cover,
-          width: 1200,
-          height: 630,
-          alt: blog.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: blog.title,
-      description: blog.description,
-      images: [{ url: blog.cover }],
-    },
-    alternates: {
-      canonical: url,
-    },
-  };
+  return generateSeoTags(blog);
 };
 
 const BlogPage = ({ params: { slug } }: PageProps) => {
   const blog = getBlogBySlug(slug);
-
   if (!blog) notFound();
 
+  const jsonLd = generateJsonLd(blog);
+
   return (
-    <div className='mx-auto w-full max-w-4xl'>
-      <GoBackButton />
-      <Header {...blog} />
-      <Mdx content={blog.content} />
-    </div>
+    <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className='mx-auto w-full max-w-4xl'>
+        <GoBackButton />
+        <Header {...blog} />
+        <Mdx content={blog.content} />
+      </div>
+    </>
   );
 };
 

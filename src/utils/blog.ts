@@ -63,6 +63,7 @@ export const getBlogBySlug = (slug: string) => {
     description: data.description,
     cover: data.cover,
     tags: data.tags,
+    date: data.date,
     ...data,
     content,
     slug,
