@@ -1,8 +1,9 @@
 import config from '@/data/config';
 
 import type { Blog } from '@/types/Blog';
+import type { Metadata } from 'next';
 
-export const generateSeoTags = (blog: Blog) => {
+export const generateSeoTags = (blog: Blog): Metadata => {
   const url = `/blogs/${blog.slug}`;
 
   return {

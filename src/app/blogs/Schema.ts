@@ -2,9 +2,9 @@ import config from '@/data/config';
 
 import type { Blog } from '@/types/Blog';
 import type {
-  Person,
   BlogPosting,
   ImageObject,
+  Person,
   WithContext,
 } from 'schema-dts';
 
