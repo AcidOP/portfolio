@@ -60,6 +60,7 @@ const Header = async ({
           placeholder='blur'
           blurDataURL={blurUrl.placeholder}
           className='rounded-md object-cover'
+          sizes='100vw'
         />
       </div>
 
