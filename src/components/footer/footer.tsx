@@ -35,13 +35,15 @@ const Footer = () => {
             <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='space-y-2'>
-              {links.filter(({ dropdown }) => !dropdown).map(link => (
-                <li key={link.url}>
-                  <Link href={link.url} className='capitalize'>
-                    {link.text}
-                  </Link>
-                </li>
-              ))}
+              {links
+                .filter(({ dropdown }) => !dropdown)
+                .map(link => (
+                  <li key={link.url}>
+                    <Link href={link.url} className='capitalize'>
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 
@@ -71,13 +73,15 @@ const Footer = () => {
                 <Link href='/privacy-policy'>Privacy Policy</Link>
               </li>
 
-              {links.filter(({ dropdown }) => dropdown).map(link => (
-                <li key={link.url}>
-                  <Link href={link.url} className='capitalize'>
-                    {link.text}
-                  </Link>
-                </li>
-              ))}
+              {links
+                .filter(({ dropdown }) => dropdown)
+                .map(link => (
+                  <li key={link.url}>
+                    <Link href={link.url} className='capitalize'>
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
