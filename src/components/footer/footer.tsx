@@ -13,7 +13,8 @@ const Footer = () => {
     <footer className='relative my-24'>
       <ContactLink />
 
-      <div className='absolute inset-0 -z-10 h-[550px] w-[550px] overflow-x-hidden rounded-full bg-violet-500 opacity-40 blur-[64px]' />
+      {/* FIX: Causes horizontal overflow  */}
+      {/* <div className='absolute inset-0 -z-10 h-[550px] w-[550px] overflow-x-hidden rounded-full bg-violet-500 opacity-40 blur-[64px]' /> */}
 
       <div className='my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
