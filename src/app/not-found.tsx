@@ -8,18 +8,18 @@ import Link from 'next/link';
 const NotFound = () => {
   return (
     <div className='grid h-[130vh] place-content-center'>
-      <div className='absolute left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-[20%] rounded-full bg-violet-600 blur-[100px] lg:h-[800px] lg:w-[800px]' />
+      <div className='absolute left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-[20%] rounded-full bg-violet-600 blur-[100px] lg:h-[1150px] lg:w-[1150px]' />
 
       <Image
         src={image404}
         alt='404'
-        className='absolute left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-[20%] rounded-full lg:h-[600px] lg:w-[600px]'
+        className='absolute left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-[20%] rounded-full lg:h-[600px] lg:w-[600px] animate-pulse'
       />
 
       <div>
         <h1
           className={cn(
-            'mb-3 text-6xl drop-shadow-lg lg:text-9xl lg:text-white',
+            'mb-3 text-6xl drop-shadow-2xl lg:text-9xl lg:text-white',
             suez_400.className,
           )}
         >
@@ -28,7 +28,7 @@ const NotFound = () => {
 
         <Link
           href='/'
-          className='group relative mx-auto grid w-min place-content-center overflow-hidden overflow-x-hidden border-2 border-black bg-black px-10 py-4 text-white lg:mt-6'
+          className='group relative mx-auto grid w-min place-content-center overflow-hidden overflow-x-hidden border-2 border-black bg-violet-700 lg:bg-black px-10 py-4 text-white lg:mt-6'
         >
           <span
             className={cn(
