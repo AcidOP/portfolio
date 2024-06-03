@@ -16,9 +16,9 @@ const Hero = () => {
             Hello 👋🏻
           </span>
           <br />{' '}
-          <span className={cn('text-nowrap', inter_700.className)}>
+          <h1 className={cn('text-nowrap', inter_700.className)}>
             I&apos;m {config.name.split(/ /g)[0]}
-          </span>
+          </h1>
         </div>
 
         <div
