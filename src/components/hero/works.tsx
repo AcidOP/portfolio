@@ -15,10 +15,10 @@ const Works = () => {
     <>
       <Heading text='Selected Works.' className='my-24 uppercase' />
 
-      <Link href={`/works/${firstWork.data.slug}`}>
+      <Link href={`/works/${firstWork.slug}`}>
         <Image
-          src={firstWork.data.image}
-          alt={firstWork.data.title}
+          src={firstWork.cover}
+          alt={firstWork.title}
           width={1920}
           height={1080}
           className='mt-6 rounded-xl border-2 border-black transition-all duration-200 hover:scale-[1.02]'
@@ -28,13 +28,13 @@ const Works = () => {
       <div className='mb-24 mt-6 flex flex-col gap-6 lg:flex-row'>
         {otherWorks.map(work => (
           <Link
-            href={`/works/${work.data.slug}`}
-            key={work.data.slug}
+            href={`/works/${work.slug}`}
+            key={work.slug}
             className='flex-1'
           >
             <Image
-              src={work.data.image}
-              alt={work.data.title}
+              src={work.cover}
+              alt={work.title}
               width={1920}
               height={1080}
               className='hover:cursor rounded-xl border-2 border-black transition-all duration-200 hover:scale-105'

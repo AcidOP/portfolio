@@ -14,7 +14,7 @@ interface MarkdownProps {
 
 const Mdx = ({ content }: MarkdownProps) => {
   return (
-    <article className='prose prose-xl mx-auto w-full max-w-4xl prose-a:no-underline'>
+    <article className='prose mx-auto w-full max-w-4xl lg:prose-xl prose-a:no-underline'>
       <Markdown
         components={components}
         remarkPlugins={[remarkGfm]}
@@ -25,7 +25,7 @@ const Mdx = ({ content }: MarkdownProps) => {
           rehypeMinifyAttrEnumerated,
           [
             rehypeExternalLinks,
-            { content: { type: 'text', value: '🌐' } },
+            { content: { type: 'text', value: ' ➚' } },
           ],
         ]}
       >

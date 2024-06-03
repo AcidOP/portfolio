@@ -1,3 +1,5 @@
+import calculateReadingTime from './reading-time';
+
 import { existsSync, readdirSync, readFileSync } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -35,9 +37,23 @@ export const works = () => {
       data.image = '/works/' + coverImageFilename;
     }
 
-    data.slug = workFile.split('.')[0];
+    const readingTime = calculateReadingTime(content);
 
-    return { data, content };
+    data.slug = workFile.split('.')[0];
+    data.time = readingTime;
+
+    return {
+      title: data.title,
+      description: data.description,
+      cover: data.image,
+      services: data.services,
+      industry: data.industry,
+      website: data.website,
+      date: data.date,
+      content,
+      slug: data.slug,
+      time: data.time,
+    };
   });
 
   return works;
@@ -45,10 +61,10 @@ export const works = () => {
 
 export const getWorkSlugs = () => {
   const allWorks = works();
-  return allWorks.map(work => work.data.slug);
+  return allWorks.map(work => work.slug);
 };
 
 export const getWorkBySlug = (slug: string) => {
   const allWorks = works();
-  return allWorks.find(work => work.data.slug === slug);
+  return allWorks.find(work => work.slug === slug);
 };

@@ -18,7 +18,7 @@ const CustomHeading = ({ as, ...rest }: HeadingProps) => {
     <Link href={`#${slug}`}>
       {createElement(
         as,
-        { id: slug, ...rest, className: 'mt-16 lg:mt-32' },
+        { id: slug, ...rest, className: 'mt-16' },
         <>
           <span className='text-violet-600'>#</span> {rest.children}
         </>,

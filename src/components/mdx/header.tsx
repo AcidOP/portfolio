@@ -9,6 +9,7 @@ interface HeaderProps {
   description: string;
   date?: string;
   tags?: string[];
+  services?: string[];
   cover: string;
   time: number;
 }
@@ -19,6 +20,7 @@ const Header = async ({
   title,
   cover,
   tags,
+  services,
   time,
 }: HeaderProps) => {
   const blurUrl = await getPlaceholder(cover);
@@ -27,7 +29,7 @@ const Header = async ({
     <>
       <h1 className='mt-10 text-4xl font-black lg:text-5xl'>{title}</h1>
 
-      <div className='mt-4 flex flex-wrap items-center space-x-5'>
+      <div className='mt-5 flex flex-wrap items-center gap-5 lg:mt-16'>
         {tags && (
           <div className='flex flex-wrap gap-2'>
             {tags.map(tag => (
@@ -42,13 +44,28 @@ const Header = async ({
           </div>
         )}
 
+        {services && (
+          <div className='flex flex-wrap gap-2'>
+            {services.map(service => (
+              <h6
+                key={service}
+                className='rounded-md bg-violet-100 px-2 py-1 font-medium text-violet-600'
+              >
+                {service}
+              </h6>
+            ))}
+          </div>
+        )}
+
         {date && (
           <time className='text-nowrap opacity-70'>
             📅 {format(date, 'dd-MMM-yyyy').replaceAll('-', ' ')}
           </time>
         )}
 
-        <p className='text-nowrap opacity-70'>⏳ {time} min read</p>
+        {time && (
+          <p className='text-nowrap opacity-70'>⏳ {time} min read</p>
+        )}
       </div>
 
       <div className='relative mt-7 aspect-video'>
@@ -60,7 +77,7 @@ const Header = async ({
           placeholder='blur'
           blurDataURL={blurUrl.placeholder}
           className='rounded-md object-cover'
-          sizes='100vw'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
       </div>
 

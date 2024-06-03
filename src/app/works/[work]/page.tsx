@@ -23,8 +23,7 @@ const Work = ({ params: { work } }: PageProps) => {
     <div className='mx-auto w-full max-w-3xl'>
       <GoBackButton />
 
-      {/* @ts-ignore */}
-      <Header {...workData.data} cover={workData.data.image} />
+      <Header {...workData} />
 
       <article className='prose mx-auto w-full max-w-3xl prose-a:no-underline'>
         <Mdx content={workData.content} />

@@ -14,13 +14,13 @@ const AllWorks = () => {
       <div className='grid gap-6 lg:grid-cols-2'>
         {allWorks.map(work => (
           <Link
-            href={`/works/${work.data.slug}`}
-            key={work.data.slug}
+            href={`/works/${work.slug}`}
+            key={work.slug}
             className='border-2 border-black transition duration-200 lg:hover:scale-[1.02]'
           >
             <Image
-              src={work.data.image}
-              alt={work.data.title}
+              src={work.cover}
+              alt={work.title}
               height={1920}
               width={1080}
               className='object-cover'
