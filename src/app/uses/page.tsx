@@ -1,11 +1,11 @@
-// pages/uses.js
 import ProductCard from './ProductCard';
 
 import uses from '@/data/uses';
 
 const Uses = () => {
   return (
-    <div>
+    <>
+      <h1 className='sr-only'>Uses</h1>
       {Object.keys(uses).map(category => (
         <div key={category}>
           <h2 className='mt-8 text-5xl font-semibold underline'>
@@ -19,7 +19,7 @@ const Uses = () => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

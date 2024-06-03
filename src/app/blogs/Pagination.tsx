@@ -14,7 +14,7 @@ const Pagination = ({ current, total }: PaginationProps) => {
     <div className='mx-auto mt-8 flex w-full max-w-xl justify-between text-xl'>
       {!prevPage && (
         <button
-          className='cursor-not-allowed disabled:opacity-50'
+          className='disabled:cursor-not-allowed disabled:opacity-50'
           disabled={!prevPage}
         >
           Previous
@@ -22,16 +22,20 @@ const Pagination = ({ current, total }: PaginationProps) => {
       )}
 
       {prevPage && (
-        <Link href={`/blogs/page/${current - 1}`}>Previous</Link>
+        <Link
+          href={current === 2 ? '/blogs' : `/blogs/page/${current - 1}`}
+        >
+          Previous
+        </Link>
       )}
 
-      <span>
+      <div>
         {current} of {total}
-      </span>
+      </div>
 
       {!nextPage && (
         <button
-          className='cursor-not-allowed disabled:opacity-50'
+          className='disabled:cursor-not-allowed disabled:opacity-50'
           disabled={!nextPage}
         >
           Next

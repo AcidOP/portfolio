@@ -102,10 +102,13 @@ export const getBlogsByTag = (tag: string) => {
 };
 
 export const allBlogs = allBlogsMeta();
+export const numberOfBlogs: number = allBlogs.length;
 export const getXRecentBlogs = (x: number) => allBlogs.slice(0, x);
 
 export const POSTS_PER_PAGE = 6;
-export const TOTAL_PAGES = Math.ceil(allBlogs.length / POSTS_PER_PAGE);
+export const TOTAL_PAGES: number = Math.ceil(
+  numberOfBlogs / POSTS_PER_PAGE,
+);
 
 export const blogsPerPage = (current: number) => {
   const startIndex = POSTS_PER_PAGE * (current - 1);

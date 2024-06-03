@@ -9,9 +9,9 @@ const Hero = () => {
         suez_400.className,
       )}
     >
-      <p className='max-w-4xl text-center text-4xl lg:text-6xl'>
+      <h1 className='max-w-4xl text-center text-4xl lg:text-6xl'>
         This is Zeeshan, a fullstack developer focused on creating.
-      </p>
+      </h1>
     </div>
   );
 };

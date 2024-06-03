@@ -8,7 +8,11 @@ const AllTags = () => {
 
   return (
     <>
-      <Heading text='Blog Tags' className='mb-16 mt-8 text-center' />
+      <Heading
+        text='Blog Tags'
+        as='h1'
+        className='mb-16 mt-8 text-center'
+      />
 
       <div className='mx-auto flex max-w-lg flex-wrap justify-center'>
         {Object.keys(tags).length === 0 && 'No tags found.'}

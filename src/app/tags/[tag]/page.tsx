@@ -13,7 +13,12 @@ export const generateStaticParams = async () => {
 const Tag = ({ params: { tag } }: TagPageParams) => {
   const blogs = getBlogsByTag(tag);
 
-  return <ListBlogs blogs={blogs} />;
+  return (
+    <>
+      <h1 className='sr-only'>{tag} blogs.</h1>
+      <ListBlogs blogs={blogs} />
+    </>
+  );
 };
 
 export default Tag;

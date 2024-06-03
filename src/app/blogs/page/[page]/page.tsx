@@ -31,6 +31,7 @@ const BlogPage = ({ params: { page } }: BlogPageProps) => {
 
   return (
     <>
+      <h1 className='sr-only'>Blogs</h1>
       <ListBlogs blogs={blogs} />
       <Pagination current={currentPage} total={TOTAL_PAGES} />
     </>

@@ -13,6 +13,7 @@ const BlogPage = () => {
   const blogs = blogsPerPage(1);
   return (
     <>
+      <h1 className='sr-only'>Blogs</h1>
       <ListBlogs blogs={blogs} />
       <Pagination current={1} total={TOTAL_PAGES} />
     </>
