@@ -27,7 +27,7 @@ const Header = async ({
     <>
       <h1 className='mt-10 text-4xl font-black lg:text-5xl'>{title}</h1>
 
-      <div className='mt-4 flex items-center space-x-5'>
+      <div className='mt-4 flex flex-wrap items-center space-x-5'>
         {tags && (
           <div className='flex flex-wrap gap-2'>
             {tags.map(tag => (
@@ -43,12 +43,12 @@ const Header = async ({
         )}
 
         {date && (
-          <time className='opacity-70'>
+          <time className='text-nowrap opacity-70'>
             📅 {format(date, 'dd-MMM-yyyy').replaceAll('-', ' ')}
           </time>
         )}
 
-        <p className='opacity-70'>⏳ {time} min read</p>
+        <p className='text-nowrap opacity-70'>⏳ {time} min read</p>
       </div>
 
       <div className='relative mt-7 aspect-video'>
