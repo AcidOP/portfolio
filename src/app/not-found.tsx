@@ -13,7 +13,7 @@ const NotFound = () => {
       <Image
         src={image404}
         alt='404'
-        className='absolute left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-[20%] rounded-full lg:h-[600px] lg:w-[600px] animate-pulse'
+        className='absolute left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-[20%] animate-pulse rounded-full lg:h-[600px] lg:w-[600px]'
       />
 
       <div>
@@ -28,7 +28,7 @@ const NotFound = () => {
 
         <Link
           href='/'
-          className='group relative mx-auto grid w-min place-content-center overflow-hidden overflow-x-hidden border-2 border-black bg-violet-700 lg:bg-black px-10 py-4 text-white lg:mt-6'
+          className='group relative mx-auto grid w-min place-content-center overflow-hidden overflow-x-hidden border-2 border-black bg-violet-700 px-10 py-4 text-white lg:mt-6 lg:bg-black'
         >
           <span
             className={cn(
