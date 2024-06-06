@@ -9,6 +9,8 @@ import { cn } from '@/utils/cn';
 import Link from 'next/link';
 
 const Footer = () => {
+  const miscLinks = links.filter(link => !link.dropdown);
+
   return (
     <footer className='relative my-24'>
       <ContactLink />
@@ -35,8 +37,7 @@ const Footer = () => {
             <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='space-y-2'>
-              {links
-                .filter(({ dropdown }) => !dropdown)
+              {miscLinks
                 .map(link => (
                   <li key={link.url}>
                     <Link href={link.url} className='capitalize'>
