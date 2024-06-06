@@ -1,0 +1,369 @@
+---
+title: I built an Markdown editor using Next.js and TailwindCss 🔥
+tags: [development, webdev]
+description: Join me on this project where we build an online Markdown editor using the latest version of Nextjs.
+date: 2023-11-14
+cover: 'https://images.unsplash.com/photo-1623039405147-547794f92e9e?q=80&w=1726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+---
+
+## Objectives
+
+- Rendering [markdown](/blogs/markdown-cheatsheet) in an Next.js project
+- Use custom components
+- Add [Remark](https://remark.js.org/) and [Rehype](https://github.com/rehypejs/rehype) plugins
+- Learn to change states in parent component from child.
+- Have fun 🔥
+
+
+To check the finished build [click here](https://next-markdown-editor.vercel.app/)
+
+## 1. Create the landing page
+
+I want a simple layout so I divided the screen into two parts; the left being the editor and we see the markdown rendering on the right.
+
+```typescript
+const Homepage = () => {
+	return (
+		<div className='h-screen flex justify-between'>
+			{/* Input markdown */}
+			<section className='w-full pt-5 h-full'>
+				<textarea
+					className='w-full ... placeholder:opacity-80'
+					placeholder='Feed me some Markdown 🍕'
+					autoFocus
+				/>
+			</section>
+
+			<div className='fixed ... border-dashed' />
+
+			{/* Render markdown */}
+			<article className='w-full pt-5 pl-6'>
+				Markdown lies here
+			</article>
+		</div>
+	)
+}
+
+export default Homepage
+
+```
+
+### 2. Add states to store data
+
+Now let's change it into a client component and add the `useState` hook.
+
+```typescript
+'use client';
+
+import { useState } from "react"
+
+const Homepage = () => {
+	const [source, setSource] = useState('');
+
+	return (
+		...
+		<textarea
+      className='w-full ... placeholder:opacity-80'
+      placeholder='Feed me some Markdown 🍕'
+      value={source}
+      onChange={(e) => setSource(e.target.value)}
+      autoFocus
+    />
+    ...
+	)
+}
+```
+
+## 3. Setup [react-markdown](https://www.npmjs.com/package/react-markdown) and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+
+We use `react-markdown` to render markdown and `@tailwindcss/typography` to style the markdown. Install them by firing the following commands.
+
+```bash
+npm install react-markdown
+npm install -D @tailwindcss/typography
+```
+
+Now import and add the Markdown component and pass `source` as children. Remember to add the `prose` classname to the Markdown component.
+
+```typescript
+import Markdown from 'react-markdown'
+
+const Homepage = () => {
+	return (
+		...
+		<div className='fixed ... border-dashed' />
+        // Render the markdown
+        <article className='w-full pt-5 pl-6'>
+          <Markdown
+            className='prose prose-invert min-w-full'
+          >
+            {source}
+          </Markdown>
+        </article>
+        ...
+	)
+}
+```
+
+Now if you type any markdown you'd still not find any changes. This is because we forgot to add the `@tailwindcss/typography` plugin to the tailwindcss config 💀
+
+Change your `tailwind.config.ts` to the following:
+
+```typescript
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  // Add the plugin here
+  plugins: [require('@tailwindcss/typography')]
+}
+
+export default config
+```
+
+Now write some markdown and you will see the changes live 🚀
+
+## 4. Code Highlighting and Custom Components
+
+Now we need to install the `react-syntax-highlighter` package to add code highlighting to our project.
+
+```bash
+npm i react-syntax-highlighter
+npm i --save @types/react-syntax-highlighter
+```
+
+Now we are going to create a **Custom Component** for the Code Highlighter.
+
+Create a folder called `components` inside the `src` folder. Now create a file called `Code.tsx` inside the components folder.
+
+Add the following code from the [documentation](https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme) of react-syntax-highlighter:
+
+```typescript
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+export const CodeBlock = ({ ...props }) => {
+  return (
+    <SyntaxHighlighter
+      language={props.className?.replace(/(?:lang(?:uage)?-)/, '')}
+      style={materialOceanic}
+      wrapLines={true}
+      className='not-prose rounded-md'
+    >
+      {props.children}
+    </SyntaxHighlighter>
+  )
+}
+
+```
+
+Here the props contain a classname with the language of the code in the format: `lang-typescript` or sometimes `language-typescript` so we use some [regex grooups](/blogs/regex-cheatsheet-101#groups-and-capture)to remove everything except the name of the language. The `not-prose` classname is going to [remove the default typography styles](https://tailwindcss.com/docs/typography-plugin#undoing-typography-styles).
+
+Now comeback to the main `page.tsx` file and import the `CodeBlock` component and pass it to the original `<Markdown />` component
+
+```typescript
+import Markdown from 'react-markdown'
+import { CodeBlock } from '@/components/Code'
+
+const Homepage = () => {
+	const options = { code: CodeBlock }
+	return (
+		...
+          <Markdown
+            className='prose prose-invert min-w-full'
+            components={options}
+          >
+            {source}
+          </Markdown>
+        ...
+	)
+}
+```
+
+This is going to replace every occurrence of `code` with our Custom `CodeBlock`component. 
+
+### Optional
+
+BUG (🐛): You might have a weird dark border around your code component which is caused by the `pre` tag and tailwind styles.
+
+To fix this go back to your `Code.tsx` and add the following code that removes the tailwind styles from the pre tag.
+
+```typescript
+export const Pre = ({ ...props }) => {
+  return (
+    <div className='not-prose'>
+      {props.children}
+    </div>
+  )
+}
+```
+
+Import this into your `page.tsx` and add it into the `options` variable:
+
+```typescript
+const Homepage = () => {
+	const options = { 
+		code: CodeBlock,
+		// Add here
+		pre: Pre,
+	}
+	return ( ... )
+}
+```
+
+This is going to remove that border.
+
+## 5. Adding Rehype and Remark Plugins
+
+[Rehype](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md) and [Remark](https://github.com/remarkjs/remark/blob/main/doc/plugins.md) are plugins used to transform and manipulate the HTML and Markdown content of a website, helping to enhance its functionality and appearance.
+
+We are going to use the following:
+
+- `rehype-sanitize` : Sanitize the markdown
+- `rehype-external-links` :  Add an 🔗 icon on links
+- `remark-gfm` : Plugin to support [GFM](https://github.github.com/gfm/) (Supporting tables, footnotes, etc.)
+
+Install the Plugins:
+
+```bash
+npm i remark-gfm rehype-external-links rehype-sanitize
+```
+
+Back to our `page.tsx`
+
+```typescript
+import remarkGfm from 'remark-gfm'
+import rehypeSanitize from 'rehype-sanitize'
+import rehypeExternalLinks from 'rehype-external-links'
+
+... 
+<Markdown
+  ...
+  remarkPlugins={[remarkGfm]}
+  rehypePlugins={[
+	rehypeSanitize,
+	[rehypeExternalLinks,
+	 { content: { type: 'text', value: '🔗' } }
+    ],
+  ]}
+>{source}</Markdown>
+```
+
+Pass the remark plugins within `remarkPlugins` and rehype plugins in `rehypePlugins` (I know very surprising). 
+
+If any plugin needs any [customization](https://github.com/remarkjs/react-markdown#use-a-plugin-with-options) put them in square brackets followed by the plugin name and the options in curly brackets in this syntax: 
+
+`[veryCoolPlugin, { { options } }]`
+
+## 6. Header with Markdown buttons
+
+Next we add a Header component that has buttons which on clicked inserts certain Markdown elements.
+
+First create a `Header.tsx` in the `components` folder and write the following code:
+
+```typescript
+const Header = () => {
+  const btns = [
+    { name: 'B', syntax: '**Bold**' },
+    { name: 'I', syntax: '*Italic*' },
+    { name: 'S', syntax: '~Strikethrough~' },
+    { name: 'H1', syntax: '# ' },
+]
+
+  return (
+    <header className="flex ... bg-[#253237]">
+        {btns.map(btn => (
+          <button
+            key={btn.syntax}
+            className="flex ...rounded-md"
+          >
+            {btn.name}
+          </button>
+        ))}
+    </header>
+  )
+}
+
+export default Header
+```
+
+Import it in the main `page.tsx`
+
+```typescript
+import Header from '@/components/Header'
+
+const Homepage = () => {
+	const options = { code: CodeBlock }
+	return (
+		<>
+		<Header /> // Should be on top
+		<div className='h-screen flex justify-between'>
+			...
+		</div>
+		</>
+	)
+}
+```
+
+Now here's the catch. Our states lie in the parent component and the `Header` is a child component. 
+
+How do we work with the states in the child component? The best solution is we create a function to change the state in parent component and pass the function to the child component. [Read this article](https://surajsharma.net/blog/react-update-parent-state-from-child)
+
+```typescript
+const Homepage = () => {
+  const [source, setSource] = useState('');
+  
+  const feedElement = (syntax: string) => {
+    return setSource(source + syntax)
+  }
+  
+  return (
+	 <>
+	 <Header />
+	...
+  )
+}
+```
+
+In `Header.tsx` we need to accept the function as a parameter and add it to the button using the `onClick` attribute:
+
+```typescript
+const Header = (
+  { feedElement }: 
+  { feedElement: (syntax: string) => void }
+) => {
+  const btns = [ ... ]
+
+  return (
+    ...
+    <button
+      key={btn.syntax}
+      className="flex ...rounded-md"
+      onClick={() => feedElement(btn.syntax)}
+    >
+      {btn.name}
+    </button>
+  )
+}
+```
+
+Back to `page.tsx` we pass the `feedElement` function to the Header
+
+```typescript
+const feedElement = (syntax: string) => {
+  return setSource(source + syntax)
+}
+  
+return (
+  <>
+  <Header feedElement={feedElement} />
+  ...
+)
+```
+
+Now anytime you click on a button you should get the following Markdown Element.
+
