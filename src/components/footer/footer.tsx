@@ -74,7 +74,7 @@ const Footer = () => {
               </li>
 
               {links
-                .filter(({ dropdown }) => dropdown)
+                .filter(link => link.dropdown)
                 .map(link => (
                   <li key={link.url}>
                     <Link href={link.url} className='capitalize'>
