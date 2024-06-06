@@ -1,22 +1,25 @@
-const NEXT_SSG_FILES = [
+const SERVER_FILES = [
   '/*.json$',
   '/*_buildManifest.js$',
   '/*_middlewareManifest.js$',
   '/*_ssgManifest.js$',
   '/*.js$',
+  '/_next/*',
+  '/cdn-cgi/*',
 ];
 
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
-        disallow: NEXT_SSG_FILES,
+        disallow: SERVER_FILES,
       },
     ],
   },
   autoLastmod: false,
+  changefreq: 'Yearly',
 };
