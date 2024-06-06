@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
           inter_500.className,
         )}
+        suppressHydrationWarning
       >
         <Navbar />
         {children}
