@@ -14,7 +14,6 @@ cover: 'https://images.unsplash.com/photo-1623039405147-547794f92e9e?q=80&w=1726
 - Learn to change states in parent component from child.
 - Have fun 🔥
 
-
 To check the finished build [click here](https://next-markdown-editor.vercel.app/)
 
 ## 1. Create the landing page
@@ -74,9 +73,9 @@ const Homepage = () => {
 }
 ```
 
-## 3. Setup [react-markdown](https://www.npmjs.com/package/react-markdown) and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+## 3. Setup `react-markdown` and `@tailwindcss/typography`
 
-We use `react-markdown` to render markdown and `@tailwindcss/typography` to style the markdown. Install them by firing the following commands.
+We use [react-markdown](https://www.npmjs.com/package/react-markdown) to render markdown and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) to style the markdown. Install them by firing the following commands.
 
 ```bash
 npm install react-markdown
@@ -110,7 +109,7 @@ Now if you type any markdown you'd still not find any changes. This is because w
 Change your `tailwind.config.ts` to the following:
 
 ```typescript
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -119,10 +118,10 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   // Add the plugin here
-  plugins: [require('@tailwindcss/typography')]
-}
+  plugins: [require('@tailwindcss/typography')],
+};
 
-export default config
+export default config;
 ```
 
 Now write some markdown and you will see the changes live 🚀
@@ -184,7 +183,7 @@ const Homepage = () => {
 }
 ```
 
-This is going to replace every occurrence of `code` with our Custom `CodeBlock`component. 
+This is going to replace every occurrence of `code` with our Custom `CodeBlock`component.
 
 ### Optional
 
@@ -206,7 +205,7 @@ Import this into your `page.tsx` and add it into the `options` variable:
 
 ```typescript
 const Homepage = () => {
-	const options = { 
+	const options = {
 		code: CodeBlock,
 		// Add here
 		pre: Pre,
@@ -224,7 +223,7 @@ This is going to remove that border.
 We are going to use the following:
 
 - `rehype-sanitize` : Sanitize the markdown
-- `rehype-external-links` :  Add an 🔗 icon on links
+- `rehype-external-links` : Add an 🔗 icon on links
 - `remark-gfm` : Plugin to support [GFM](https://github.github.com/gfm/) (Supporting tables, footnotes, etc.)
 
 Install the Plugins:
@@ -240,7 +239,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeExternalLinks from 'rehype-external-links'
 
-... 
+...
 <Markdown
   ...
   remarkPlugins={[remarkGfm]}
@@ -253,9 +252,9 @@ import rehypeExternalLinks from 'rehype-external-links'
 >{source}</Markdown>
 ```
 
-Pass the remark plugins within `remarkPlugins` and rehype plugins in `rehypePlugins` (I know very surprising). 
+Pass the remark plugins within `remarkPlugins` and rehype plugins in `rehypePlugins` (I know very surprising).
 
-If any plugin needs any [customization](https://github.com/remarkjs/react-markdown#use-a-plugin-with-options) put them in square brackets followed by the plugin name and the options in curly brackets in this syntax: 
+If any plugin needs any [customization](https://github.com/remarkjs/react-markdown#use-a-plugin-with-options) put them in square brackets followed by the plugin name and the options in curly brackets in this syntax:
 
 `[veryCoolPlugin, { { options } }]`
 
@@ -309,18 +308,18 @@ const Homepage = () => {
 }
 ```
 
-Now here's the catch. Our states lie in the parent component and the `Header` is a child component. 
+Now here's the catch. Our states lie in the parent component and the `Header` is a child component.
 
 How do we work with the states in the child component? The best solution is we create a function to change the state in parent component and pass the function to the child component. [Read this article](https://surajsharma.net/blog/react-update-parent-state-from-child)
 
 ```typescript
 const Homepage = () => {
   const [source, setSource] = useState('');
-  
+
   const feedElement = (syntax: string) => {
     return setSource(source + syntax)
   }
-  
+
   return (
 	 <>
 	 <Header />
@@ -333,7 +332,7 @@ In `Header.tsx` we need to accept the function as a parameter and add it to the 
 
 ```typescript
 const Header = (
-  { feedElement }: 
+  { feedElement }:
   { feedElement: (syntax: string) => void }
 ) => {
   const btns = [ ... ]
@@ -357,7 +356,7 @@ Back to `page.tsx` we pass the `feedElement` function to the Header
 const feedElement = (syntax: string) => {
   return setSource(source + syntax)
 }
-  
+
 return (
   <>
   <Header feedElement={feedElement} />
@@ -366,4 +365,3 @@ return (
 ```
 
 Now anytime you click on a button you should get the following Markdown Element.
-
