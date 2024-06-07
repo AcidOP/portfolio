@@ -4,13 +4,14 @@ import Newsletter from '../newsletter/newsletter';
 import ContactLink from './contact-link';
 
 import config from '@/data/config';
-import { Link as NavLink } from '@/types/NavLink';
 import { cn } from '@/utils/cn';
 
 import Link from 'next/link';
+import type { Link as NavLink } from '@/types/NavLink';
 
 const Footer = () => {
-  const miscLinks: NavLink[] = links.filter(link => !link.dropdown);
+  const navLinks: NavLink[] = links.filter(link => !link.dropdown);
+  const miscLinks: NavLink[] = links.filter(link => link.dropdown);
 
   return (
     <footer className='relative my-24'>
@@ -38,7 +39,7 @@ const Footer = () => {
             <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='space-y-2'>
-              {miscLinks.map(link => (
+              {navLinks.map(link => (
                 <li key={link.url}>
                   <Link href={link.url} className='capitalize'>
                     {link.text}
@@ -74,8 +75,7 @@ const Footer = () => {
                 <Link href='/privacy-policy'>Privacy Policy</Link>
               </li>
 
-              {links
-                .filter(link => link.dropdown)
+              {miscLinks
                 .map(link => (
                   <li key={link.url}>
                     <Link href={link.url} className='capitalize'>
