@@ -1,17 +1,18 @@
 import { suez_400 } from '../fonts';
-import links from '../navbar/navlinks';
+import allLinks from '../navbar/navlinks';
 import Newsletter from '../newsletter/newsletter';
 import ContactLink from './contact-link';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
-import Link from 'next/link';
-import type { Link as NavLink } from '@/types/NavLink';
+import NextLink from 'next/link';
+
+import type Link from '@/types/NavLink';
 
 const Footer = () => {
-  const navLinks: NavLink[] = links.filter(link => !link.dropdown);
-  const miscLinks: NavLink[] = links.filter(link => link.dropdown);
+  const navLinks: Link[] = allLinks.filter(link => !link.dropdown);
+  const miscLinks: Link[] = allLinks.filter(link => link.dropdown);
 
   return (
     <footer className='relative my-24'>
@@ -41,9 +42,9 @@ const Footer = () => {
             <ul className='space-y-2'>
               {navLinks.map(link => (
                 <li key={link.url}>
-                  <Link href={link.url} className='capitalize'>
+                  <NextLink href={link.url} className='capitalize'>
                     {link.text}
-                  </Link>
+                  </NextLink>
                 </li>
               ))}
             </ul>
@@ -57,9 +58,9 @@ const Footer = () => {
             <ul className='space-y-2'>
               {config.socials.map(social => (
                 <li key={social.name}>
-                  <Link href={social.url} className='capitalize'>
+                  <NextLink href={social.url} className='capitalize'>
                     {social.name}
-                  </Link>
+                  </NextLink>
                 </li>
               ))}
             </ul>
@@ -72,17 +73,16 @@ const Footer = () => {
 
             <ul className='space-y-2'>
               <li>
-                <Link href='/privacy-policy'>Privacy Policy</Link>
+                <NextLink href='/privacy-policy'>Privacy Policy</NextLink>
               </li>
 
-              {miscLinks
-                .map(link => (
-                  <li key={link.url}>
-                    <Link href={link.url} className='capitalize'>
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
+              {miscLinks.map(link => (
+                <li key={link.url}>
+                  <NextLink href={link.url} className='capitalize'>
+                    {link.text}
+                  </NextLink>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
