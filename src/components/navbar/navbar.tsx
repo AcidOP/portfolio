@@ -1,3 +1,4 @@
+import DropdownMenu from './dropdown';
 import MobileNav from './mobile';
 import NavLink from './nav-link';
 import links from './navlinks';
@@ -10,6 +11,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Navbar = () => {
+  const headerLinks = links.filter(({ dropdown }) => !dropdown);
+
   return (
     <nav className='sticky top-0 z-50 mx-auto flex h-20 w-full items-center justify-between'>
       <div className='text-3xl font-bold'>
@@ -19,14 +22,18 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className='hidden text-xl font-medium lg:block'>
+      <div className='hidden items-center text-xl font-medium lg:flex'>
         <ul className='flex space-x-6'>
-          {links.map(link => (
-            <li key={link.url}>
-              <NavLink href={link.url}>{link.text}</NavLink>
+          {headerLinks.map(({ url, text }) => (
+            <li key={url}>
+              <NavLink href={url}>{text}</NavLink>
             </li>
           ))}
         </ul>
+
+        <div className='ml-8 '>
+          <DropdownMenu />
+        </div>
       </div>
 
       <div className='hidden lg:block'>

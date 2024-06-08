@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import links from '../navlinks';
 
@@ -11,7 +11,7 @@ interface MobileNavbarProps {
   toggle: () => void;
 }
 
-const MobileNavbar: FC<MobileNavbarProps> = ({ toggle }) => {
+const MobileNavbar = ({ toggle }: MobileNavbarProps) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 

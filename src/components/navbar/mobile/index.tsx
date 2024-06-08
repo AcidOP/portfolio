@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import Hamburger from './hamburger';
+import Hamburger from '../hamburger';
 import MobileNavbar from './mobile-nav';
 
 import { AnimatePresence } from 'framer-motion';
@@ -13,8 +13,8 @@ const Index = () => {
 
   return (
     <>
-      <Hamburger isOpen={isOpen} toggle={toggle} />
       <AnimatePresence>
+        <Hamburger isOpen={isOpen} toggle={toggle} />
         {isOpen && <MobileNavbar toggle={toggle} />}
       </AnimatePresence>
     </>
