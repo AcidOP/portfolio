@@ -1,5 +1,5 @@
 import { suez_400 } from '../fonts';
-import allLinks from '../navbar/navlinks';
+// import allLinks from '../navbar/navlinks';
 import Newsletter from '../newsletter/newsletter';
 import ContactLink from './contact-link';
 
@@ -8,11 +8,11 @@ import { cn } from '@/utils/cn';
 
 import NextLink from 'next/link';
 
-import type Link from '@/types/NavLink';
+// import type Link from '@/types/NavLink';
 
 const Footer = () => {
-  const navLinks: Link[] = allLinks.filter(link => !link.dropdown);
-  const miscLinks: Link[] = allLinks.filter(link => link.dropdown);
+  // const navLinks: Link[] = allLinks.filter(link => !link.dropdown);
+  // const miscLinks: Link[] = allLinks.filter(link => link.dropdown);
 
   return (
     <footer className='relative my-24'>
@@ -40,13 +40,31 @@ const Footer = () => {
             <hr className='my-6 w-[80%] border border-gray-300' />
 
             <ul className='space-y-2'>
-              {navLinks.map(link => (
-                <li key={link.url}>
-                  <NextLink href={link.url} className='capitalize'>
-                    {link.text}
-                  </NextLink>
-                </li>
-              ))}
+              <li>
+                <NextLink href='/' className='capitalize'>
+                  Home
+                </NextLink>
+              </li>
+              <li>
+                <NextLink href='/about' className='capitalize'>
+                  about
+                </NextLink>
+              </li>
+              <li>
+                <NextLink href='/works' className='capitalize'>
+                  works
+                </NextLink>
+              </li>
+              <li>
+                <NextLink href='/blogs' className='capitalize'>
+                  blogs
+                </NextLink>
+              </li>
+              <li>
+                <NextLink href='/contact' className='capitalize'>
+                  contact
+                </NextLink>
+              </li>
             </ul>
           </div>
 
@@ -76,13 +94,21 @@ const Footer = () => {
                 <NextLink href='/privacy-policy'>Privacy Policy</NextLink>
               </li>
 
-              {miscLinks.map(link => (
-                <li key={link.url}>
-                  <NextLink href={link.url} className='capitalize'>
-                    {link.text}
-                  </NextLink>
-                </li>
-              ))}
+              <li>
+                <NextLink href='/tags' className='capitalize'>
+                  tags
+                </NextLink>
+              </li>
+              <li>
+                <NextLink href='/uses' className='capitalize'>
+                  uses
+                </NextLink>
+              </li>
+              <li>
+                <NextLink href='/newsletter' className='capitalize'>
+                  Newsletter
+                </NextLink>
+              </li>
             </ul>
           </div>
         </div>
