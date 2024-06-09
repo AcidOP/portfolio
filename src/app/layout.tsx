@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description: config.description,
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? ''),
   openGraph: {
+    url: './',
     title: config.title,
     description: config.description,
     type: 'website',
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    site: process.env.NEXT_PUBLIC_SITE_URL ?? 'x.com',
     card: 'summary_large_image',
     title: config.title,
     description: config.description,

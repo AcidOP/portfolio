@@ -26,6 +26,7 @@ export const generateSeoTags = (blog: Blog): Metadata => {
       ],
     },
     twitter: {
+      site: process.env.NEXT_PUBLIC_SITE_URL + url,
       card: 'summary_large_image',
       title: blog.title,
       description: blog.description,
