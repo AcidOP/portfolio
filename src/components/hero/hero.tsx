@@ -1,11 +1,14 @@
 import { inter_700, suez_400 } from '../fonts';
-import BackgroundBeams from './backgound';
 import HeroBlob from './hero-blob';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
+import dynamic from 'next/dynamic';
+
 const Hero = () => {
+  const BackgroundBeams = dynamic(() => import('./backgound'));
+
   return (
     <div className='flex h-[70vh] w-full items-center justify-center lg:h-[calc(100vh-5rem)]'>
       <HeroBlob />
