@@ -12,6 +12,7 @@ interface HeaderProps {
   services?: string[];
   cover: string;
   time: number;
+  wordCount: number;
 }
 
 const Header = async ({
@@ -22,6 +23,7 @@ const Header = async ({
   tags,
   services,
   time,
+  wordCount,
 }: HeaderProps) => {
   const blurUrl = await getPlaceholder(cover);
 
@@ -29,7 +31,7 @@ const Header = async ({
     <>
       <h1 className='mt-10 text-4xl font-black lg:text-5xl'>{title}</h1>
 
-      <div className='mt-5 flex flex-wrap items-center gap-5 lg:mt-16'>
+      <div className='mt-5 flex flex-wrap items-center gap-5 lg:mt-10'>
         {tags && (
           <div className='flex flex-wrap gap-2'>
             {tags.map(tag => (
@@ -66,6 +68,10 @@ const Header = async ({
         {time && (
           <p className='text-nowrap opacity-70'>⏳ {time} min read</p>
         )}
+
+        {wordCount && (
+          <p className='text-nowrap opacity-70'>🔠 {wordCount} words</p>
+        )}
       </div>
 
       <div className='relative mt-7 aspect-video'>
@@ -76,7 +82,7 @@ const Header = async ({
           priority
           placeholder='blur'
           blurDataURL={blurUrl.placeholder}
-          className='rounded-md object-cover'
+          className='border-2 border-black object-cover shadow-md'
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
       </div>

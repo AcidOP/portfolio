@@ -57,6 +57,9 @@ export const getBlogBySlug = (slug: string) => {
   const { data, content } = matter(markdownWithMetadata);
 
   const time = calculateReadingTime(content);
+  const wordCount = content
+    .split(/\s+/)
+    .filter(word => word.length > 0).length;
 
   return {
     title: data.title,
@@ -68,6 +71,7 @@ export const getBlogBySlug = (slug: string) => {
     content,
     slug,
     time,
+    wordCount,
   };
 };
 
