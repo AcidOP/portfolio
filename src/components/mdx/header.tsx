@@ -12,7 +12,7 @@ interface HeaderProps {
   services?: string[];
   cover: string;
   time: number;
-  wordCount: number;
+  wordCount?: number;
 }
 
 const Header = async ({
@@ -89,7 +89,7 @@ const Header = async ({
 
       <p className='mt-6 text-xl opacity-75'>{description}</p>
 
-      <hr className='mt-10 w-full border border-violet-100' />
+      <hr className='my-10 w-full border border-violet-100' />
     </>
   );
 };
