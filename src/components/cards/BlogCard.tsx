@@ -24,7 +24,7 @@ const BlogCard = async ({
   const image = await getPlaceholder(cover);
 
   return (
-    <article className='flex bg-white transition hover:scale-105 hover:shadow-xl'>
+    <article className='flex border-2 border-black bg-white transition hover:scale-105 hover:shadow-xl'>
       <div className='rotate-180 p-2 [writing-mode:_vertical-lr]'>
         <time
           dateTime={date}
@@ -38,7 +38,7 @@ const BlogCard = async ({
         </time>
       </div>
 
-      <div className='hidden sm:block sm:basis-56'>
+      <div className='hidden border-x-2 border-black sm:block sm:basis-56'>
         <Image
           src={image.src}
           alt={title}
@@ -51,7 +51,7 @@ const BlogCard = async ({
       </div>
 
       <div className='flex flex-1 flex-col justify-between'>
-        <div className='border-s border-gray-900/10 px-4 sm:border-l-transparent sm:px-6'>
+        <div className='border-s border-gray-900/10 p-4 sm:border-l-transparent sm:px-6'>
           <Link href={`/blogs/${slug}`}>
             <h3 className='text-xl font-bold uppercase text-gray-900'>
               {title}
@@ -66,9 +66,9 @@ const BlogCard = async ({
         <div className='sm:flex sm:items-end sm:justify-end'>
           <Link
             href={`/blogs/${slug}`}
-            className='block bg-violet-700 px-5 py-3 text-center text-xs font-bold uppercase  text-white transition hover:bg-black lg:hover:scale-125'
+            className='block bg-violet-700 px-6 py-3 text-center text-sm font-bold text-white transition lg:bg-black lg:hover:scale-125'
           >
-            Read Blog
+            READ BLOG
           </Link>
         </div>
       </div>
