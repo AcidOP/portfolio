@@ -1,0 +1,348 @@
+---
+title: 12 easy SEO Tips Every Developer Should Know
+date: '2024-06-11'
+tags: ['SEO']
+description: 'Learn how to implement best SEO tips as a developer'
+cover: https://images.unsplash.com/photo-1625296276703-3fbc924f07b5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+# Introduction
+
+It's easy to code a website with good UI/UX with time and good coffee.
+
+\
+But what good is a website without visitors and users?
+
+\
+Here are 12 easy things to look out for when building your next website and get more organic visitors.
+
+# 1. URL Structure
+
+Keep the URLs [short and concise](https://backlinko.com/search-engine-ranking#short-urls-rank) that are easy to remember. Your goal here should be conveying as much information through less words. Your main keyword for webpage must be in the URL. Any special characters (eg. $%^^) must be avoided.
+
+For example:\
+`seo-tips-for-beginners` vs `superfine_seo-tutorial_aimed-at_100%-beginners`
+
+Which of the above do you think will google prefer?
+
+### Using hyphens vs. underscores
+
+Using special characters in URLs, such as underscores, might confuse search engines. It makes sense to use hyphens in place of this quandary.
+
+You may improve the readability of your URLs and help search engines understand the genuine purpose of each web site by using hyphens to divide words.
+
+In short: [underscores ruin your SEO](https://linkilo.co/blog/hyphens-or-underscores-url/).
+
+# 2. Title Tags and Meta Descriptions
+
+Here is how a title tag looks:
+
+```html
+<head>
+  <title>AcidOP | Freelancing Developer</title>
+</head>
+```
+
+Your goal here is again to tell a lot in very less. You technically don't have any limit to this number but you should keep it less than [60 characters](https://www.authorityhacker.com/seo-title-tags/). The title should explain your niche or product related to your website or article.
+
+### Writing compelling meta descriptions
+
+Here is how a description tag looks:
+
+```html
+<head>
+  <meta name="description" content="Excellent Developer from India." />
+</head>
+```
+
+One of the most important elements in drawing visitors to a website is the [meta description](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description) tag. The meta description should skillfully include the page's target keywords to persuade readers to click through to the page.
+
+Search engines like Google frequently draw the user's attention by emphasizing terms from the query while displaying the description. It's critical to match your descriptions closely, but not excessively, to highly valuable search terms.
+
+Do not exceed [155 words](https://yoast.com/meta-descriptions/#meta-description) as google will then truncate the text.
+
+[Here](https://www.w3schools.com/tags/tag_meta.asp) is a list of other meta tags that you can use as well.
+
+# 3. Header Tags (H1, H2, H3, etc.)
+
+[Header tags](https://www.w3schools.com/tags/tag_header.asp) help your users navigate the page. The break up your content and break the page into dedicated sections. Search engines rely on headers to better understand the sections of a page, which help with SEO.
+
+Instead of writing one very long article with a few dozen paragraphs, divide the article in multiple parts with each having it's own heading.
+
+### Structuring content with header tags
+
+The main title of your document should be your `<h1>`. The [H1 Tag](https://backlinko.com/h1-tag) represent the document's overall topic and is displayed at the beginning as a large text.
+
+Your main points should be wrapped in `<h2>`. [H2 tags](https://www.techonthenet.com/html/elements/h2_tag.php) are second level headings used to break up content and make it scannable and easy to read.
+
+Subsequent heading tags lead all the way up to H6, which are not that important in the heading hierarchy.
+
+**NOTE**:
+
+1. All the tags must be in hierarchy, i.e. H1>H2>H3...H6.
+2. There should only be 1 H1 tag in entire document.
+
+**Example:**
+
+In my blog [markdown editor](/blogs/nextjs-markdown-editor), I arrange my headings in the below order.
+
+```html
+<h1>I built an Markdown editor using Next.js and TailwindCss 🔥</h1>
+
+<h2>Objectives</h2>
+
+<h2>1. Create the landing page</h2>
+<h2>2. Add states to store data</h2>
+<h2>3. Setup react-markdown and @tailwindcss/typography</h2>
+<h2>4. Code Highlighting and Custom Components</h2>
+<h3>Optional</h3>
+<h2>5. Adding Rehype and Remark Plugins</h2>
+<h2>6. Header with Markdown buttons</h2>
+```
+
+# 4. Image Optimization for SEO
+
+According to Optinmonster, content that contains images [receives up to 94% more views](https://optinmonster.com/blogging-statistics/). Visuals naturally captivate people, and nothing does it more effectively than a pleasing image. This means that in order to engage readers and increase your visibility, you must use visuals in your content.
+
+### Using descriptive alt text
+
+Example:
+
+```html
+<img src="https://acidop.codes/og.jpg" alt="My website banner" />
+```
+
+[Alt tags](https://www.w3schools.com/TAGS/att_img_alt.asp) (Technically they're not tags, they're [attributes](https://www.geeksforgeeks.org/tags-vs-elements-vs-attributes-in-html/), but you don't need to worry about that) are important for a few key reasons:
+
+- Enhanced Accessibility: It assists visually impaired individuals in comprehending the image.
+
+- SEO Boost: It offers search engines valuable details about the image, aiding in its visibility in search rankings.
+
+- Improved User Experience: It conveys information about the image, even when it fails to load.
+
+### Choosing the right image formats
+
+- [JPEGs](https://web.dev/learn/images/jpeg/) are good for things like screenshots, blog post images, and content where [site speed](/blogs/seo-tips#a-importance-of-site-speed-for-seo-and-user-experience) is essential.
+
+- [PNG](https://cloudinary.com/guides/image-formats/what-is-a-png-image-and-how-to-convert-it) is better for quality and resolution, but these files are typically larger, which can result in slower page load times.
+
+- [WebP](https://developers.google.com/speed/webp) offers superior compression capabilities compared to others, without compromising much on image quality. It enhances the load time of your web pages and minimizes bandwidth. It supports both the animated features of GIFs and the transparent backgrounds of PNGs.
+
+- [SVG](https://www.freecodecamp.org/news/a-fresh-perspective-at-why-when-and-how-to-use-svg/) is best when it comes to icons and logos. They can be scaled to any size without losing resolution.
+
+### Implementing responsive images (srcset)
+
+Your website may perform much slower with large graphics. We can speed up the process and [lower the file size](https://imagekit.io/guides/image-optimization/). But visual quality remains the same on mobile devices as it does on desktop computers.
+
+[srcset](https://html.com/attributes/img-srcset/) allows you to define a list of different image resources along with size information so that browser can pick the most appropriate image based on the actual device's resolution.
+
+Example:
+
+```html
+<img
+  src="image.jpg"
+  srcset="small.jpg 300w, medium.jpg 600w, large.jpg 900w"
+/>
+```
+
+# 5. Mobile-Friendliness
+
+With the rise in mobile device usage for online searches, like smartphones and tablets, [Google's web crawler](https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers) now prioritizes indexing the mobile version of a website's content.
+
+\
+**Fun Fact**: Mobile devices contribute to [59.45% of global online traffic](https://www.statista.com/topics/779/mobile-internet/#topicOverview)
+
+### Ensuring responsive design
+
+The website shows the exact same HTML code on the same URL no matter what device you're using (like a computer, tablet, phone, or even a browser that doesn't display images), but it can adjust how the content looks depending on the size of the screen.
+
+[Google suggests using Responsive Web Design](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) because it's the simplest design approach to set up and keep up with.
+
+**Free** Tools for testing mobile-friendliness:
+
+1. [Small SEO Tools](https://smallseotools.com/mobile-friendly-test/)
+2. [Browserstack](https://www.browserstack.com/responsive)
+3. [Websiteplanet](https://www.websiteplanet.com/webtools/responsive-checker/)
+4. [ready.mobi](https://ready.mobi/)
+5. [Seomator](https://seomator.com/free-tools)
+
+# 6. Site Speed Optimization
+
+According to a study conducted by Google, [53% users abandon a website](https://think.storage.googleapis.com/docs/mobile-page-speed-new-industry-benchmarks.pdf) if it hasn't loaded in 3 seconds. Therefore Google considers [page speed as a ranking factor](https://developer.chrome.com/blog/search-ads-speed/).
+
+Google uses these three metrics to get a picture of loading speed based on speed, interactivity, and visual stability:
+
+1. [Largest Contentful Paint](https://web.dev/articles/lcp) (LCP): measures how long it takes for your main content to load. It should be 2.5 seconds or less.
+2. [First Input Delay](https://web.dev/articles/fid) (FID): measures how long it takes until a user can interact with a page. It should be of 100 milliseconds or less.
+3. [Cumulative Layout Shift](https://web.dev/articles/cls) (CLS): measures how often users experience layout shifts. Your CLS score should be 0.1 or less.
+
+##### **Free** Tools for measuring site speed
+
+1. [PageSpeed Insights](https://pagespeed.web.dev/)
+2. [Google Lighthouse](https://github.com/GoogleChrome/lighthouse)
+3. [BrowserStack Speedlab](https://www.browserstack.com/speedlab)
+4. [Gtmetrix](https://gtmetrix.com/)
+5. [Webpagetest](https://www.webpagetest.org/)
+
+# 7. Internal Linking for SEO
+
+It's when you link to another page that lives on the [same domain](https://www.geeksforgeeks.org/difference-between-external-link-and-internal-link/).
+
+Linking another article or product in a tasteful way increase users time on the site and creates a network of links of related pages.
+
+### Best practices for internal linking structure
+
+Will it be a good decision to spam internal links?
+
+- No. Absolutely not.
+
+It's important that you link content where it feels natural, with anchor text that describes what the destination is.
+
+**Example**:\
+Notice I have also linked to some of my other blogs all throughout the article 😉.
+
+# 8. Schema Markup and Structured Data
+
+Schema is not a ranking factor for Google. But it indirectly helps your site rank higher in google.
+
+Google, Bing, Yandex, and Yahoo! worked together to create [Schema.org](https://schema.org/) so you could provide search engines the data they require to understand your content and deliver the most relevant results.
+
+### Implementing Structured data
+
+You can use any of the 3 methods [suggested by Google](https://developers.google.com/search/docs/appearance/structured-data/sd-policies#technical-guidelines):
+
+1. [Json-ld](https://json-ld.org/)
+2. [Microdata](<https://en.wikipedia.org/wiki/Microdata_(HTML)>)
+3. [RDFa](https://en.wikipedia.org/wiki/RDFa)
+
+However, JSON-LD is the format Google recommends. It is also the easiest one to implement.
+
+Here's an example of Schema markup of [my github bio blog](/blog/beautify-your-github-profile-like-a-pro) using JSON-LD:
+
+```html
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "url": "https://acidop.codes/blog/beautify-your-github-profile-like-a-pro",
+    "image": {
+      "@type": "ImageObject",
+      "url": "/blogs/beautify-your-github-profile-like-a-pro/cover.jpg",
+      "height": 630,
+      "width": 1200
+    },
+    "author": {
+      "@type": "Person",
+      "name": "AcidOP"
+    },
+    "inLanguage": "en-US",
+    "headline": "Beautify Your GitHub Profile like a Pro",
+    "dateCreated": "2023-03-15",
+    "datePublished": "2023-03-15",
+    "description": "Beautify your GitHub ... appealing for developers."
+  }
+</script>
+```
+
+The above script can be placed in either `<head>` or `<body>`.
+
+You can check the validity of your structured data in the [schema.org validator](https://validator.schema.org/).
+
+# 9. XML Sitemaps and Robots.txt
+
+An XML sitemap tells search engines which URLs on your website should be indexed. Its is a list of all important content of your website.
+
+Here is a part of the sitemap of my website:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://acidop.codes</loc>
+    <changefreq>Yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://acidop.codes/blogs/nextjs-markdown-editor</loc>
+    <changefreq>Yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
+```
+
+Save your sitemaps as `sitemap.xml` in your project root. Then submit your sitemap to [Google Search Console](https://search.google.com/search-console/sitemaps).
+
+### Robots.txt
+
+A robots.txt file is a simple text file on a website that tells search engines which pages they can or can't visit.
+
+Example:
+
+```java
+Sitemap: https://acidop.codes/sitemap.xml
+User-agent: *
+Allow: /
+Disallow: /admin
+```
+
+In the above example, we submit our sitemap, and also make it clear we **do not want** to index our admin directory.
+
+# 10. Canonical Tags (Important)
+
+```html
+<head>
+  <link
+    rel="canonical"
+    href="https://acidop.codes/blogs/developer-seo-tips"
+  />
+</head>
+```
+
+In SEO, [canonical tag](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls) is a link attribute used to tell search engines which version of a webpage is the original one, helping to avoid confusion when there are multiple pages with similar or identical content. Google is known to penalize sites with duplicate content.
+
+_My story_ :
+
+I write blogs on 2 sites. [Dev.to](https://dev.to/acidop) (_which supports canonical URLs_) and my website: [acidop.codes](/blogs). My primary source is my website obviously.
+
+I first post any blog on my website. Then I post the same blog on dev.to with canonical URL pointing to my own website.
+
+This way I manage to get a bigger audience while also preventing google from penalizing me.
+
+\
+**Fun Fact:**\
+`https://acidop.codes`\
+`https://acidop.codes?utm_content=buffer`
+
+Google would consider both URLs to be different pages. Having a proper canonical tag would help google understand both are same.
+
+# 11. User Experience (UX) on SEO
+
+Google wants users to have a seamless, intuitive, and enjoyable experience when on a site (page experience).
+
+Google has a set of [guidelines to assess page experience](https://developers.google.com/search/docs/appearance/page-experience#assess).
+
+- Do your pages have good [Core Web Vitals](/blogs/developer-seo-tips#a-importance-of-site-speed-for-seo-and-user-experience)?
+- Are your pages served in a secure fashion?
+- Does your content [display well on mobile devices](/blogs/developer-seo-tips#5-mobile-friendliness)?
+- Does your content avoid using an excessive amount of ads that distract from or interfere with the main content?
+- Do your pages avoid using intrusive interstitials?
+- Is your page designed so visitors can easily distinguish the main content from other content on your page?
+
+# 12. Regular SEO Audits and Monitoring
+
+An SEO audit determines how optimized your website is for search engines. It identifies problems that could be harming the website's rankings and offers ways to fix them.
+
+**_Free_** Tools for SEO audits:
+
+1. [Aioseo](https://aioseo.com/seo-analyzer/) (_Best_)
+2. [seoptimer.com](https://www.seoptimer.com/)
+3. [Seomator](https://seomator.com/free-tools)
+4. [Seobility](https://www.seobility.net/en/seocheck/)
+5. [Semrush](https://www.semrush.com/siteaudit/)
+6. [Ahrefs](https://ahrefs.com/seo-audit-tool)
+
+### Conclusion
+
+- Recap of the checklist
+- Encouragement to implement the practices
+- Call to action for further resources or tools
