@@ -6,7 +6,7 @@ date: 2023-11-14
 cover: 'https://images.unsplash.com/photo-1623039405147-547794f92e9e?q=80&w=1726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
-## Objectives
+# Objectives
 
 - Rendering [markdown](/blogs/markdown-cheatsheet) in an Next.js project
 - Use custom components
@@ -16,7 +16,7 @@ cover: 'https://images.unsplash.com/photo-1623039405147-547794f92e9e?q=80&w=1726
 
 To check the finished build [click here](https://next-markdown-editor.vercel.app/)
 
-## 1. Create the landing page
+# 1. Create the landing page
 
 I want a simple layout so I divided the screen into two parts; the left being the editor and we see the markdown rendering on the right.
 
@@ -47,7 +47,7 @@ export default Homepage
 
 ```
 
-### 2. Add states to store data
+# 2. Add states to store data
 
 Now let's change it into a client component and add the `useState` hook.
 
@@ -73,7 +73,7 @@ const Homepage = () => {
 }
 ```
 
-## 3. Setup `react-markdown` and `@tailwindcss/typography`
+# 3. Setup `react-markdown` and `@tailwindcss/typography`
 
 We use [react-markdown](https://www.npmjs.com/package/react-markdown) to render markdown and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) to style the markdown. Install them by firing the following commands.
 
@@ -126,7 +126,7 @@ export default config;
 
 Now write some markdown and you will see the changes live 🚀
 
-## 4. Code Highlighting and Custom Components
+# 4. Code Highlighting and Custom Components
 
 Now we need to install the `react-syntax-highlighter` package to add code highlighting to our project.
 
@@ -185,9 +185,9 @@ const Homepage = () => {
 
 This is going to replace every occurrence of `code` with our Custom `CodeBlock`component.
 
-### Optional
+## (Optional)
 
-BUG (🐛): You might have a weird dark border around your code component which is caused by the `pre` tag and tailwind styles.
+**BUG** (🐛): You might have a weird dark border around your code component which is caused by the `pre` tag and tailwind styles.
 
 To fix this go back to your `Code.tsx` and add the following code that removes the tailwind styles from the pre tag.
 
@@ -216,7 +216,7 @@ const Homepage = () => {
 
 This is going to remove that border.
 
-## 5. Adding Rehype and Remark Plugins
+# 5. Adding Rehype and Remark Plugins
 
 [Rehype](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md) and [Remark](https://github.com/remarkjs/remark/blob/main/doc/plugins.md) are plugins used to transform and manipulate the HTML and Markdown content of a website, helping to enhance its functionality and appearance.
 
@@ -258,7 +258,7 @@ If any plugin needs any [customization](https://github.com/remarkjs/react-markdo
 
 `[veryCoolPlugin, { { options } }]`
 
-## 6. Header with Markdown buttons
+# 6. Header with Markdown buttons
 
 Next we add a Header component that has buttons which on clicked inserts certain Markdown elements.
 
