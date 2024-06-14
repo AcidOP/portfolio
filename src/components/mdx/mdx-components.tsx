@@ -29,19 +29,25 @@ export const CodeBlock = ({ ...rest }) => {
 
 const BetterLink = ({ ...rest }) => {
   const styles =
-    'not-prose rounded px-1 py-[2px] font-bold text-violet-600 hover:underline';
+    'not-prose rounded px-1 py-[2px] font-bold text-violet-600 hover:underline text-nowrap';
   const isInternalLink = rest.href.startsWith('/');
 
   if (isInternalLink)
-    return <Link href={rest.href} {...rest} className={styles} />;
+    return (
+      <Link href={rest.href} className={styles}>
+        {rest.children}
+      </Link>
+    );
 
   return (
     <a
-      {...rest}
+      href={rest.href}
       target='_blank'
-      rel='noopener noreferrer'
+      rel='noopener noreferrer nofollow'
       className={styles}
-    />
+    >
+      {rest.children}
+    </a>
   );
 };
 
@@ -59,10 +65,17 @@ const BetterImage = ({ ...rest }) => {
   );
 };
 
-const Pre = ({ ...rest }) => <div className='not-prose' {...rest} />;
+const P = ({ ...rest }) => (
+  <p className='not-prose mt-6 leading-[1.5] lg:mt-12'>{rest.children}</p>
+);
+
+const Pre = ({ ...rest }) => (
+  <div className='not-prose'>{rest.children}</div>
+);
 
 export const components = {
   a: BetterLink,
+  p: P,
   pre: Pre,
   code: CodeBlock,
   h1: H1,
@@ -70,6 +83,6 @@ export const components = {
   h3: H3,
   h4: H4,
   h5: H5,
-  h6: H6,
+  H6: H6,
   img: BetterImage,
 };
