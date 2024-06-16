@@ -217,17 +217,17 @@ You can use any of the 3 methods [suggested by Google](https://developers.google
 
 However, JSON-LD is the format Google recommends. It is also the easiest one to implement.
 
-Here's an example of Schema markup of [my github bio blog](/blogs/beautify-your-github-profile-like-a-pro) using JSON-LD:
+Here's an example of Schema markup of [my github bio blog](/blogs/beautify-your-github-profile) using JSON-LD:
 
 ```html
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "url": "https://acidop.codes/blogs/beautify-your-github-profile-like-a-pro",
+    "url": "https://acidop.codes/blogs/beautify-your-github-profile",
     "image": {
       "@type": "ImageObject",
-      "url": "/blogs/beautify-your-github-profile-like-a-pro/cover.jpg",
+      "url": "/blogs/beautify-your-github-profile/cover.jpg",
       "height": 630,
       "width": 1200
     },
