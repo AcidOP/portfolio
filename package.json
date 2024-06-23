@@ -19,9 +19,11 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "clsx": "^2.1.0",
+    "contentlayer2": "^0.4.6",
     "framer-motion": "^11.0.8",
     "moment-timezone": "^0.5.45",
     "next": "14.1.0",
+    "next-contentlayer2": "^0.4.6",
     "react": "^18",
     "react-confetti": "^6.1.0",
     "react-dom": "^18",
@@ -81,5 +83,10 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "overrides": {
+    "next-contentlayer": {
+      "next": "$next"
+    }
+  }
 }

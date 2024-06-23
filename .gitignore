@@ -43,3 +43,7 @@ robots.txt
 sitemap*.xml
 
 /analyze/*.html
+
+
+# Contentlayer
+.contentlayer

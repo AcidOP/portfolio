@@ -1,5 +1,5 @@
 {
-  "endOfLine": "crlf",
+  "endOfLine": "lf",
   "printWidth": 75,
   "tabWidth": 2,
   "arrowParens": "avoid",
@@ -23,7 +23,11 @@
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderParserPlugins": [
+    "typescript",
+    "jsx",
+    "decorators-legacy"
+  ],
   "importOrder": [
     "^react$",
     "",

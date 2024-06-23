@@ -2,7 +2,9 @@ import Pagination from './Pagination';
 
 import ListBlogs from '@/components/cards/ListBlogs';
 import config from '@/data/config';
-import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
+import { TOTAL_PAGES } from '@/utils/blog';
+
+import { allBlogs } from 'contentlayer/generated';
 
 export const metadata = {
   title: `Blogs | ${config.name}`,
@@ -10,11 +12,11 @@ export const metadata = {
 };
 
 const BlogPage = () => {
-  const blogs = blogsPerPage(1);
   return (
     <>
       <h1 className='sr-only'>Blogs</h1>
-      <ListBlogs blogs={blogs} />
+      <ListBlogs blogs={allBlogs} />
+
       <Pagination current={1} total={TOTAL_PAGES} />
     </>
   );
