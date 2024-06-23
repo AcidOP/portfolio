@@ -20,7 +20,7 @@ const Calendly = ({ url, name }: CalendlyProps) => {
 
         <div className='flex items-center'>
           <Image
-            src='/images/about-me.png'
+            src='/images/calendly.png'
             alt='Calendly'
             width={64}
             height={64}
