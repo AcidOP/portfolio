@@ -18,6 +18,20 @@ const nextConfig = {
     ],
     minimumCacheTTL: 3600,
   },
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, webpack },
+  ) => {
+    config.externals.push({
+      'utf-8-validate': 'commonjs utf-8-validate',
+      bufferutil: 'commonjs bufferutil',
+      'supports-color': 'commonjs supports-color',
+    });
+    config.infrastructureLogging = {
+      level: 'error',
+    };
+    return config;
+  },
 };
 
 export default withContentlayer(nextConfig);

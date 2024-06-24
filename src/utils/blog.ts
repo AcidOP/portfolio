@@ -10,6 +10,15 @@ export const TOTAL_BLOGS = BLOGS.length;
 
 export const TOTAL_PAGES = Math.ceil(TOTAL_BLOGS / POSTS_PER_PAGE);
 
+export const getBlogBySlug = (slug: string) => {
+  const blog = BLOGS.find(blog => blog._raw.flattenedPath === slug);
+  return blog;
+};
+
+export const getAllBlogSlugs = () => {
+  return BLOGS.map(blog => blog._raw.flattenedPath);
+};
+
 export const getBlogsByTag = (tag: string) => {
   return BLOGS.filter(blog => blog.tags.includes(tag));
 };

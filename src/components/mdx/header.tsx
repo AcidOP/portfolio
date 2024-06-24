@@ -4,15 +4,10 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface HeaderProps {
-  title: string;
-  description: string;
-  date?: string;
-  tags?: string[];
+import type { Blog } from 'contentlayer/generated';
+
+interface HeaderProps extends Blog {
   services?: string[];
-  cover: string;
-  time: number;
-  wordCount?: number;
 }
 
 const Header = async ({
@@ -22,10 +17,9 @@ const Header = async ({
   cover,
   tags,
   services,
-  time,
-  wordCount,
+  stats,
 }: HeaderProps) => {
-  const blurUrl = await getPlaceholder(cover);
+  const blurUrl = await getPlaceholder(cover as string);
 
   return (
     <>
@@ -65,12 +59,16 @@ const Header = async ({
           </time>
         )}
 
-        {time && (
-          <p className='text-nowrap opacity-70'>⏳ {time} min read</p>
+        {stats.readingTime && (
+          <p className='text-nowrap opacity-70'>
+            ⏳ {stats.readingTime} min read
+          </p>
         )}
 
-        {wordCount && (
-          <p className='text-nowrap opacity-70'>🔠 {wordCount} words</p>
+        {stats.wordCount && (
+          <p className='text-nowrap opacity-70'>
+            🔠 {stats.wordCount} words
+          </p>
         )}
       </div>
 
@@ -80,6 +78,7 @@ const Header = async ({
           alt={title}
           fill
           priority
+          quality={100}
           placeholder='blur'
           blurDataURL={blurUrl.placeholder}
           className='border-2 border-black object-cover shadow-md'

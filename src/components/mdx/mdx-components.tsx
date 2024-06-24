@@ -1,52 +1,33 @@
 import { H1, H2, H3, H4, H5, H6 } from './text-headings';
 
+import { cn } from '@/utils/cn';
+
 import NextImage from 'next/image';
 import Link from 'next/link';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-export const CodeBlock = ({ ...rest }) => {
-  // Inline code
-  if (!rest.className?.startsWith('language')) {
-    return (
-      <code className='not-prose rounded-md bg-slate-200 p-1 font-bold text-violet-600'>
-        `{rest.children}`
-      </code>
-    );
-  }
+import type { HTMLProps } from 'react';
 
-  return (
-    <SyntaxHighlighter
-      language={rest.className?.replace(/(?:lang(?:uage)?-)/, '')}
-      style={materialOceanic}
-      wrapLines={true}
-      className='not-prose mb-4 overflow-x-auto rounded-md p-4'
-    >
-      {rest.children}
-    </SyntaxHighlighter>
-  );
-};
-
-const BetterLink = ({ ...rest }) => {
+const BetterLink = (props: HTMLProps<HTMLAnchorElement>) => {
   const styles =
-    'not-prose rounded px-1 py-[2px] font-bold text-violet-600 hover:underline text-nowrap';
-  const isInternalLink = rest.href.startsWith('/');
+    'rounded px-1 py-[2px] font-bold text-violet-600 hover:underline text-nowrap';
+  const href = props.href || ''; // Provide a default value for href
+  const isInternalLink = href.startsWith('/');
 
   if (isInternalLink)
     return (
-      <Link href={rest.href} className={styles}>
-        {rest.children}
+      <Link href={href} className={styles}>
+        {props.children}
       </Link>
     );
 
   return (
     <a
-      href={rest.href}
+      href={href}
       target='_blank'
-      rel='noopener noreferrer nofollow'
+      rel='noopener noreferrer'
       className={styles}
     >
-      {rest.children}
+      {props.children} ↗
     </a>
   );
 };
@@ -69,15 +50,17 @@ const P = ({ ...rest }) => (
   <p className='not-prose mt-6 leading-[1.5] lg:mt-12'>{rest.children}</p>
 );
 
-const Pre = ({ ...rest }) => (
-  <div className='not-prose'>{rest.children}</div>
-);
+const p = (props: HTMLProps<HTMLParagraphElement>) => {
+  return (
+    <div className='not-prose mt-6 leading-[1.5] lg:mt-12'>
+      {props.children}
+    </div>
+  );
+};
 
 export const components = {
+  p,
   a: BetterLink,
-  p: P,
-  pre: Pre,
-  code: CodeBlock,
   h1: H1,
   h2: H2,
   h3: H3,

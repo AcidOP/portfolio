@@ -1,36 +1,16 @@
 import { components } from './mdx-components';
 
-import Markdown from 'react-markdown';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeMinifyAttrWhitespace from 'rehype-minify-attribute-whitespace';
-import rehypeMinifyAttrEnumerated from 'rehype-minify-attribute-whitespace';
-import rehypeMinifyWhitespaces from 'rehype-minify-whitespace';
-import rehypeSanitize from 'rehype-sanitize';
-import remarkGfm from 'remark-gfm';
+import { getMDXComponent } from 'next-contentlayer2/hooks';
 
 interface MarkdownProps {
-  content: string | null | undefined;
+  code: string;
 }
 
-const Mdx = ({ content }: MarkdownProps) => {
+const Mdx = ({ code }: MarkdownProps) => {
+  const MDXContent = getMDXComponent(code);
   return (
     <article className='prose mx-auto w-full max-w-4xl lg:prose-xl prose-a:no-underline'>
-      <Markdown
-        components={components}
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[
-          rehypeSanitize,
-          rehypeMinifyWhitespaces,
-          rehypeMinifyAttrWhitespace,
-          rehypeMinifyAttrEnumerated,
-          [
-            rehypeExternalLinks,
-            { content: { type: 'text', value: ' ➚' } },
-          ],
-        ]}
-      >
-        {content}
-      </Markdown>
+      <MDXContent components={components} />
     </article>
   );
 };

@@ -21,7 +21,7 @@ const CustomHeading = ({ as, ...rest }: HeadingProps) => {
     <>
       <br />
       <Link href={`#${slug}`}>
-        {createElement(as, { id: slug }, <>{rest.children}</>)}
+        {createElement(as, { id: slug }, rest.children)}
       </Link>
     </>
   );

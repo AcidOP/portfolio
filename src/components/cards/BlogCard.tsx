@@ -52,7 +52,7 @@ const BlogCard = async ({
 
       <div className='flex flex-1 flex-col justify-between'>
         <div className='border-s border-gray-900/10 p-4 sm:border-l-transparent sm:px-6'>
-          <Link href={`/blogs/${slug}`}>
+          <Link href={slug}>
             <h3 className='text-xl font-bold uppercase text-gray-900'>
               {title}
             </h3>
@@ -65,7 +65,7 @@ const BlogCard = async ({
 
         <div className='sm:flex sm:items-end sm:justify-end'>
           <Link
-            href={`/blogs/${slug}`}
+            href={slug}
             className='block bg-violet-700 px-6 py-3 text-center text-sm font-bold text-white transition lg:bg-black lg:hover:scale-125'
           >
             READ BLOG

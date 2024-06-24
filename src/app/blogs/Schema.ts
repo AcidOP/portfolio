@@ -1,6 +1,6 @@
 import config from '@/data/config';
 
-import type { Blog } from '@/types/Blog';
+import type { Blog } from 'contentlayer/generated';
 import type {
   BlogPosting,
   ImageObject,
@@ -9,7 +9,7 @@ import type {
 } from 'schema-dts';
 
 export const generateJsonLd = (blog: Blog): WithContext<BlogPosting> => {
-  const url = `https://${process.env.NEXT_PUBLIC_SITE_URL}/blog/${blog.slug}`;
+  const url = 'https://' + process.env.NEXT_PUBLIC_SITE_URL + blog.slug;
 
   const author: Person = {
     '@type': 'Person',

@@ -21,17 +21,15 @@ export const generateStaticParams = async () => {
 
 export const generateMetadata = ({ params }: PageProps): Metadata => {
   const blog = getBlogBySlug(params.slug);
-
-  if (!blog) return {};
-
-  return generateSeoTags(blog);
+  return blog ? generateSeoTags(blog) : {};
 };
 
 const BlogPage = ({ params: { slug } }: PageProps) => {
   const blog = getBlogBySlug(slug);
+
   if (!blog) notFound();
 
-  const jsonLd = generateJsonLd(blog);
+  const jsonLd = generateJsonLd(blog!);
 
   return (
     <>
@@ -43,7 +41,7 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
       <div className='mx-auto w-full max-w-4xl'>
         <GoBackButton />
         <Header {...blog} />
-        <Mdx content={blog.content} />
+        <Mdx code={blog.body.code} />
       </div>
     </>
   );
