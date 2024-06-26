@@ -1,7 +1,5 @@
 import { H1, H2, H3, H4, H5, H6 } from './text-headings';
 
-import { cn } from '@/utils/cn';
-
 import NextImage from 'next/image';
 import Link from 'next/link';
 
@@ -10,8 +8,8 @@ import type { HTMLProps } from 'react';
 const BetterLink = (props: HTMLProps<HTMLAnchorElement>) => {
   const styles =
     'rounded px-1 py-[2px] font-bold text-violet-600 hover:underline text-nowrap';
-  const href = props.href || ''; // Provide a default value for href
-  const isInternalLink = href.startsWith('/');
+  const href = props.href || '';
+  const isInternalLink = href.startsWith('/') || href.startsWith('#');
 
   if (isInternalLink)
     return (

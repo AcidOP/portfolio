@@ -1,11 +1,10 @@
-/** @type {import('next').NextConfig} */
-
 import { withContentlayer } from 'next-contentlayer2';
 
 // const withBundleAnalyzer = import('@next/bundle-analyzer')({
 //   enabled: process.env.ANALYZE === 'true',
 // })
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -18,10 +17,7 @@ const nextConfig = {
     ],
     minimumCacheTTL: 3600,
   },
-  webpack: (
-    config,
-    { buildId, dev, isServer, defaultLoaders, webpack },
-  ) => {
+  webpack: config => {
     config.externals.push({
       'utf-8-validate': 'commonjs utf-8-validate',
       bufferutil: 'commonjs bufferutil',

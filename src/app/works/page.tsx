@@ -1,11 +1,11 @@
 import Heading from '@/components/heading';
-import { works } from '@/utils/works';
 
+import { allWorks } from 'contentlayer/generated';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const AllWorks = () => {
-  const allWorks = works();
+  console.log(allWorks);
 
   return (
     <>
