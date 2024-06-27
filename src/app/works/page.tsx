@@ -12,8 +12,8 @@ const AllWorks = () => {
       <div className='grid gap-6 lg:grid-cols-2'>
         {allWorks.map(work => (
           <Link
-            href={work.slug}
-            key={work.slug}
+            key={work.url}
+            href={work.url}
             className='border-2 border-black transition duration-200 lg:hover:scale-[1.02]'
           >
             <Image

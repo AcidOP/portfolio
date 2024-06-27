@@ -28,7 +28,7 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
 
   if (!blog) notFound();
 
-  const jsonLd = generateJsonLd(blog!);
+  const jsonLd = generateJsonLd(blog);
 
   return (
     <>

@@ -81,8 +81,8 @@ const About = () => {
       <div className='hidden w-full flex-col space-y-6 lg:flex lg:max-w-md'>
         {recentBlogs.map(blog => (
           <Link
-            key={blog.slug}
-            href={blog.slug}
+            key={blog.url}
+            href={blog.url}
             className='h-full transition duration-200 hover:scale-105'
           >
             <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>

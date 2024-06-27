@@ -10,6 +10,6 @@ export const getXRecentWorks = (x: number) => WORKS.slice(0, x);
 export const workSlugs = WORKS.map(work => work.slug);
 
 export const getWorkBySlug = (slug: string) => {
-  const blog = WORKS.find(work => work.slug === slug);
+  const blog = WORKS.find(work => work.url === slug);
   return blog;
 };

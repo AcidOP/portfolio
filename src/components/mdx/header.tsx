@@ -73,11 +73,10 @@ const Header = async ({
           alt={title}
           fill
           priority
-          quality={100}
           placeholder='blur'
           blurDataURL={blurUrl.placeholder}
           className='border-2 border-black object-cover shadow-md'
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          sizes='100vw'
         />
       </div>
 

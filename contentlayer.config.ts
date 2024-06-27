@@ -27,6 +27,10 @@ const DEFAULT_COVER =
   'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 const computedFields: ComputedFields = {
+  slug: {
+    type: 'string',
+    resolve: doc => doc._raw.flattenedPath.replace(/^.+?(\/)/, ''),
+  },
   stats: {
     type: 'json',
     resolve: doc => {
@@ -56,7 +60,7 @@ export const Blog = defineDocumentType(() => ({
   },
   computedFields: {
     ...computedFields,
-    slug: {
+    url: {
       type: 'string',
       resolve: doc =>
         `/blogs/${doc._raw.flattenedPath.replace(/^.+?(\/)/, '')}`,
@@ -79,7 +83,7 @@ const Work = defineDocumentType(() => ({
   },
   computedFields: {
     ...computedFields,
-    slug: {
+    url: {
       type: 'string',
       resolve: doc =>
         `/works/${doc._raw.flattenedPath.replace(/^.+?(\/)/, '')}`,
