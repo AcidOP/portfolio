@@ -11,15 +11,32 @@ export const TOTAL_BLOGS = BLOGS.length;
 export const TOTAL_PAGES = Math.ceil(TOTAL_BLOGS / POSTS_PER_PAGE);
 
 export const getBlogBySlug = (slug: string) => {
-  return BLOGS.find(blog => blog._raw.flattenedPath === slug);
+  return BLOGS.find(blog => blog.slug === slug);
 };
 
-export const getAllBlogSlugs = () => {
-  return BLOGS.map(blog => blog._raw.flattenedPath);
+export const blogSlugs = BLOGS.map(blog => blog.slug);
+
+export const getBlogTags = () => {
+  const tagCounts: { [key: string]: number } = {};
+  const tags = BLOGS.map(blog => blog.tags).filter(
+    tags => tags !== undefined,
+  );
+
+  tags.forEach(item => {
+    item!.forEach(tag => {
+      if (tagCounts[tag]) {
+        tagCounts[tag]++;
+      } else {
+        tagCounts[tag] = 1;
+      }
+    });
+  });
+
+  return tagCounts;
 };
 
 export const getBlogsByTag = (tag: string) => {
-  return BLOGS.filter(blog => blog.tags.includes(tag));
+  return BLOGS.filter(blog => blog.tags && blog.tags.includes(tag));
 };
 
 export const getXRecentBlogs = (x: number) => BLOGS.slice(0, x);

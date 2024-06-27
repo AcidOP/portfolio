@@ -1,21 +1,23 @@
 import Heading from '../heading';
 
-import { works } from '@/utils/works';
+import { getXRecentWorks } from '@/utils/works';
 
 import Image from 'next/image';
 import Link from 'next/link';
 
+const NO_OF_WORKS = 3;
+
 const Works = () => {
-  const worksData = works();
+  const worksData = getXRecentWorks(NO_OF_WORKS);
 
   const firstWork = worksData[0];
-  const otherWorks = worksData.slice(1, 3);
+  const otherWorks = worksData.slice(1, NO_OF_WORKS);
 
   return (
     <>
       <Heading text='Selected Works.' className='my-24 uppercase' />
 
-      <Link href={`/works/${firstWork.slug}`}>
+      <Link href={firstWork.slug}>
         <Image
           src={firstWork.cover}
           alt={firstWork.title}
@@ -27,11 +29,7 @@ const Works = () => {
 
       <div className='mb-24 mt-6 flex flex-col gap-6 lg:flex-row'>
         {otherWorks.map(work => (
-          <Link
-            href={`/works/${work.slug}`}
-            key={work.slug}
-            className='flex-1'
-          >
+          <Link href={work.slug} key={work.slug} className='flex-1'>
             <Image
               src={work.cover}
               alt={work.title}

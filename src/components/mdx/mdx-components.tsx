@@ -44,10 +44,6 @@ const BetterImage = ({ ...rest }) => {
   );
 };
 
-const P = ({ ...rest }) => (
-  <p className='not-prose mt-6 leading-[1.5] lg:mt-12'>{rest.children}</p>
-);
-
 const p = (props: HTMLProps<HTMLParagraphElement>) => {
   return (
     <div className='not-prose mt-6 leading-[1.5] lg:mt-12'>

@@ -1,7 +1,7 @@
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
-import { getWorkBySlug, getWorkSlugs } from '@/utils/works';
+import { getWorkBySlug, workSlugs } from '@/utils/works';
 
 import { notFound } from 'next/navigation';
 
@@ -10,13 +10,11 @@ interface PageProps {
 }
 
 export const generateStaticParams = async () => {
-  const slugs = getWorkSlugs();
-  return slugs.map(slug => ({ work: slug }));
+  return workSlugs.map(slug => ({ work: slug }));
 };
 
 const Work = ({ params: { work } }: PageProps) => {
-  const workData = getWorkBySlug(work);
-
+  const workData = getWorkBySlug(`/works/${work}`);
   if (!workData) notFound();
 
   return (
@@ -26,7 +24,7 @@ const Work = ({ params: { work } }: PageProps) => {
       <Header {...workData} />
 
       <article className='prose mx-auto w-full max-w-3xl prose-a:no-underline'>
-        <Mdx content={workData.content} />
+        <Mdx code={workData.body.code} />
       </article>
     </div>
   );

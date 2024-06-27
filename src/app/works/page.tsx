@@ -5,8 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const AllWorks = () => {
-  console.log(allWorks);
-
   return (
     <>
       <Heading text='Selected Works' as='h1' className='mb-16 mt-8' />
@@ -14,7 +12,7 @@ const AllWorks = () => {
       <div className='grid gap-6 lg:grid-cols-2'>
         {allWorks.map(work => (
           <Link
-            href={`/works/${work.slug}`}
+            href={work.slug}
             key={work.slug}
             className='border-2 border-black transition duration-200 lg:hover:scale-[1.02]'
           >

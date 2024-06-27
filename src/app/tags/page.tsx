@@ -1,10 +1,10 @@
 import Tag from './Tag';
 
 import Heading from '@/components/heading';
-import { getAllBlogTags } from '@/utils/blog';
+import { getBlogTags } from '@/utils/blog';
 
 const AllTags = () => {
-  const tags = getAllBlogTags();
+  const tags = getBlogTags();
 
   return (
     <>

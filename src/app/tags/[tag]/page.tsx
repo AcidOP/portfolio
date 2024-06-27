@@ -1,12 +1,12 @@
 import ListBlogs from '@/components/cards/ListBlogs';
-import { getAllBlogTags, getBlogsByTag } from '@/utils/blog';
+import { getBlogsByTag, getBlogTags } from '@/utils/blog';
 
 interface TagPageParams {
   params: { tag: string };
 }
 
 export const generateStaticParams = async () => {
-  const allTags = getAllBlogTags();
+  const allTags = getBlogTags();
   return Object.keys(allTags).map(tag => ({ tag }));
 };
 

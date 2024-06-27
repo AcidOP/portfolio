@@ -1,14 +1,9 @@
+import { BlogWork } from '@/types/BlogWork';
 import { getPlaceholder } from '@/utils/image';
 
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import type { Blog } from 'contentlayer/generated';
-
-interface HeaderProps extends Blog {
-  services?: string[];
-}
 
 const Header = async ({
   date,
@@ -18,8 +13,8 @@ const Header = async ({
   tags,
   services,
   stats,
-}: HeaderProps) => {
-  const blurUrl = await getPlaceholder(cover as string);
+}: BlogWork) => {
+  const blurUrl = await getPlaceholder(cover);
 
   return (
     <>

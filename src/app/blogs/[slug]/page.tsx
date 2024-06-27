@@ -4,7 +4,7 @@ import { generateSeoTags } from '../SEO';
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
-import { getAllBlogSlugs, getBlogBySlug } from '@/utils/blog';
+import { blogSlugs, getBlogBySlug } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
 
@@ -15,8 +15,7 @@ interface PageProps {
 }
 
 export const generateStaticParams = async () => {
-  const slugs = getAllBlogSlugs();
-  return slugs.map(slug => ({ slug }));
+  return blogSlugs.map(slug => ({ slug }));
 };
 
 export const generateMetadata = ({ params }: PageProps): Metadata => {
@@ -25,7 +24,7 @@ export const generateMetadata = ({ params }: PageProps): Metadata => {
 };
 
 const BlogPage = ({ params: { slug } }: PageProps) => {
-  const blog = getBlogBySlug(slug);
+  const blog = getBlogBySlug(`/blogs/${slug}`);
 
   if (!blog) notFound();
 

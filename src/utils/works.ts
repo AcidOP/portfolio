@@ -5,11 +5,11 @@ export const WORKS = allWorks.sort((a, b) => {
   return compareDesc(a.date, b.date);
 });
 
-export const getWorkSlugs = () => {
-  return WORKS.map(work => work._raw.flattenedPath);
-};
+export const getXRecentWorks = (x: number) => WORKS.slice(0, x);
+
+export const workSlugs = WORKS.map(work => work.slug);
 
 export const getWorkBySlug = (slug: string) => {
-  const blog = WORKS.find(work => work._raw.flattenedPath === slug);
+  const blog = WORKS.find(work => work.slug === slug);
   return blog;
 };

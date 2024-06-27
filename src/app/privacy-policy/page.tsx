@@ -1,10 +1,11 @@
 import Mdx from '@/components/mdx/mdx';
-import { privacy } from '@/utils/works';
 
+import { allPrivacyPolicies } from 'contentlayer/generated';
 import { format } from 'date-fns';
 
 const PrivacyPolicy = () => {
-  const lastUpdated = format(privacy.data.lastUpdated, 'yyyy-MMM-dd');
+  const policy = allPrivacyPolicies[0];
+  const lastUpdated = format(policy.lastUpdated, 'yyyy-MMM-dd');
 
   return (
     <>
@@ -18,7 +19,7 @@ const PrivacyPolicy = () => {
       </div>
 
       <article className='prose mx-auto w-full max-w-2xl'>
-        <Mdx content={privacy.content} />
+        <Mdx code={policy.body.code} />
       </article>
     </>
   );

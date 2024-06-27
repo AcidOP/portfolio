@@ -46,11 +46,11 @@ export const Blog = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
     date: { type: 'date', required: true },
-    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    tags: { type: 'list', of: { type: 'string' } },
     lastmod: { type: 'date' },
     draft: { type: 'boolean' },
-    description: { type: 'string' },
     cover: { type: 'string', default: DEFAULT_COVER },
     canonicalUrl: { type: 'string' },
   },
@@ -67,12 +67,13 @@ export const Blog = defineDocumentType(() => ({
 const Work = defineDocumentType(() => ({
   name: 'Work',
   filePathPattern: 'works/*.mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     date: { type: 'date', required: true },
-    services: { type: 'list', of: { type: 'string' }, default: [] },
-    techstack: { type: 'list', of: { type: 'string' }, default: [] },
+    services: { type: 'list', of: { type: 'string' } },
+    techstack: { type: 'list', of: { type: 'string' } },
     website: { type: 'string' },
     industry: { type: 'string' },
   },
@@ -85,8 +86,18 @@ const Work = defineDocumentType(() => ({
     },
     cover: {
       type: 'string',
-      resolve: doc => `/works/${doc.slug}.jpg`,
+      resolve: doc =>
+        `/works/${doc._raw.flattenedPath.replace(/^.+?(\/)/, '')}.jpg`,
     },
+  },
+}));
+
+const PrivacyPolicy = defineDocumentType(() => ({
+  name: 'PrivacyPolicy',
+  filePathPattern: 'privacy-policy.mdx',
+  contentType: 'mdx',
+  fields: {
+    lastUpdated: { type: 'date', required: true },
   },
 }));
 
@@ -111,7 +122,7 @@ const prettyCodeOptions: Options = {
 
 export default makeSource({
   contentDirPath: 'src/data',
-  documentTypes: [Blog, Work],
+  documentTypes: [Blog, Work, PrivacyPolicy],
   mdx: {
     rehypePlugins: [
       rehypeSanitize,

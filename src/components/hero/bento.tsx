@@ -82,7 +82,7 @@ const About = () => {
         {recentBlogs.map(blog => (
           <Link
             key={blog.slug}
-            href={`/blogs/${blog.slug}`}
+            href={blog.slug}
             className='h-full transition duration-200 hover:scale-105'
           >
             <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>
