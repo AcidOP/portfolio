@@ -1,4 +1,4 @@
-import { getPlaceholder } from '@/utils/image';
+// import { getPlaceholder } from '@/utils/image';
 
 import { Blog } from 'contentlayer/generated';
 import { format } from 'date-fns';
@@ -7,17 +7,11 @@ import Link from 'next/link';
 
 // https://www.hyperui.dev/components/marketing/blog-cards
 // TODO: Add cover image in mobile view
-const BlogCard = async ({
-  cover,
-  date,
-  description,
-  url,
-  title,
-}: Blog) => {
-  const image = await getPlaceholder(cover);
+const BlogCard = ({ cover, date, description, url, title }: Blog) => {
+  // const image = await getPlaceholder(cover);
 
   return (
-    <article className='flex border-2 border-black bg-white transition hover:scale-105 hover:shadow-xl'>
+    <article className='z-0 flex border-2 border-black bg-white transition hover:scale-105 hover:shadow-xl'>
       <div className='rotate-180 p-2 [writing-mode:_vertical-lr]'>
         <time
           dateTime={date}
@@ -33,12 +27,12 @@ const BlogCard = async ({
 
       <div className='hidden border-x-2 border-black sm:block sm:basis-56'>
         <Image
-          src={image.src}
+          src={cover}
           alt={title}
           width={1740}
           height={1740}
-          placeholder='blur'
-          blurDataURL={image.placeholder}
+          // placeholder='blur'
+          // blurDataURL={image.placeholder}
           className='aspect-square h-full w-full object-cover'
         />
       </div>
@@ -56,7 +50,7 @@ const BlogCard = async ({
           </p>
         </div>
 
-        <div className='sm:flex sm:items-end sm:justify-end'>
+        <div className='z-20 sm:flex sm:items-end sm:justify-end'>
           <Link
             href={url}
             className='block bg-violet-700 px-6 py-3 text-center text-sm font-bold text-white transition lg:bg-black lg:hover:scale-125'

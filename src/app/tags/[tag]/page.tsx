@@ -1,4 +1,4 @@
-import ListBlogs from '@/components/cards/ListBlogs';
+import ListBlogs from '@/components/lists/ListBlogs';
 import { getBlogsByTag, getBlogTags } from '@/utils/blog';
 
 interface TagPageParams {

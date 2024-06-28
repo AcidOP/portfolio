@@ -1,5 +1,4 @@
 import { inter_700, suez_400 } from '../fonts';
-import HeroBlob from './hero-blob';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
@@ -7,6 +6,7 @@ import { cn } from '@/utils/cn';
 import dynamic from 'next/dynamic';
 
 const Hero = () => {
+  const HeroBlob = dynamic(() => import('./hero-blob'));
   const BackgroundBeams = dynamic(() => import('./backgound'));
 
   return (

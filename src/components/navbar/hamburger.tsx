@@ -19,7 +19,7 @@ const HamburgerButton = ({ isOpen, toggle }: HamburgerProps) => {
       initial={false}
       onClick={toggle}
       className={cn(
-        'relative rounded-full text-4xl transition-all duration-200 lg:bg-violet-200 lg:p-2 lg:text-2xl',
+        'relative rounded-full border-black bg-white text-4xl transition-all duration-200 hover:scale-95 lg:border-2 lg:p-2 lg:text-2xl',
         isOpen && 'lg:bg-violet-600 lg:text-white',
       )}
       aria-label='Toggle menu'

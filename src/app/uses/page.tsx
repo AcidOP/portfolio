@@ -1,5 +1,4 @@
-import ProductCard from './ProductCard';
-
+import ProductCard from '@/components/cards/ProductCard';
 import uses from '@/data/uses';
 
 const Uses = () => {

@@ -92,7 +92,7 @@ const About = () => {
         ))}
       </div>
 
-      <div className='absolute bottom-0 right-0 -z-10 flex h-[600px] w-[600px] -translate-x-1/2 translate-y-1/3 items-center justify-center rounded-full bg-violet-500 opacity-35 blur-[64px]' />
+      <div className='absolute bottom-0 left-0 -z-10 flex h-[600px] w-[600px] items-center justify-center rounded-full bg-violet-500 opacity-80 blur-[64px] lg:translate-x-1/2' />
     </div>
   );
 };

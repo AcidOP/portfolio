@@ -42,11 +42,11 @@ const StackedCard = ({
 
       <div className='relative w-full max-w-2xl pt-6 lg:w-1/2'>
         <ul className='flex w-full flex-col lg:gap-y-3 lg:pt-28'>
-          {works.map((work, index) => (
+          {works.map(work => (
             <li
-              key={index}
+              key={work}
               className={cn(
-                'pb-3 text-xl font-bold opacity-70 lg:text-5xl',
+                'z-10 pb-3 text-xl font-bold opacity-70 lg:text-5xl',
                 inter_900.className,
               )}
             >
@@ -55,7 +55,7 @@ const StackedCard = ({
           ))}
         </ul>
 
-        <div className='absolute bottom-0 right-0 text-9xl font-black leading-none text-violet-600 opacity-10 lg:text-[15rem]'>
+        <div className='absolute bottom-0 right-0 -z-10 text-9xl font-black leading-none text-violet-600 opacity-30 blur-sm lg:text-[15rem]'>
           0{index + 1}.
         </div>
       </div>

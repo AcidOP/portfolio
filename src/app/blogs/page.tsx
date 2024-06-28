@@ -1,6 +1,6 @@
 import Pagination from './Pagination';
 
-import ListBlogs from '@/components/cards/ListBlogs';
+import ListBlogs from '@/components/lists/ListBlogs';
 import config from '@/data/config';
 import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
 
