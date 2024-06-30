@@ -15,8 +15,8 @@ const SmallBox = ({ text }: { text: string }) => {
     <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 transition duration-200 hover:-rotate-6 hover:scale-110'>
       {text}
     </div>
-  )
-}
+  );
+};
 
 const About = () => {
   const recentBlogs = getXRecentBlogs(LATEST_BLOGS);
@@ -40,7 +40,7 @@ const About = () => {
       </div>
 
       {/* Second column */}
-      <div className='flex w-full flex-col space-y-6 lg:max-w-md text-lg font-medium'>
+      <div className='flex w-full flex-col space-y-6 text-lg font-medium lg:max-w-md'>
         <div className='flex space-x-6 text-lg lg:max-w-md'>
           <SmallBox text='20+ Clients' />
           <SmallBox text='30+ Projects' />
@@ -53,9 +53,16 @@ const About = () => {
 
         <Link
           href='/about'
-          className='group grid h-1/3 place-content-center bg-black text-white text-5xl lg:text-6xl'
+          className='group grid h-1/3 place-content-center bg-black text-5xl text-white lg:text-6xl'
         >
-          <span className={cn('transition-all duration-200 group-hover:scale-105', suez_400.className)}>About Me</span>
+          <span
+            className={cn(
+              'transition-all duration-200 group-hover:scale-105',
+              suez_400.className,
+            )}
+          >
+            About Me
+          </span>
         </Link>
 
         <div className='relative hidden h-2/3 w-full max-w-md space-x-6 object-cover text-lg saturate-0 transition-all duration-300 hover:saturate-100 lg:flex'>
@@ -74,11 +81,16 @@ const About = () => {
           <Link
             key={blog.url}
             href={blog.url}
-            className='relative h-full transition duration-200 hover:scale-105 rounded-2xl border-2 border-black z-10'
+            className='relative z-10 h-full rounded-2xl border-2 border-black transition duration-200 hover:scale-105'
           >
-            <Image src={blog.cover} alt={blog.title} fill className='object-cover -z-10 rounded-2xl blur-sm brightness-50 contrast-125' />
+            <Image
+              src={blog.cover}
+              alt={blog.title}
+              fill
+              className='-z-10 rounded-2xl object-cover blur-sm brightness-50 contrast-125'
+            />
 
-            <div className='grid h-full place-content-center text-white p-6 text-center text-3xl'>
+            <div className='grid h-full place-content-center p-6 text-center text-3xl text-white'>
               {blog.title}
             </div>
           </Link>

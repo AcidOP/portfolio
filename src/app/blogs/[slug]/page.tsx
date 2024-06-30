@@ -4,6 +4,7 @@ import { generateSeoTags } from '../SEO';
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
+import ScrollTop from '@/components/mdx/scroll-top';
 import { blogSlugs, getBlogBySlug } from '@/utils/blog';
 
 import { notFound } from 'next/navigation';
@@ -41,6 +42,7 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
         <GoBackButton />
         <Header {...blog} />
         <Mdx code={blog.body.code} />
+        <ScrollTop />
       </div>
     </>
   );
