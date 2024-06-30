@@ -17,7 +17,7 @@ const Works = () => {
     <>
       <Heading text='Selected Works.' className='my-24 uppercase' />
 
-      <Link href={firstWork.slug}>
+      <Link href={firstWork.url}>
         <Image
           src={firstWork.cover}
           alt={firstWork.title}
@@ -29,7 +29,7 @@ const Works = () => {
 
       <div className='mb-24 mt-6 flex flex-col gap-6 lg:flex-row'>
         {otherWorks.map(work => (
-          <Link href={work.slug} key={work.slug} className='flex-1'>
+          <Link href={work.url} key={work.slug} className='flex-1'>
             <Image
               src={work.cover}
               alt={work.title}
