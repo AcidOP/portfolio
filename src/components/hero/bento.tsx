@@ -10,6 +10,14 @@ import Link from 'next/link';
 
 const LATEST_BLOGS = 2;
 
+const SmallBox = ({ text }: { text: string }) => {
+  return (
+    <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 transition duration-200 hover:-rotate-6 hover:scale-110'>
+      {text}
+    </div>
+  )
+}
+
 const About = () => {
   const recentBlogs = getXRecentBlogs(LATEST_BLOGS);
 
@@ -32,40 +40,22 @@ const About = () => {
       </div>
 
       {/* Second column */}
-      <div className='flex w-full flex-col space-y-6 lg:max-w-md'>
+      <div className='flex w-full flex-col space-y-6 lg:max-w-md text-lg font-medium'>
         <div className='flex space-x-6 text-lg lg:max-w-md'>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:rotate-3 hover:scale-110'>
-            20+ Clients
-          </div>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:-rotate-6 hover:scale-110'>
-            30+ Projects
-          </div>
+          <SmallBox text='20+ Clients' />
+          <SmallBox text='30+ Projects' />
         </div>
 
-        <div className='flex space-x-6 text-lg lg:max-w-md'>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:-rotate-3 hover:scale-110'>
-            4000+ Hours
-          </div>
-          <div className='grid h-24 w-full place-content-center rounded-xl border-2 border-black bg-slate-100 text-lg font-medium transition duration-200 hover:rotate-6 hover:scale-110'>
-            2 Awards
-          </div>
+        <div className='flex space-x-6 text-lg font-medium lg:max-w-md'>
+          <SmallBox text='4000+ Hours' />
+          <SmallBox text='2 Awards' />
         </div>
 
         <Link
           href='/about'
-          className='group relative grid h-1/3 place-content-center overflow-hidden overflow-x-hidden border-2 border-black bg-black px-10 py-6 text-white lg:py-2'
+          className='group grid h-1/3 place-content-center bg-black text-white text-5xl lg:text-6xl'
         >
-          <span
-            className={cn(
-              'relative z-10 text-5xl font-medium text-white transition-all duration-300 lg:text-6xl',
-              suez_400.className,
-            )}
-          >
-            About Me
-          </span>
-          <span className='absolute inset-0 overflow-hidden'>
-            <span className='absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-violet-600 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150' />
-          </span>
+          <span className={cn('transition-all duration-200 group-hover:scale-105', suez_400.className)}>About Me</span>
         </Link>
 
         <div className='relative hidden h-2/3 w-full max-w-md space-x-6 object-cover text-lg saturate-0 transition-all duration-300 hover:saturate-100 lg:flex'>
@@ -78,21 +68,24 @@ const About = () => {
         </div>
       </div>
 
+      {/* Third col */}
       <div className='hidden w-full flex-col space-y-6 lg:flex lg:max-w-md'>
         {recentBlogs.map(blog => (
           <Link
             key={blog.url}
             href={blog.url}
-            className='h-full transition duration-200 hover:scale-105'
+            className='relative h-full transition duration-200 hover:scale-105 rounded-2xl border-2 border-black z-10'
           >
-            <div className='grid h-full place-content-center rounded-2xl border-2 border-black bg-slate-300 p-6 text-center text-3xl'>
-              {blog.title} 🔗
+            <Image src={blog.cover} alt={blog.title} fill className='object-cover -z-10 rounded-2xl blur-sm brightness-50 contrast-125' />
+
+            <div className='grid h-full place-content-center text-white p-6 text-center text-3xl'>
+              {blog.title}
             </div>
           </Link>
         ))}
       </div>
 
-      <div className='absolute bottom-0 left-0 -z-10 flex h-[600px] w-[600px] items-center justify-center rounded-full bg-violet-500 opacity-80 blur-[64px] lg:translate-x-1/2' />
+      <div className='absolute bottom-0 left-0 -z-10 flex h-[600px] w-[600px] rounded-full bg-violet-500 opacity-80 blur-[64px] lg:translate-x-1/2' />
     </div>
   );
 };
