@@ -54,9 +54,9 @@ const Header = async ({
           </time>
         )}
 
-        {stats.readingTime && (
+        {stats.time && (
           <p className='text-nowrap opacity-70'>
-            ⏳ {stats.readingTime} min read
+            ⏳ {stats.time} min read
           </p>
         )}
 
