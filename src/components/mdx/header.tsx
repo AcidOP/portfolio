@@ -1,4 +1,7 @@
+import { inter_900 } from '../fonts';
+
 import { BlogWork } from '@/types/BlogWork';
+import { cn } from '@/utils/cn';
 import { getPlaceholder } from '@/utils/image';
 
 import { format } from 'date-fns';
@@ -18,7 +21,14 @@ const Header = async ({
 
   return (
     <>
-      <h1 className='mt-10 text-4xl font-black lg:text-5xl'>{title}</h1>
+      <h1
+        className={cn(
+          'mt-10 text-4xl font-black lg:text-7xl',
+          inter_900.className,
+        )}
+      >
+        {title}
+      </h1>
 
       <div className='mt-5 flex flex-wrap items-center gap-5 lg:mt-10'>
         {tags && (
@@ -80,9 +90,9 @@ const Header = async ({
         />
       </div>
 
-      <p className='mt-6 text-xl opacity-75'>{description}</p>
+      <p className='mt-16 text-lg opacity-75 lg:text-xl'>{description}</p>
 
-      <hr className='my-10 w-full border border-violet-100' />
+      <hr className='my-16 w-full border border-violet-100' />
     </>
   );
 };

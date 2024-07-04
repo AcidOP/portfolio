@@ -39,7 +39,7 @@ const BetterImage = ({ ...rest }) => {
       width={0}
       height={0}
       sizes='100vw'
-      className='mx-auto h-auto w-auto'
+      className='mx-auto h-auto w-auto border-2 border-black shadow-2xl'
     />
   );
 };
