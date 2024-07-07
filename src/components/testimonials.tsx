@@ -1,36 +1,27 @@
 import { inter_400 } from './fonts';
 import Heading from './heading';
+import { ScreenFitText } from './ScreenFitText';
 
+import testimonials from '@/data/testimonials';
 import { cn } from '@/utils/cn';
 
 import Image from 'next/image';
 
-const testimonials = [
-  {
-    name: 'Julie Pattyn',
-    title: 'Founder, Yentarirah',
-    content:
-      'AcidOP is a great developer and designer with a great eye for detail. He is also very patient and understanding. I would recommend him to anyone who is looking for a smooth experience.',
-    image: '/testimonials/julie-pattyn.jpg',
-  },
-  {
-    name: 'Anshumaan',
-    title: 'Freelance Motion Designer',
-    content:
-      'Acid is exceptional — clear communication, punctual, and a design visionary. He immediately knows what the client needs. A pleasure to work with!',
-    image: '/testimonials/anshumaan.jpg',
-  },
-];
-
 const Testimonials = () => {
   return (
-    <div className='mb-24'>
+    <div>
       <Heading
-        text="DON'T JUST TAKE MY WORD FOR IT."
-        className='mb-16 items-stretch text-7xl'
+        text='HEAR WHAT PEOPLE SAY ABOUT ME.'
+        className='mb-16 hidden text-center text-7xl lg:block'
       />
 
-      <div className='flex flex-col gap-y-10'>
+      <div className='lg:hidden'>
+        <ScreenFitText text='HEAR' />
+        <ScreenFitText text='WHAT PEOPLE' />
+        <ScreenFitText text='SAY ABOUT ME.' />
+      </div>
+
+      <div className='mt-10 flex flex-col gap-y-6'>
         {testimonials.map(testimonial => (
           <div
             key={testimonial.title}

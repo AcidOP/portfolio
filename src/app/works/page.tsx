@@ -1,12 +1,12 @@
-import Heading from '@/components/heading';
 import ListWorks from '@/components/lists/ListWorks';
+import { ScreenFitText } from '@/components/ScreenFitText';
 
 import { allWorks } from 'contentlayer/generated';
 
 const AllWorks = () => {
   return (
     <>
-      <Heading text='Selected Works' as='h1' className='mb-16 mt-8' />
+      <ScreenFitText text='Selected Works' className='my-16' />
       <ListWorks works={allWorks} />
     </>
   );

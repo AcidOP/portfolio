@@ -2,14 +2,11 @@
 
 import WorkCard from '../cards/WorkCard';
 
-import { Work } from 'contentlayer/generated';
 import { motion } from 'framer-motion';
 
-interface IProps {
-  works: Work[];
-}
+import type { Work } from 'contentlayer/generated';
 
-const ListWorks = ({ works }: IProps) => {
+const ListWorks = ({ works }: { works: Work[] }) => {
   return (
     <div className='grid gap-6 lg:grid-cols-2'>
       {works.map((work, index) => {

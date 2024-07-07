@@ -1,4 +1,4 @@
-import { inter_700, suez_400 } from '../fonts';
+import { inter_700, inter_900 } from '../fonts';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
@@ -7,36 +7,38 @@ import dynamic from 'next/dynamic';
 
 const Hero = () => {
   const HeroBlob = dynamic(() => import('./hero-blob'));
-  const BackgroundBeams = dynamic(() => import('./backgound'));
 
   return (
     <div className='flex h-[70vh] w-full items-center justify-center lg:h-[calc(100vh-5rem)]'>
       <HeroBlob />
 
-      <div className='relative flex h-[32vh] w-full flex-col justify-between lg:h-1/2 lg:px-5'>
-        <div className={cn('text-6xl lg:text-[7rem]', suez_400.className)}>
-          <span className='text-4xl font-medium opacity-90 lg:text-7xl'>
-            Hello 👋🏻
-          </span>
-          <br />{' '}
-          <h1 className={cn('text-nowrap', inter_700.className)}>
-            I&apos;m {config.name.split(/ /g)[0]}
+      <div className='relative flex h-[32vh] w-full flex-col place-items-baseline justify-between lg:h-1/2'>
+        <div>
+          <h1
+            className={cn(
+              'text-5xl opacity-75 lg:text-[5rem]',
+              inter_700.className,
+            )}
+          >
+            Hello,
+          </h1>
+          <h1
+            className={cn('text-6xl lg:text-[7rem]', inter_900.className)}
+          >
+            I&rsquo;m {config.name}.
           </h1>
         </div>
 
-        <div
+        <p
           className={cn(
-            'absolute bottom-0 right-0 max-w-[80%] indent-8 text-xl opacity-75 lg:max-w-3xl lg:text-4xl',
+            'absolute bottom-0 right-0 w-full indent-8 text-xl opacity-75 sm:max-w-xl md:max-w-2xl lg:max-w-3xl lg:text-4xl',
             inter_700.className,
           )}
         >
-          <p>
-            — a hybrid developer and designer nudging early-stage startups
-            and teams into greatness.
-          </p>
-        </div>
+          — a hybrid developer and designer nudging early-stage startups
+          and teams into greatness.
+        </p>
       </div>
-      <BackgroundBeams />
     </div>
   );
 };

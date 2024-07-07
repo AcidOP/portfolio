@@ -1,8 +1,7 @@
 import TimeDisplay from './TimeDisplay';
 
-import { suez_400 } from '@/components/fonts';
+import { ScreenFitText } from '@/components/ScreenFitText';
 import config from '@/data/config';
-import { cn } from '@/utils/cn';
 
 import moment from 'moment-timezone';
 import Image from 'next/image';
@@ -14,14 +13,10 @@ const Hero = () => {
 
   return (
     <>
-      <h1
-        className={cn(
-          'py-16 text-7xl lg:text-end lg:text-8xl',
-          suez_400.className,
-        )}
-      >
-        <span className='hidden lg:inline-block'>...</span>More About Me
-      </h1>
+      <div className='my-16'>
+        <ScreenFitText text='More' className='lg:hidden' />
+        <ScreenFitText text='About Me' />
+      </div>
 
       <div className='mx-auto grid max-w-xl gap-2 lg:max-w-none lg:grid-cols-5'>
         <section className='pb-16 pt-8 text-4xl font-medium lg:col-span-2 lg:py-0 lg:text-5xl'>

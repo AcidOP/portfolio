@@ -1,4 +1,4 @@
-import Heading from '../heading';
+import { ScreenFitText } from '../ScreenFitText';
 
 import { getXRecentWorks } from '@/utils/works';
 
@@ -15,7 +15,7 @@ const Works = () => {
 
   return (
     <>
-      <Heading text='Selected Works.' className='my-24 uppercase' />
+      <ScreenFitText text='Selected Works.' />
 
       <Link href={firstWork.url}>
         <Image

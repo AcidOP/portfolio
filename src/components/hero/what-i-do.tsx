@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 const WhatIDo = () => {
   const skills = [
     {
-      title: 'Web Development',
+      title: 'Development',
       description:
         'I create unique, custom-coded websites that are tailored to your brand. I focus on scalability, performance, accessibility, and engaging animations for a memorable experience.',
       works: ['CMS Integration', 'Motion & Animations', 'Accessibility'],
@@ -32,7 +32,7 @@ const WhatIDo = () => {
 
   return (
     <div className='mb-36'>
-      <div className='flex flex-col justify-between pb-12 lg:flex-row'>
+      <div className='flex flex-col justify-between py-36 lg:flex-row'>
         <Heading text='What I Do.' />
 
         <h3

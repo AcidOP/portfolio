@@ -1,7 +1,7 @@
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
 
-import { inter_700, suez_400 } from '@/components/fonts';
+import { inter_700, inter_900 } from '@/components/fonts';
 import { getXRecentBlogs } from '@/utils/blog';
 import { cn } from '@/utils/cn';
 
@@ -53,16 +53,12 @@ const About = () => {
 
         <Link
           href='/about'
-          className='group grid h-1/3 place-content-center bg-black text-5xl text-white lg:text-6xl'
+          className={cn(
+            'bg-black py-4 text-5xl text-white transition-all hover:rounded-xl lg:text-6xl',
+            inter_900.className,
+          )}
         >
-          <span
-            className={cn(
-              'transition-all duration-200 group-hover:scale-105',
-              suez_400.className,
-            )}
-          >
-            About Me
-          </span>
+          <button className='w-full'>ABOUT ME</button>
         </Link>
 
         <div className='relative hidden h-2/3 w-full max-w-md space-x-6 object-cover text-lg saturate-0 transition-all duration-300 hover:saturate-100 lg:flex'>
@@ -87,7 +83,7 @@ const About = () => {
               src={blog.cover}
               alt={blog.title}
               fill
-              className='-z-10 rounded-2xl object-cover blur-sm brightness-50 contrast-125'
+              className='-z-10 rounded-2xl object-cover blur-sm brightness-[0.4] contrast-125'
             />
 
             <div className='grid h-full place-content-center p-6 text-center text-3xl text-white'>

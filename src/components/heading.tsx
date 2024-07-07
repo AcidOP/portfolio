@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 
-import { suez_400 } from './fonts';
+import { inter_900 } from './fonts';
 
 import { cn } from '@/utils/cn';
 
@@ -15,8 +15,8 @@ const Heading = ({ text, className, as = 'h2' }: HeadingProps) => {
     as,
     {
       className: cn(
-        'text-6xl font-black lg:text-8xl',
-        suez_400.className,
+        'text-6xl lg:text-8xl uppercase',
+        inter_900.className,
         className,
       ),
     },

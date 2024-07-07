@@ -4,7 +4,7 @@ import './globals.css';
 
 import Analytics from '@/components/analytics';
 import Favicon from '@/components/favicon';
-import Footer from '@/components/footer/footer';
+import Footer from '@/components/footer';
 import Navbar from '@/components/navbar/navbar';
 import config from '@/data/config';
 import { cn } from '@/utils/cn';

@@ -1,7 +1,7 @@
-import { suez_400 } from '../fonts';
+import { suez_400 } from './fonts';
 // import allLinks from '../navbar/navlinks';
-import Newsletter from '../newsletter/newsletter';
-import ContactLink from './contact-link';
+import Newsletter from './newsletter/newsletter';
+import { ScreenFitText } from './ScreenFitText';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
@@ -15,8 +15,16 @@ const Footer = () => {
   // const miscLinks: Link[] = allLinks.filter(link => link.dropdown);
 
   return (
-    <footer className='relative my-24'>
-      <ContactLink />
+    <footer className='mt-24'>
+      <ScreenFitText
+        text='Have a question or want to work together?'
+        className='opacity-60'
+      />
+      <ScreenFitText
+        text='Get in touch'
+        href='/contact'
+        className='opacity-80'
+      />
 
       {/* FIX: Causes horizontal overflow  */}
       {/* <div className='absolute inset-0 -z-10 h-[550px] w-[550px] overflow-x-hidden rounded-full bg-violet-500 opacity-40 blur-[64px]' /> */}
@@ -39,31 +47,21 @@ const Footer = () => {
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
-            <ul className='space-y-2'>
+            <ul className='space-y-2 capitalize'>
               <li>
-                <NextLink href='/' className='capitalize'>
-                  Home
-                </NextLink>
+                <NextLink href='/'>Home</NextLink>
               </li>
               <li>
-                <NextLink href='/about' className='capitalize'>
-                  about
-                </NextLink>
+                <NextLink href='/about'>about</NextLink>
               </li>
               <li>
-                <NextLink href='/works' className='capitalize'>
-                  works
-                </NextLink>
+                <NextLink href='/works'>works</NextLink>
               </li>
               <li>
-                <NextLink href='/blogs' className='capitalize'>
-                  blogs
-                </NextLink>
+                <NextLink href='/blogs'>blogs</NextLink>
               </li>
               <li>
-                <NextLink href='/contact' className='capitalize'>
-                  contact
-                </NextLink>
+                <NextLink href='/contact'>contact</NextLink>
               </li>
             </ul>
           </div>
@@ -89,25 +87,18 @@ const Footer = () => {
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
-            <ul className='space-y-2'>
+            <ul className='space-y-2 capitalize'>
               <li>
                 <NextLink href='/privacy-policy'>Privacy Policy</NextLink>
               </li>
-
               <li>
-                <NextLink href='/tags' className='capitalize'>
-                  tags
-                </NextLink>
+                <NextLink href='/tags'>tags</NextLink>
               </li>
               <li>
-                <NextLink href='/uses' className='capitalize'>
-                  uses
-                </NextLink>
+                <NextLink href='/uses'>uses</NextLink>
               </li>
               <li>
-                <NextLink href='/newsletter' className='capitalize'>
-                  Newsletter
-                </NextLink>
+                <NextLink href='/newsletter'>Newsletter</NextLink>
               </li>
             </ul>
           </div>
@@ -115,18 +106,11 @@ const Footer = () => {
       </div>
 
       <div className='text-center'>
-        <p className='my-6 text-6xl font-black leading-[0%] opacity-85 lg:text-[7rem] lg:leading-[30%]'>
+        <time className='my-6 text-6xl font-black opacity-85 lg:text-[7rem]'>
           © {new Date().getFullYear()}
-        </p>
+        </time>
 
-        <h4
-          className={cn(
-            'text-8xl font-black opacity-85 lg:text-[17rem]',
-            suez_400.className,
-          )}
-        >
-          {config.name}.
-        </h4>
+        <ScreenFitText text='AcidOP' className='opacity-85' />
       </div>
     </footer>
   );
