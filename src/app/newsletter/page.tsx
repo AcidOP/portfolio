@@ -1,6 +1,6 @@
 import SubscribeBox from './SubscribeBox';
 
-import { suez_400 } from '@/components/fonts';
+import { inter_900 } from '@/components/fonts';
 import { cn } from '@/utils/cn';
 
 const NewsletterPage = () => {
@@ -10,7 +10,7 @@ const NewsletterPage = () => {
         <h1
           className={cn(
             'text-center text-6xl font-black text-white lg:text-7xl',
-            suez_400.className,
+            inter_900.className,
           )}
         >
           Stay Updated

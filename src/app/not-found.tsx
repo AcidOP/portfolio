@@ -1,5 +1,5 @@
 import image404 from '@/../public/images/404/404.svg';
-import { suez_400 } from '@/components/fonts';
+import { inter_800 } from '@/components/fonts';
 import { cn } from '@/utils/cn';
 
 import Image from 'next/image';
@@ -20,7 +20,7 @@ const NotFound = () => {
         <h1
           className={cn(
             'mb-3 text-6xl drop-shadow-2xl lg:text-9xl lg:text-white',
-            suez_400.className,
+            inter_800.className,
           )}
         >
           Lost in space?
@@ -33,10 +33,10 @@ const NotFound = () => {
           <span
             className={cn(
               'relative z-10 text-nowrap text-3xl font-medium text-white transition-all duration-300 group-hover:text-black lg:text-6xl',
-              suez_400.className,
+              inter_800.className,
             )}
           >
-            Come home.
+            Come Home.
           </span>
           <span className='absolute inset-0 overflow-hidden'>
             <span className='absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-white transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150'></span>

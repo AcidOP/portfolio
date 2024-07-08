@@ -24,7 +24,7 @@ const About = () => {
   return (
     <div
       className={cn(
-        'relative mb-32 mt-16 flex flex-col gap-6 rounded-3xl lg:flex-row',
+        'relative my-16 flex flex-col gap-6 rounded-3xl lg:flex-row',
         inter_700.className,
       )}
     >

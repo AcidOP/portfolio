@@ -1,4 +1,4 @@
-import { suez_400 } from './fonts';
+import { inter_500, inter_700 } from './fonts';
 import MarqueeText from './MarqueeText';
 // import allLinks from '../navbar/navlinks';
 import Newsletter from './newsletter/newsletter';
@@ -38,7 +38,7 @@ const Footer = () => {
       <div className='my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
           <h3
-            className={cn('mb-6 text-3xl font-bold', suez_400.className)}
+            className={cn('mb-6 text-3xl font-bold', inter_500.className)}
           >
             Newsletter 📰
           </h3>
@@ -47,7 +47,7 @@ const Footer = () => {
 
         <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
           <div className='w-full'>
-            <h4 className={cn('text-xl', suez_400.className)}>
+            <h4 className={cn('text-xl', inter_700.className)}>
               Navigation
             </h4>
 
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
 
           <div className='w-full'>
-            <h4 className={cn('text-xl', suez_400.className)}>Socials</h4>
+            <h4 className={cn('text-xl', inter_700.className)}>Socials</h4>
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
 
           <div className='w-full'>
-            <h4 className={cn('text-xl', suez_400.className)}>Misc</h4>
+            <h4 className={cn('text-xl', inter_700.className)}>Misc</h4>
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 

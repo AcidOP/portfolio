@@ -3,7 +3,7 @@ import MobileNav from './mobile';
 import NavLink from './nav-link';
 import links from './navlinks';
 
-import { suez_400 } from '@/components/fonts';
+import { inter_500 } from '@/components/fonts';
 import config from '@/data/config';
 import logo from '@/data/logo.png';
 
@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className='text-3xl font-bold'>
         <Link href='/' className='flex items-center'>
           <Image src={logo} width={50} height={50} alt='logo' />
-          <span className={suez_400.className}>{config.name}</span>
+          <span className={inter_500.className}>{config.name}</span>
         </Link>
       </div>
 

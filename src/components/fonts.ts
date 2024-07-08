@@ -1,6 +1,4 @@
-import { Inter, Suez_One } from 'next/font/google';
-
-export const suez_400 = Suez_One({ subsets: ['latin'], weight: '400' });
+import { Inter } from 'next/font/google';
 
 export const inter_400 = Inter({ subsets: ['latin'], weight: '400' });
 export const inter_500 = Inter({ subsets: ['latin'], weight: '500' });
