@@ -1,4 +1,5 @@
 import { suez_400 } from './fonts';
+import MarqueeText from './MarqueeText';
 // import allLinks from '../navbar/navlinks';
 import Newsletter from './newsletter/newsletter';
 import { ScreenFitText } from './ScreenFitText';
@@ -15,7 +16,7 @@ const Footer = () => {
   // const miscLinks: Link[] = allLinks.filter(link => link.dropdown);
 
   return (
-    <footer className='mt-24'>
+    <footer className='relative mt-24'>
       <ScreenFitText
         text='Have a question or want to work together?'
         className='opacity-60'
@@ -26,8 +27,13 @@ const Footer = () => {
         className='opacity-80'
       />
 
+      <MarqueeText
+        text={['Development', 'Designing', 'SEO']}
+        className='my-24 hidden lg:flex'
+      />
+
       {/* FIX: Causes horizontal overflow  */}
-      {/* <div className='absolute inset-0 -z-10 h-[550px] w-[550px] overflow-x-hidden rounded-full bg-violet-500 opacity-40 blur-[64px]' /> */}
+      <div className='absolute left-0 top-1/2 -z-10 h-[400px] w-[400px] -translate-y-1/2 overflow-x-hidden rounded-full bg-violet-400 opacity-70 blur-[64px] lg:h-[550px] lg:w-[550px]' />
 
       <div className='my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
