@@ -38,7 +38,7 @@ const MarqueeText = ({ text, duration = 30, className }: IProps) => {
     .fill(null)
     .flatMap(() => toArray);
 
-  const dotted = line.flatMap(item => [item, '●']);
+  const dotted = line.flatMap(item => [item, '•']);
 
   typeof text === 'string' ? (duration = 12) : null;
 
