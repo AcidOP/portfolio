@@ -25,15 +25,13 @@ const MobileNavbar = ({ toggle }: MobileNavbarProps) => {
       initial={{ x: '-100%' }}
       animate={{ x: 0 }}
       exit={{ x: '200%' }}
-      className='absolute left-0 top-20 grid h-[calc(100vh-5rem)] w-screen place-content-center bg-black text-white opacity-90 backdrop-blur-sm'
+      className='absolute left-0 top-20 flex h-[calc(100vh-5rem)] w-full flex-col items-center justify-center gap-3 bg-black text-3xl font-medium text-white opacity-90 backdrop-blur-sm'
     >
-      <ul className='space-y-6 text-4xl font-bold' onClick={toggle}>
-        {links.map(link => (
-          <li key={link.url}>
-            <Link href={link.url}>{link.text}</Link>
-          </li>
-        ))}
-      </ul>
+      {links.map(link => (
+        <Link key={link.url} href={link.url} onClick={toggle}>
+          {link.text}
+        </Link>
+      ))}
     </motion.div>
   );
 };

@@ -15,7 +15,13 @@ const Works = () => {
 
   return (
     <>
-      <ScreenFitText text='Selected Works.' />
+      <hr className='mb-16 lg:hidden' />
+      <ScreenFitText text='Selected Works.' className='hidden lg:block' />
+
+      <div className='mb-16 mt-32 lg:hidden'>
+        <ScreenFitText text='Selected' />
+        <ScreenFitText text='Works' />
+      </div>
 
       <Link href={firstWork.url}>
         <Image

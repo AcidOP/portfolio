@@ -12,10 +12,10 @@ const Testimonials = () => {
     <div>
       <Heading
         text='HEAR WHAT PEOPLE SAY ABOUT ME.'
-        className='mb-16 hidden text-center text-7xl lg:block'
+        className='my-48 hidden text-center text-7xl lg:block'
       />
 
-      <div className='lg:hidden'>
+      <div className='mb-16 mt-48 lg:hidden'>
         <ScreenFitText text='HEAR' />
         <ScreenFitText text='WHAT PEOPLE' />
         <ScreenFitText text='SAY ABOUT ME.' />

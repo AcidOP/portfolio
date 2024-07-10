@@ -1,8 +1,5 @@
-'use client';
-
 import { cn } from '@/utils/cn';
 
-import { motion } from 'framer-motion';
 import { IoMdClose } from 'react-icons/io';
 import { IoMenu } from 'react-icons/io5';
 
@@ -15,17 +12,16 @@ const HamburgerButton = ({ isOpen, toggle }: HamburgerProps) => {
   const Icon = isOpen ? IoMdClose : IoMenu;
 
   return (
-    <motion.button
-      initial={false}
+    <button
       onClick={toggle}
       className={cn(
-        'relative rounded-full border-black bg-white text-4xl transition-all duration-200 hover:scale-95 lg:border-2 lg:p-2 lg:text-2xl',
+        'relative rounded-full border-black text-4xl transition-all duration-200 hover:scale-95 lg:border-2 lg:bg-white lg:p-2 lg:text-2xl',
         isOpen && 'lg:bg-violet-600 lg:text-white',
       )}
       aria-label='Toggle menu'
     >
       <Icon />
-    </motion.button>
+    </button>
   );
 };
 

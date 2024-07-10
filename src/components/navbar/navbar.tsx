@@ -31,7 +31,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='ml-8 '>
+        <div className='ml-8'>
           <DropdownMenu />
         </div>
       </div>

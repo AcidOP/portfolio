@@ -13,7 +13,7 @@ const Index = () => {
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence mode='wait'>
         <Hamburger isOpen={isOpen} toggle={toggle} />
         {isOpen && <MobileNavbar toggle={toggle} />}
       </AnimatePresence>
