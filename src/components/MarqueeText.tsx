@@ -45,7 +45,7 @@ const MarqueeText = ({ text, duration = 30, className }: IProps) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-between overflow-hidden border-y-4 border-black bg-violet-700 py-2 lg:py-4 uppercase text-white shadow-2xl text-xl lg:text-5xl',
+        'flex items-center justify-between overflow-hidden border-y-4 border-black bg-violet-700 py-2 text-xl uppercase text-white shadow-2xl lg:py-4 lg:text-5xl',
         className,
       )}
     >
