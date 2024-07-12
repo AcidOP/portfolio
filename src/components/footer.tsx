@@ -29,7 +29,7 @@ const Footer = () => {
 
       <MarqueeText
         text={['Development', 'Designing', 'SEO']}
-        className='my-24 hidden lg:flex'
+        className='my-24'
       />
 
       {/* FIX: Causes horizontal overflow  */}

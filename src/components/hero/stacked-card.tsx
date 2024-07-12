@@ -25,7 +25,7 @@ const StackedCard = ({
     >
       <h3
         className={cn(
-          'my-12 text-6xl opacity-80 lg:text-8xl',
+          'my-12 text-5xl opacity-80 lg:text-8xl',
           inter_900.className,
         )}
       >
@@ -49,7 +49,7 @@ const StackedCard = ({
             <li
               key={work}
               className={cn(
-                'z-10 text-nowrap pb-3 text-3xl font-bold opacity-70 lg:text-5xl',
+                'z-10 text-nowrap pb-3 text-2xl font-bold opacity-70 lg:text-5xl',
                 inter_900.className,
               )}
             >
