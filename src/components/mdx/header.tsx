@@ -16,6 +16,7 @@ const Header = async ({
   tags,
   services,
   stats,
+  website,
 }: BlogWork) => {
   const blurUrl = await getPlaceholder(cover);
 
@@ -74,6 +75,12 @@ const Header = async ({
           <p className='text-nowrap opacity-70'>
             🔠 {stats.wordCount} words
           </p>
+        )}
+
+        {website && (
+          <a href={website} target='_blank' rel="noreferrer" className='text-nowrap opacity-70'>
+            🔗 Link
+          </a>
         )}
       </div>
 
