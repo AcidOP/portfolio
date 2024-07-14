@@ -78,12 +78,7 @@ const Header = async ({
         )}
 
         {website && (
-          <a
-            href={website}
-            target='_blank'
-            rel='noreferrer'
-            className='text-nowrap opacity-70'
-          >
+          <a href={website} target='_blank' rel="noreferrer" className='text-nowrap opacity-70'>
             🔗 Link
           </a>
         )}
