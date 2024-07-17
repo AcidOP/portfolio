@@ -50,14 +50,14 @@ const Newsletter = () => {
   ];
 
   return (
-    <div>
-      <p className='mb-2 font-medium opacity-70'>
+    <>
+      <p className='mb-2 text-lg font-medium opacity-70'>
         Join our newsletter to get updates on new things in our community.
       </p>
 
       <SubscribeBox />
 
-      <div className='my-3 flex w-full flex-row items-center'>
+      <div className='my-3 flex flex-row items-center'>
         <AnimatedTooltip items={people} />
 
         <p className='pl-6'>
@@ -66,7 +66,7 @@ const Newsletter = () => {
         </p>
       </div>
 
-      <p className='mt-4 w-full max-w-md text-xs'>
+      <p className='mt-4 max-w-md'>
         By subscribing you agree to with our{' '}
         <Link
           href='/privacy-policy'
@@ -76,7 +76,7 @@ const Newsletter = () => {
         </Link>{' '}
         and provide consent to receive updates from me.
       </p>
-    </div>
+    </>
   );
 };
 

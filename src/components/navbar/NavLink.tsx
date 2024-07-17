@@ -13,7 +13,7 @@ interface NavLinkProps extends LinkProps {
   children: ReactNode;
 }
 
-const NavLink = ({ children, className, ...rest }: NavLinkProps) => {
+const NavLink = ({ className, ...rest }: NavLinkProps) => {
   const pathname = usePathname();
   const firstSlug = '/' + pathname.split('/')[1];
 
@@ -28,17 +28,17 @@ const NavLink = ({ children, className, ...rest }: NavLinkProps) => {
       {...rest}
       // https://buttons.ibelick.com/
       className={cn(
-        'group relative h-12 px-4 text-neutral-950',
+        'group relative px-4 text-neutral-950',
         isActive ? 'font-semibold text-violet-900' : 'opacity-80',
         className,
       )}
     >
       <span className='relative inline-flex overflow-hidden'>
         <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12'>
-          {children}
+          {rest.children}
         </div>
         <div className='absolute translate-y-[110%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
-          {children}
+          {rest.children}
         </div>
       </span>
     </Link>

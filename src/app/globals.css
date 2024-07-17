@@ -9,6 +9,12 @@ body {
   /* background-color: #EEF7FF; */
 }
 
+@layer components {
+  .layout-container {
+    @apply mx-auto px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0;
+  }
+}
+
 /* * {
   border: 2px solid red;
 } */

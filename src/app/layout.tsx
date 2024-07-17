@@ -5,7 +5,7 @@ import './globals.css';
 import Analytics from '@/components/analytics';
 import Favicon from '@/components/favicon';
 import Footer from '@/components/footer';
-import Navbar from '@/components/navbar/navbar';
+import Navbar from '@/components/navbar';
 import config from '@/data/config';
 import { cn } from '@/utils/cn';
 
@@ -57,15 +57,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
       </head>
 
-      <body
-        className={cn(
-          'mx-auto overflow-x-hidden px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0',
-          inter_500.className,
-        )}
-        suppressHydrationWarning
-      >
+      <body>
         <Navbar />
-        {children}
+
+        <div className={cn('layout-container', inter_500.className)}>
+          {children}
+        </div>
+
         <Footer />
       </body>
     </html>

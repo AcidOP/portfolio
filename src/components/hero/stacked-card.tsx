@@ -20,7 +20,7 @@ const StackedCard = ({
 }: StackedCardProps) => {
   return (
     <div
-      style={{ top: `calc(5rem + ${index * 5}rem)`, zIndex: 0 + index }}
+      style={{ top: `calc(${index * 5}rem)`, zIndex: 0 + index }}
       className='sticky w-full border-t-2 border-black/20 bg-white p-3'
     >
       <h3

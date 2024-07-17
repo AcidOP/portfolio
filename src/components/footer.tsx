@@ -1,6 +1,5 @@
 import { inter_500, inter_700 } from './fonts';
 import MarqueeText from './MarqueeText';
-// import allLinks from '../navbar/navlinks';
 import Newsletter from './newsletter/newsletter';
 import { ScreenFitText } from './ScreenFitText';
 
@@ -9,33 +8,29 @@ import { cn } from '@/utils/cn';
 
 import NextLink from 'next/link';
 
-// import type Link from '@/types/NavLink';
-
 const Footer = () => {
-  // const navLinks: Link[] = allLinks.filter(link => !link.dropdown);
-  // const miscLinks: Link[] = allLinks.filter(link => link.dropdown);
-
   return (
     <footer className='relative mt-24'>
-      <ScreenFitText
-        text='Have a question or want to work together?'
-        className='opacity-60'
-      />
-      <ScreenFitText
-        text='Get in touch'
-        href='/contact'
-        className='opacity-80'
-      />
+      <div className='layout-container'>
+        <ScreenFitText
+          text='Have a question or want to work together?'
+          className='opacity-60'
+        />
+        <ScreenFitText
+          text='Get in touch'
+          href='/contact'
+          className='opacity-80'
+        />
+      </div>
 
       <MarqueeText
         text={['Development', 'Designing', 'SEO']}
         className='my-24'
       />
 
-      {/* FIX: Causes horizontal overflow  */}
       <div className='absolute left-0 top-1/2 -z-10 h-[400px] w-[400px] -translate-y-1/2 overflow-x-hidden rounded-full bg-violet-400 opacity-70 blur-[64px] lg:h-[550px] lg:w-[550px]' />
 
-      <div className='my-24 flex flex-col lg:flex-row'>
+      <div className='layout-container my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
           <h3
             className={cn('mb-6 text-3xl font-bold', inter_500.className)}
@@ -111,7 +106,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='text-center'>
+      <div className='layout-container text-center'>
         <time className='my-6 text-6xl font-black opacity-85 lg:text-[7rem]'>
           © {new Date().getFullYear()}
         </time>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import Hamburger from '../hamburger';
+import Hamburger from '../Hamburger';
 import MobileNavbar from './mobile-nav';
 
 import { AnimatePresence } from 'framer-motion';
@@ -12,12 +12,12 @@ const Index = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <>
-      <AnimatePresence mode='wait'>
-        <Hamburger isOpen={isOpen} toggle={toggle} />
+    <div className='lg:hidden'>
+      <Hamburger isOpen={isOpen} toggle={toggle} />
+      <AnimatePresence mode='sync'>
         {isOpen && <MobileNavbar toggle={toggle} />}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
