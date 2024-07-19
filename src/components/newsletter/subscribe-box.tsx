@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 import DisplayConfetti from '../confetti';
-import emailoctopus from './providers/emailoctopus';
 
 import { isValidEmail } from '@/utils/email';
 
@@ -15,6 +14,9 @@ const SubscribeBox = () => {
     if (!isValidEmail(email)) {
       return alert('Please enter a valid email address');
     }
+
+    const emailoctopus = (await import('./providers/emailoctopus'))
+      .default;
 
     const res = await emailoctopus(email);
 
@@ -45,7 +47,7 @@ const SubscribeBox = () => {
         Subscribe
       </button>
 
-      <DisplayConfetti showConfetti={showConfetti} />
+      {showConfetti && <DisplayConfetti showConfetti={showConfetti} />}
     </div>
   );
 };

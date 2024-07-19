@@ -24,7 +24,7 @@ const Block = ({ line, duration }: BlockProps) => {
       className='flex flex-shrink-0'
     >
       {line.map((item, index) => (
-        <span key={index} className='mx-10 w-full max-w-xl'>
+        <span key={index} className='mx-10'>
           {item}
         </span>
       ))}
@@ -32,7 +32,7 @@ const Block = ({ line, duration }: BlockProps) => {
   );
 };
 
-const MarqueeText = ({ text, duration = 30, className }: IProps) => {
+const MarqueeText = ({ text, duration = 60, className }: IProps) => {
   const toArray = Array.isArray(text) ? text : [text];
   const line = Array(10)
     .fill(null)
@@ -45,7 +45,7 @@ const MarqueeText = ({ text, duration = 30, className }: IProps) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-between overflow-hidden border-y-4 border-black bg-violet-700 py-2 text-xl uppercase text-white shadow-2xl lg:py-4 lg:text-5xl',
+        'flex items-center justify-between border-y-4 border-black bg-violet-700 py-4 text-2xl font-medium uppercase text-white shadow-2xl lg:text-5xl',
         className,
       )}
     >

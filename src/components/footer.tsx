@@ -1,4 +1,4 @@
-import { inter_500, inter_700 } from './fonts';
+import { inter_700 } from './fonts';
 import MarqueeText from './MarqueeText';
 import Newsletter from './newsletter/newsletter';
 import { ScreenFitText } from './ScreenFitText';
@@ -24,7 +24,7 @@ const Footer = () => {
       </div>
 
       <MarqueeText
-        text={['Development', 'Designing', 'SEO']}
+        text={['React Developer', 'Web Design', 'SEO']}
         className='my-24'
       />
 
@@ -33,7 +33,7 @@ const Footer = () => {
       <div className='layout-container my-24 flex flex-col lg:flex-row'>
         <div className='max-w-md'>
           <h3
-            className={cn('mb-6 text-3xl font-bold', inter_500.className)}
+            className={cn('mb-6 text-3xl font-bold', inter_700.className)}
           >
             Newsletter 📰
           </h3>
