@@ -10,7 +10,7 @@ const WhatIDo = () => {
       title: 'Development',
       description:
         'I create unique, custom-coded websites that are tailored to your brand. I focus on scalability, performance, accessibility, and engaging animations for a memorable experience.',
-      works: ['CMS Integration', 'Motion & Animations', 'Accessibility'],
+      works: ['React Development', 'Motion & Animations', 'Accessibility'],
     },
     {
       title: 'Web Design',
@@ -22,11 +22,7 @@ const WhatIDo = () => {
       title: 'SEO',
       description:
         'Beyond crafting visually memorable websites, I also optimize your online presence to elevate your visibility in search rankings so your voices can be heard in the digital landscape.',
-      works: [
-        'Technical SEO',
-        'On-Page Optimization',
-        'SEO Audits & Analysis',
-      ],
+      works: ['On-Page SEO', 'Technical SEO', 'Content Creation'],
     },
   ];
 
@@ -41,9 +37,8 @@ const WhatIDo = () => {
             inter_700.className,
           )}
         >
-          My obsession is to deliver a digital experience that not only
-          serves a great purpose, but give your business an unfair
-          advantage.
+          Dedicated to deliver a digital experience that not only serves a
+          great purpose, but give your business an unfair advantage.
         </h3>
       </div>
 

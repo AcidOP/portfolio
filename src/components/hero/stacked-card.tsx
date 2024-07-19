@@ -20,31 +20,33 @@ const StackedCard = ({
 }: StackedCardProps) => {
   return (
     <div
-      style={{ top: `calc(${index * 5}rem)`, zIndex: 0 + index }}
+      style={{ top: `calc(5rem + ${index * 5}rem)`, zIndex: 0 + index }}
       className='sticky w-full border-t-2 border-black/20 bg-white p-3'
     >
       <h3
         className={cn(
-          'my-12 text-5xl opacity-80 lg:text-8xl',
+          'mb-12 text-5xl opacity-80 lg:text-8xl',
           inter_900.className,
         )}
       >
         {title}
       </h3>
 
-      <div className='flex w-full flex-col gap-10 lg:flex-row'>
-        <RoughNotation type='box' show>
-          <p
-            className={cn(
-              'w-full p-3 text-lg opacity-60 lg:text-2xl',
-              inter_600.className,
-            )}
-          >
-            {description}
-          </p>
-        </RoughNotation>
+      <div className='flex w-full flex-col justify-between gap-10 lg:flex-row'>
+        <div className='w-full lg:w-1/2'>
+          <RoughNotation type='box' show>
+            <p
+              className={cn(
+                'p-3 text-lg opacity-60 lg:text-2xl',
+                inter_600.className,
+              )}
+            >
+              {description}
+            </p>
+          </RoughNotation>
+        </div>
 
-        <ul className='relative flex w-full flex-col gap-1 lg:gap-y-3 lg:pl-10'>
+        <ul className='flex w-full flex-col gap-1 lg:w-1/2 lg:gap-y-3 lg:pl-10'>
           {works.map(work => (
             <li
               key={work}
