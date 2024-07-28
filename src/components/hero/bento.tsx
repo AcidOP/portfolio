@@ -1,5 +1,6 @@
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
+import Container from '../Container';
 
 import { inter_700, inter_900 } from '@/components/fonts';
 import { getXRecentBlogs } from '@/utils/blog';
@@ -22,7 +23,7 @@ const About = () => {
   const recentBlogs = getXRecentBlogs(LATEST_BLOGS);
 
   return (
-    <div
+    <Container
       className={cn(
         'relative my-16 flex flex-col gap-6 rounded-3xl lg:flex-row',
         inter_700.className,
@@ -92,7 +93,7 @@ const About = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

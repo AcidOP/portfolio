@@ -13,7 +13,10 @@ interface IProps {
 
 const Logo = ({ className }: IProps) => {
   return (
-    <Link href='/' className={cn('flex items-center', className)}>
+    <Link
+      href='/'
+      className={cn('flex items-center text-3xl font-bold', className)}
+    >
       <Image src={logo} width={50} height={50} alt='logo' />
       <span className={inter_900.className}>{config.name}</span>
     </Link>

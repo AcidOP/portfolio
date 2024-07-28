@@ -1,12 +1,13 @@
 import Calendly from './Calendly';
 
+import Container from '@/components/Container';
 import config from '@/data/config';
 
 const ContactPage = () => {
   const { name } = config;
 
   return (
-    <section className='my-28 flex flex-col items-start justify-between lg:my-60 lg:flex-row'>
+    <Container className='my-28 flex flex-col items-start justify-between lg:my-60 lg:flex-row'>
       <div className='w-full font-medium lg:w-3/5'>
         <p className='text-3xl'>
           I&apos;d love to get to know about you, your business, project or
@@ -31,7 +32,7 @@ const ContactPage = () => {
       </div>
 
       <Calendly name={name} url={config.calendlyUrl} />
-    </section>
+    </Container>
   );
 };
 

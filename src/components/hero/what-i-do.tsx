@@ -1,3 +1,4 @@
+import Container from '../Container';
 import { inter_700 } from '../fonts';
 import Heading from '../heading';
 import StackedCard from './stacked-card';
@@ -27,7 +28,7 @@ const WhatIDo = () => {
   ];
 
   return (
-    <div className='mb-36'>
+    <Container className='mb-36'>
       <div className='flex flex-col justify-between py-36 lg:flex-row'>
         <Heading text='What I Do.' />
 
@@ -47,7 +48,7 @@ const WhatIDo = () => {
           <StackedCard key={index} index={index} {...skill} />
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

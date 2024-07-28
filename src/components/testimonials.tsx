@@ -1,3 +1,4 @@
+import Container from './Container';
 import { inter_400 } from './fonts';
 import Heading from './heading';
 import { ScreenFitText } from './ScreenFitText';
@@ -9,7 +10,7 @@ import Image from 'next/image';
 
 const Testimonials = () => {
   return (
-    <div>
+    <Container>
       <Heading
         text='HEAR WHAT PEOPLE SAY ABOUT ME.'
         className='my-48 hidden text-center text-7xl lg:block'
@@ -70,7 +71,7 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

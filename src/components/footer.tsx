@@ -1,3 +1,4 @@
+import Container from './Container';
 import { inter_700 } from './fonts';
 import MarqueeText from './MarqueeText';
 import Newsletter from './newsletter/newsletter';
@@ -11,7 +12,7 @@ import NextLink from 'next/link';
 const Footer = () => {
   return (
     <footer className='relative mt-24'>
-      <div className='layout-container'>
+      <Container>
         <ScreenFitText
           text='Have a question or want to work together?'
           className='opacity-60'
@@ -21,7 +22,7 @@ const Footer = () => {
           href='/contact'
           className='opacity-80'
         />
-      </div>
+      </Container>
 
       <MarqueeText
         text={['React Developer', 'Web Design', 'SEO']}
@@ -30,8 +31,8 @@ const Footer = () => {
 
       <div className='absolute left-0 top-1/2 -z-10 h-[400px] w-[400px] -translate-y-1/2 overflow-x-hidden rounded-full bg-violet-400 opacity-70 blur-[64px] lg:h-[550px] lg:w-[550px]' />
 
-      <div className='layout-container my-24 flex flex-col lg:flex-row'>
-        <div className='max-w-md'>
+      <Container className='my-24 flex flex-col lg:flex-row lg:gap-16'>
+        <div className='w-full max-w-lg'>
           <h3
             className={cn('mb-6 text-3xl font-bold', inter_700.className)}
           >
@@ -40,7 +41,7 @@ const Footer = () => {
           <Newsletter />
         </div>
 
-        <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0 lg:w-1/2'>
+        <div className='mx-auto mt-16 flex w-full justify-between lg:mt-0'>
           <div className='w-full'>
             <h4 className={cn('text-xl', inter_700.className)}>
               Navigation
@@ -48,7 +49,7 @@ const Footer = () => {
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
-            <ul className='space-y-2 capitalize'>
+            <ul className='space-y-2 text-lg capitalize'>
               <li>
                 <NextLink href='/'>Home</NextLink>
               </li>
@@ -72,7 +73,7 @@ const Footer = () => {
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
-            <ul className='space-y-2'>
+            <ul className='space-y-2 text-lg capitalize'>
               {config.socials.map(social => (
                 <li key={social.name}>
                   <NextLink href={social.url} className='capitalize'>
@@ -88,7 +89,7 @@ const Footer = () => {
 
             <hr className='my-6 w-[80%] border border-gray-300' />
 
-            <ul className='space-y-2 capitalize'>
+            <ul className='space-y-2 text-lg capitalize'>
               <li>
                 <NextLink href='/privacy-policy'>Privacy Policy</NextLink>
               </li>
@@ -104,7 +105,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </Container>
 
       <div className='layout-container text-center'>
         <time className='my-6 text-6xl font-black opacity-85 lg:text-[7rem]'>

@@ -1,3 +1,4 @@
+import Container from '../Container';
 import { inter_700, inter_900 } from '../fonts';
 import MarqueeText from '../MarqueeText';
 
@@ -11,7 +12,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className='flex h-[70vh] w-full items-center justify-center lg:h-[100vh]'>
+      <Container className='flex h-[70vh] w-full items-center justify-center lg:h-[100vh]'>
         <HeroBlob />
 
         <div className='relative flex h-[32vh] w-full flex-col place-items-baseline justify-between lg:h-1/2'>
@@ -44,10 +45,11 @@ const Hero = () => {
             and teams into greatness.
           </p>
         </div>
-      </div>
+      </Container>
+
       <MarqueeText
         text={['React Developer', 'Web Design', 'SEO']}
-        className='full-width my-10 lg:my-24'
+        className='my-10 lg:my-24'
       />
     </>
   );

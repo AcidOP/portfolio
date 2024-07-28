@@ -1,3 +1,4 @@
+import Container from '../Container';
 import ContactButton from './ContactBtn';
 import DropdownMenu from './dropdown';
 import Logo from './Logo';
@@ -9,8 +10,8 @@ const Navbar = () => {
   const headerLinks = links.filter(({ dropdown }) => !dropdown);
 
   return (
-    <div className='layout-container flex h-full items-center justify-between'>
-      <Logo className='text-3xl font-bold' />
+    <Container className='layout-container flex h-full items-center justify-between py-5'>
+      <Logo />
 
       <div className='hidden items-center text-xl font-medium lg:flex'>
         <div className='flex gap-6'>
@@ -25,7 +26,7 @@ const Navbar = () => {
 
       <ContactButton className='hidden lg:block' />
       <MobileNav />
-    </div>
+    </Container>
   );
 };
 

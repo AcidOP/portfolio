@@ -1,3 +1,4 @@
+import Container from '../Container';
 import { ScreenFitText } from '../ScreenFitText';
 
 import { getXRecentWorks } from '@/utils/works';
@@ -14,7 +15,7 @@ const Works = () => {
   const otherWorks = worksData.slice(1, NO_OF_WORKS);
 
   return (
-    <>
+    <Container>
       <hr className='mb-16 lg:hidden' />
       <ScreenFitText text='Selected Works.' className='hidden lg:block' />
 
@@ -46,7 +47,7 @@ const Works = () => {
           </Link>
         ))}
       </div>
-    </>
+    </Container>
   );
 };
 

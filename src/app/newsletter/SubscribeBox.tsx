@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import { inter_900 } from '@/components/fonts';
 import emailoctopus from '@/components/newsletter/providers/emailoctopus';
 import { cn } from '@/utils/cn';
 import { isValidEmail } from '@/utils/email';
@@ -28,7 +29,21 @@ const SubscribeBox = () => {
   };
 
   return (
-    <>
+    <div className='mx-1 mt-24 rounded-xl border-2 border-black bg-violet-800 px-3 py-16 lg:mx-auto lg:mb-48 lg:w-full lg:max-w-3xl lg:px-10'>
+      <h1
+        className={cn(
+          'text-center text-6xl font-black text-white lg:text-7xl',
+          inter_900.className,
+        )}
+      >
+        Stay Updated
+      </h1>
+
+      <h2 className='mt-4 text-center text-white opacity-70'>
+        Stay updated with the latest news about tech and software
+        development. Don&apos;t miss out on the latest trends and updates.
+      </h2>
+
       <label
         htmlFor='UserEmail'
         className='relative mx-6 block overflow-hidden border-b border-gray-200 bg-transparent pt-3 text-white focus-within:border-blue-600 lg:mt-8'
@@ -58,7 +73,7 @@ const SubscribeBox = () => {
       >
         Subscribe
       </button>
-    </>
+    </div>
   );
 };
 

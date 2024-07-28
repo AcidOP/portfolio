@@ -22,7 +22,7 @@ const Index = () => {
         hidden: { y: '-100%', opacity: 0 },
       }}
       animate={hidden ? 'hidden' : 'visible'}
-      className='sticky top-0 z-50 h-20 w-full bg-white'
+      className='sticky top-0 z-50 w-full bg-white'
     >
       <Navbar />
     </motion.nav>

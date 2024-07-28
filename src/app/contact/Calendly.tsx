@@ -24,12 +24,10 @@ const Calendly = ({ url, name }: CalendlyProps) => {
             alt='Calendly'
             width={64}
             height={64}
-            className='m-3 ml-0 rounded-full shadow-2xl'
+            className='m-3 ml-0 rounded-full border-2 border-black shadow-2xl'
           />
 
-          <div className='w-min text-nowrap text-2xl lg:text-xl'>
-            {name}
-          </div>
+          <h2 className='w-min text-nowrap text-2xl lg:text-xl'>{name}</h2>
         </div>
       </a>
     </div>
