@@ -36,7 +36,7 @@ const Footer = () => {
           <h3
             className={cn('mb-6 text-3xl font-bold', inter_700.className)}
           >
-            Newsletter 📰
+            Subscribe List 📰
           </h3>
           <Newsletter />
         </div>

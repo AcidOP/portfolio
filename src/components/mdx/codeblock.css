@@ -1,5 +1,13 @@
 code {
-  padding: 0.5rem;
+  @apply relative bg-violet-200 px-2 text-violet-800;
+}
+
+code::before {
+  content: '`';
+}
+
+code::after {
+  content: '`';
 }
 
 .highlighted,

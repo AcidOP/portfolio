@@ -113,7 +113,7 @@ const prettyCodeOptions: Options = {
     transformerNotationDiff(),
     transformerNotationFocus(),
   ],
-  keepBackground: true,
+  keepBackground: false,
   onVisitLine(node: any) {
     if (node.children.length === 0) {
       node.children = [{ type: 'text', value: ' ' }];
