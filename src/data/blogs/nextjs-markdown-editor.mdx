@@ -14,11 +14,16 @@ cover: 'https://images.unsplash.com/photo-1623039405147-547794f92e9e?q=80&w=1726
 - Learn to change states in parent component from child.
 - Have fun 🔥
 
-To check the finished build [click here](https://next-markdown-editor.vercel.app/)
+![Finished product](/blogs/nextjs-markdown-editor/mdx-editor.jpg)
+
+Visit the finished build [here](https://editor.acidop.codes/)
 
 # 1. Create the landing page
 
-I want a simple layout so I divided the screen into two parts; the left being the editor and we see the markdown rendering on the right.
+I want a simple layout so I divided the screen into two parts
+
+1. Left side: editor
+2. Right side: markdown preview
 
 ```typescript
 const Homepage = () => {
@@ -73,7 +78,7 @@ const Homepage = () => {
 }
 ```
 
-# 3. Setup `react-markdown` and `@tailwindcss/typography`
+# 3. Setup dependencies for Markdown
 
 We use [react-markdown](https://www.npmjs.com/package/react-markdown) to render markdown and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) to style the markdown. Install them by firing the following commands.
 
@@ -104,7 +109,9 @@ const Homepage = () => {
 }
 ```
 
-Now if you type any markdown you'd still not find any changes. This is because we forgot to add the `@tailwindcss/typography` plugin to the tailwindcss config 💀
+Now if you type any markdown you'd still not find any changes.
+
+We forgot to add the `@tailwindcss/typography` plugin to the tailwindcss config 💀
 
 Change your `tailwind.config.ts` to the following:
 
