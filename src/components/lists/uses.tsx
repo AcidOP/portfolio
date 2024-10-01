@@ -1,5 +1,4 @@
 import ProductCard from '@/components/cards/product';
-
 import { Uses } from '@/data/uses';
 
 const ListUses = ({ uses }: { uses: Uses }) => {

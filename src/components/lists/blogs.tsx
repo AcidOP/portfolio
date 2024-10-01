@@ -1,6 +1,6 @@
+import BlogCard from '@/components/cards/blog';
 
 import type { Blog } from 'contentlayer/generated';
-import BlogCard from '@/components/cards/blog';
 
 const ListBlogs = ({ blogs }: { blogs: Blog[] }) => {
   return (

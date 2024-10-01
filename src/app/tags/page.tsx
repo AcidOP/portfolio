@@ -1,6 +1,5 @@
-import Tag from '@/components/tag';
-
 import Heading from '@/components/heading';
+import Tag from '@/components/tag';
 import { getBlogTags } from '@/utils/blog';
 
 const AllTags = () => {

@@ -26,7 +26,7 @@ const About = () => {
     <div className='my-36'>
       <h2
         className={cn(
-          'mx-auto grid lg:gap-2 text-center text-2xl lg:text-5xl text-gray-700',
+          'mx-auto grid text-center text-2xl text-gray-700 lg:gap-2 lg:text-5xl',
           inter_900.className,
         )}
       >
@@ -40,27 +40,28 @@ const About = () => {
             <div
               key={item.heading}
               className={cn(
-                'flex justify-between gap-16 min-h-96',
+                'flex min-h-96 justify-between gap-16',
                 index % 2 === 0 ? 'flex-row' : 'flex-row-reverse',
                 index > 0 && 'mt-72',
               )}
             >
-              <div className='w-3/5 grid'>
+              <div className='grid w-3/5'>
                 <h3
                   className={cn('text-6xl uppercase', inter_900.className)}
                 >
                   {item.heading}
                 </h3>
-                <p className='text-xl text-gray-600'>
-                  {item.description}
-                </p>
+                <p className='text-xl text-gray-600'>{item.description}</p>
 
                 {item.social && (
                   <a
                     href={item.social.url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className={cn('mt-8 inline-block text-4xl text-violet-500 uppercase', inter_900.className)}
+                    className={cn(
+                      'mt-8 inline-block text-4xl uppercase text-violet-500',
+                      inter_900.className,
+                    )}
                   >
                     Follow me on {item.social.name} &#8599;
                   </a>
