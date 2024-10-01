@@ -1,7 +1,7 @@
-import Container from './Container';
+import Container from './container';
 import { inter_400 } from './fonts';
 import Heading from './heading';
-import { ScreenFitText } from './ScreenFitText';
+import { ScreenFitText } from './screen-fit-text';
 
 import testimonials from '@/data/testimonials';
 import { cn } from '@/utils/cn';

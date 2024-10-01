@@ -1,6 +1,6 @@
-import Container from '../Container';
+import Container from '../container';
 import { inter_700, inter_900 } from '../fonts';
-import MarqueeText from '../MarqueeText';
+import MarqueeText from '../marquee-text';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';

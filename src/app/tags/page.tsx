@@ -1,4 +1,4 @@
-import Tag from './Tag';
+import Tag from '@/components/tag';
 
 import Heading from '@/components/heading';
 import { getBlogTags } from '@/utils/blog';

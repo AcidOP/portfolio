@@ -1,4 +1,4 @@
-import Container from '../Container';
+import Container from '../container';
 import { inter_700 } from '../fonts';
 import Heading from '../heading';
 import StackedCard from './stacked-card';

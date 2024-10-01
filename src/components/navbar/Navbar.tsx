@@ -1,4 +1,4 @@
-import Container from '../Container';
+import Container from '../container';
 import ContactButton from './ContactBtn';
 import DropdownMenu from './dropdown';
 import Logo from './Logo';

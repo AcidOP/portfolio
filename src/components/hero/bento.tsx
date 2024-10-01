@@ -1,6 +1,6 @@
 import authorImage from '../../../public/images/hero-about-transformed.webp';
 import lamps from '../../../public/images/lamps.jpg';
-import Container from '../Container';
+import Container from '../container';
 
 import { inter_700, inter_900 } from '@/components/fonts';
 import { getXRecentBlogs } from '@/utils/blog';

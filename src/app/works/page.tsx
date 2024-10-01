@@ -1,5 +1,5 @@
-import ListWorks from '@/components/lists/ListWorks';
-import { ScreenFitText } from '@/components/ScreenFitText';
+import ListWorks from '@/components/lists/works';
+import { ScreenFitText } from '@/components/screen-fit-text';
 
 import { allWorks } from 'contentlayer/generated';
 

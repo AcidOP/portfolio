@@ -1,6 +1,6 @@
-import Calendly from './Calendly';
+import Calendly from '@/components/calendly';
 
-import Container from '@/components/Container';
+import Container from '@/components/container';
 import config from '@/data/config';
 
 const ContactPage = () => {
