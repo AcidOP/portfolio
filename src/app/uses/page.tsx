@@ -1,5 +1,5 @@
 import Container from '@/components/container';
-import ListUses from '@/components/lists/ListUses';
+import ListUses from '@/components/lists/uses';
 import uses from '@/data/uses';
 
 const Uses = () => {

@@ -1,4 +1,4 @@
-import ListBlogs from '@/components/lists/ListBlogs';
+import ListBlogs from '@/components/lists/blogs';
 import Pagination from '@/components/pagination';
 import config from '@/data/config';
 import { blogsPerPage, TOTAL_PAGES } from '@/utils/blog';
