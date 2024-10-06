@@ -1,6 +1,6 @@
 'use client';
 
-import WorkCard from '../cards/WorkCard';
+import WorkCard from '@/components/cards/work';
 
 import { motion } from 'framer-motion';
 

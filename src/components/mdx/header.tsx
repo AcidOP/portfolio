@@ -18,7 +18,7 @@ const Header = async ({
   stats,
   website,
 }: BlogWork) => {
-  const blurUrl = await getPlaceholder(cover);
+  const blurUrl = await getPlaceholder(cover!);
 
   return (
     <>
@@ -92,7 +92,7 @@ const Header = async ({
       <div className='relative mt-7 aspect-video'>
         <Image
           src={blurUrl.src}
-          alt={title}
+          alt={title ?? 'Cover Image'}
           fill
           priority
           placeholder='blur'

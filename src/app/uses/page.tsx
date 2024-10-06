@@ -1,4 +1,4 @@
-import Container from '@/components/Container';
+import Container from '@/components/container';
 import ListUses from '@/components/lists/ListUses';
 import uses from '@/data/uses';
 

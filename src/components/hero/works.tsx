@@ -1,5 +1,5 @@
-import Container from '../Container';
-import { ScreenFitText } from '../ScreenFitText';
+import Container from '../container';
+import { ScreenFitText } from '../screen-fit-text';
 
 import { getXRecentWorks } from '@/utils/works';
 

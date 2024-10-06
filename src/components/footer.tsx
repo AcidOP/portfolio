@@ -1,8 +1,8 @@
-import Container from './Container';
+import Container from './container';
 import { inter_700 } from './fonts';
-import MarqueeText from './MarqueeText';
+import MarqueeText from './marquee-text';
 import Newsletter from './newsletter/newsletter';
-import { ScreenFitText } from './ScreenFitText';
+import { ScreenFitText } from './screen-fit-text';
 
 import config from '@/data/config';
 import { cn } from '@/utils/cn';

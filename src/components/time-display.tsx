@@ -9,7 +9,6 @@ interface Props {
 
 const TimeDisplay = ({ timezone }: Props) => {
   const [currentTime, setCurrentTime] = useState('');
-  const [isClient, setIsClient] = useState(false);
 
   const getISTTime = () => {
     const date = new Date();
@@ -20,29 +19,25 @@ const TimeDisplay = ({ timezone }: Props) => {
       second: '2-digit',
       timeZone: timezone,
       hour12: false,
+      timeZoneName: 'short',
     };
+
     const timeString = new Intl.DateTimeFormat('en-GB', options).format(
       date,
     );
-    return `${timeString} UTC+05:30`;
+
+    return timeString;
   };
 
   useEffect(() => {
-    setIsClient(true);
     setCurrentTime(getISTTime());
+
+    const timerId = setInterval(() => {
+      setCurrentTime(getISTTime());
+    }, 1000);
+
+    return () => clearInterval(timerId);
   }, []);
-
-  useEffect(() => {
-    if (isClient) {
-      const timerId = setInterval(() => {
-        setCurrentTime(getISTTime());
-      }, 1000);
-
-      return () => clearInterval(timerId);
-    }
-  }, [isClient]);
-
-  if (!isClient) return null;
 
   return currentTime;
 };

@@ -1,7 +1,6 @@
-import About from './About';
-import Hero from './Hero';
-
-import Container from '@/components/Container';
+import About from '@/components/about';
+import Hero from '@/components/about-hero';
+import Container from '@/components/container';
 
 const AboutPage = () => {
   return (

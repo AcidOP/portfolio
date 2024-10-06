@@ -1,7 +1,4 @@
-import React from 'react';
-
-import ProductCard from '../cards/ProductCard';
-
+import ProductCard from '@/components/cards/product';
 import { Uses } from '@/data/uses';
 
 const ListUses = ({ uses }: { uses: Uses }) => {
