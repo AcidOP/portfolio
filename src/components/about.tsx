@@ -92,6 +92,7 @@ const About = () => {
                   src={item.image!}
                   width={100}
                   height={100}
+                  quality={100}
                   alt={item.heading}
                   className={cn(
                     'mx-auto w-[90%] object-cover sm:w-1/2 md:w-full',
