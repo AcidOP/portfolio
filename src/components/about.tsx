@@ -30,7 +30,7 @@ const aboutItems = [
 
 const DropShadow = () => {
   return (
-    <div className='absolute left-1/2 top-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-700 opacity-90 blur-3xl lg:h-[500px] lg:w-[500px] lg:blur-[128px]' />
+    <div className='absolute left-1/2 top-1/2 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-700 opacity-90 blur-3xl md:h-[350px] md:w-[350px] md:blur-[96px] lg:h-[500px] lg:w-[500px] lg:blur-[128px]' />
   );
 };
 
@@ -54,21 +54,21 @@ const About = () => {
               key={item.heading}
               className={cn(
                 'flex min-h-[600px] flex-col-reverse items-center justify-between gap-16 border-b-2 pb-10 lg:gap-16',
-                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse',
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
                 index > 0 && 'mt-48 lg:mt-16',
               )}
             >
               <div className='w-full space-y-10 lg:w-7/12'>
                 <h3
                   className={cn(
-                    'text-center text-4xl uppercase lg:text-start lg:text-6xl',
+                    'text-center text-4xl uppercase md:text-start lg:text-6xl',
                     inter_900.className,
                   )}
                 >
                   {item.heading}
                 </h3>
 
-                <p className='text-center text-lg text-gray-600 lg:text-start lg:text-xl'>
+                <p className='text-center text-lg text-gray-600 md:text-start lg:text-xl'>
                   {item.description}
                 </p>
 
@@ -78,7 +78,7 @@ const About = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                     className={cn(
-                      'mt-8 inline-block text-center text-4xl uppercase text-violet-500 hover:underline lg:text-start',
+                      'mt-8 inline-block text-center text-4xl uppercase text-violet-500 hover:underline md:text-start',
                       inter_900.className,
                     )}
                   >
@@ -94,18 +94,10 @@ const About = () => {
                   height={10}
                   alt=''
                   className={cn(
-                    'mx-auto w-[90%] object-cover lg:w-full',
+                    'mx-auto w-[90%] object-cover sm:w-1/2 md:w-full',
                     item.imgBorder && 'border-2 border-black shadow-2xl',
                   )}
                 />
-
-                {/* {
-                  index % 2 === 0 ? (
-                    <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-violet-700 rounded-full blur-[128px] -z-10' />
-                  ) : (
-                    <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-violet-700 rounded-full blur-[128px] -z-10' />
-                  )
-                } */}
 
                 <DropShadow />
               </div>
