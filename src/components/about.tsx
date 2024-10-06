@@ -90,9 +90,9 @@ const About = () => {
               <div className='relative w-full lg:w-5/12'>
                 <Image
                   src={item.image!}
-                  width={10}
-                  height={10}
-                  alt=''
+                  width={100}
+                  height={100}
+                  alt={item.heading}
                   className={cn(
                     'mx-auto w-[90%] object-cover sm:w-1/2 md:w-full',
                     item.imgBorder && 'border-2 border-black shadow-2xl',
