@@ -10,23 +10,25 @@ const Navbar = () => {
   const headerLinks = links.filter(({ dropdown }) => !dropdown);
 
   return (
-    <Container className='layout-container flex h-full items-center justify-between py-5'>
-      <Logo />
+    <nav className='sticky top-0 z-50 w-full border-b bg-white'>
+      <Container className='flex h-16 items-center justify-between'>
+        <Logo />
 
-      <div className='hidden items-center text-xl font-medium lg:flex'>
-        <div className='flex gap-6'>
-          {headerLinks.map(({ url, text }) => (
-            <NavLink key={url} href={url}>
-              {text}
-            </NavLink>
-          ))}
+        <div className='hidden items-center text-xl font-medium lg:flex'>
+          <div className='flex gap-6'>
+            {headerLinks.map(({ url, text }) => (
+              <NavLink key={url} href={url}>
+                {text}
+              </NavLink>
+            ))}
+          </div>
+          <DropdownMenu className='ml-8' />
         </div>
-        <DropdownMenu className='ml-8' />
-      </div>
 
-      <ContactButton className='hidden lg:block' />
-      <MobileNav />
-    </Container>
+        <ContactButton className='hidden lg:block' />
+        <MobileNav />
+      </Container>
+    </nav>
   );
 };
 

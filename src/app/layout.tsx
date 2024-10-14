@@ -5,9 +5,8 @@ import './globals.css';
 import Analytics from '@/components/analytics';
 import Favicon from '@/components/favicon';
 import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
+import Navbar from '@/components/navbar/Navbar';
 import config from '@/data/config';
-import { cn } from '@/utils/cn';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    site: process.env.NEXT_PUBLIC_SITE_URL ?? 'x.com',
+    site: process.env.NEXT_PUBLIC_SITE_URL ?? '',
     card: 'summary_large_image',
     title: config.title,
     description: config.description,
@@ -59,11 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       <body>
         <Navbar />
-
-        <div className={cn('layout-container', inter_500.className)}>
-          {children}
-        </div>
-
+        <div className={inter_500.className}>{children}</div>
         <Footer />
       </body>
     </html>

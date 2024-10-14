@@ -4,19 +4,11 @@
 
 body {
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
-  /* background-color: #A3FFD6; */
-  /* background-color: #A3D8FF; */
-  /* background-color: #EEF7FF; */
 }
 
 /* @layer components {
   .layout-container {
     @apply mx-auto px-6 lg:max-w-[calc(100vw-8rem)] lg:px-0;
-  }
-
-  .full-width {
-    @apply relative left-[calc(-50vw+50%)] w-screen overflow-hidden;
   }
 } */
 
