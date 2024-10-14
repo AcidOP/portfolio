@@ -15,19 +15,19 @@ const Hero = () => {
       <Container className='flex h-[70vh] w-full items-center justify-center lg:h-[100vh]'>
         <HeroBlob />
 
-        <div className='relative flex h-[32vh] w-full flex-col place-items-baseline justify-between lg:h-1/2'>
+        <div className='w-full space-y-10 py-16'>
           <div>
-            <h1
+            <h2
               className={cn(
-                'text-5xl opacity-75 lg:text-[5rem]',
+                'text-5xl opacity-75 md:text-6xl lg:text-7xl',
                 inter_700.className,
               )}
             >
               Hello,
-            </h1>
+            </h2>
             <h1
               className={cn(
-                'text-6xl lg:text-[7rem]',
+                'text-6xl md:text-7xl lg:text-8xl',
                 inter_900.className,
               )}
             >
@@ -35,15 +35,15 @@ const Hero = () => {
             </h1>
           </div>
 
-          <p
+          <div
             className={cn(
-              'absolute bottom-0 right-0 w-full indent-8 text-xl opacity-75 sm:max-w-xl md:max-w-2xl lg:max-w-3xl lg:text-4xl',
+              'ml-auto w-full indent-8 text-xl opacity-75 sm:max-w-md md:max-w-2xl lg:max-w-3xl lg:text-4xl',
               inter_700.className,
             )}
           >
             — a hybrid developer and designer nudging early-stage startups
             and teams into greatness.
-          </p>
+          </div>
         </div>
       </Container>
 
