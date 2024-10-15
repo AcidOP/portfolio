@@ -92,10 +92,10 @@ const About = () => {
                   src={item.image!}
                   width={100}
                   height={100}
-                  quality={100}
+                  unoptimized
                   alt={item.heading}
                   className={cn(
-                    'mx-auto w-[90%] object-cover sm:w-1/2 md:w-full',
+                    'mx-auto object-cover sm:w-1/2 md:w-full',
                     item.imgBorder && 'border-2 border-black shadow-2xl',
                   )}
                 />
