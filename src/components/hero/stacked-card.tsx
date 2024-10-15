@@ -24,7 +24,7 @@ const StackedCard = ({
     >
       <h3
         className={cn(
-          'pt-3 pb-10 text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-gray-900',
+          'pb-10 pt-3 text-4xl text-gray-900 sm:text-5xl md:text-7xl lg:text-8xl',
           inter_900.className,
         )}
       >
