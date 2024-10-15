@@ -29,12 +29,12 @@ const WhatIDo = () => {
 
   return (
     <Container className='mb-36'>
-      <div className='flex flex-col justify-between py-36 lg:flex-row'>
+      <div className='flex flex-col justify-between py-36 xl:flex-row'>
         <Heading text='What I Do.' />
 
         <h3
           className={cn(
-            'mt-7 text-xl opacity-70 lg:mt-0 lg:max-w-2xl lg:text-3xl',
+            'mt-7 text-xl opacity-70 xl:mt-0 xl:max-w-2xl xl:text-3xl',
             inter_700.className,
           )}
         >
