@@ -1,7 +1,9 @@
+import BlogHeader from '@/components/blog-header';
 import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
 import ScrollTop from '@/components/mdx/scroll-top';
+import TOC from '@/components/mdx/toc-mdx';
 import { generateJsonLd } from '@/components/Schema';
 import { generateSeoTags } from '@/components/Seo';
 import { blogSlugs, getBlogBySlug } from '@/utils/blog';
@@ -30,6 +32,8 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
 
   const jsonLd = generateJsonLd(blog);
 
+  const headings = blog.headings;
+
   return (
     <>
       <script
@@ -37,12 +41,13 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className='mx-auto w-full max-w-4xl'>
-        <GoBackButton />
-        <Header {...blog} />
+      <GoBackButton className='ml-auto mt-16 md:text-xl' />
+      <BlogHeader {...blog} />
+      <div className='flex'>
+        <TOC contents={headings} className='hidden pt-14 md:block' />
         <Mdx code={blog.body.code} />
-        <ScrollTop />
       </div>
+      <ScrollTop />
     </>
   );
 };

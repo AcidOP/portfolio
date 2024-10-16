@@ -11,7 +11,7 @@ interface MarkdownProps {
 const Mdx = ({ code }: MarkdownProps) => {
   const MDXContent = getMDXComponent(code);
   return (
-    <article className='prose mx-auto w-full max-w-4xl lg:prose-xl prose-a:no-underline'>
+    <article className='prose mx-auto w-full lg:prose-xl prose-a:no-underline'>
       <MDXContent components={components} />
     </article>
   );
