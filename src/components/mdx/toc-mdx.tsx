@@ -41,7 +41,7 @@ const Toc = ({ contents, className }: TOCProps) => {
   return (
     <div className={cn('sticky top-16 h-min max-w-sm', className)}>
       <nav className='pl-8'>
-        <h4 className='pb-4 text-2xl font-bold'>On this page</h4>
+        <h6 className='pb-4 text-2xl font-bold'>On this page</h6>
 
         <ul>
           {contents.map(content => {
