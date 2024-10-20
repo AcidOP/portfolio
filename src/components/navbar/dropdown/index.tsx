@@ -6,6 +6,7 @@ import Hamburger from '../Hamburger';
 import links from '../navlinks';
 import Menu from './menu';
 
+import useClickOutside from '@/hooks/use-click-outside';
 import { cn } from '@/utils/cn';
 
 import { AnimatePresence } from 'framer-motion';
@@ -16,15 +17,21 @@ interface IProps {
 
 const DropdownMenu = ({ className }: IProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const close = () => setIsOpen(false);
+
+  const ref = useClickOutside(close);
+
+  const handleClick = () => {
+    setIsOpen(value => !value);
+  };
 
   const dropdownLinks = links.filter(({ dropdown }) => dropdown);
 
   return (
-    <div className={cn('relative', className)}>
-      <Hamburger isOpen={isOpen} toggle={toggle} />
+    <div className={cn('relative', className)} ref={ref}>
+      <Hamburger isOpen={isOpen} toggle={handleClick} />
       <AnimatePresence>
-        {isOpen && <Menu links={dropdownLinks} toggle={toggle} />}
+        {isOpen && <Menu links={dropdownLinks} toggle={close} />}
       </AnimatePresence>
     </div>
   );
