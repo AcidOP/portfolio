@@ -19,8 +19,12 @@ code::after {
   @apply rounded-sm border-neutral-500 bg-neutral-700;
 }
 
-.has-focused > code > span {
-  @apply blur-sm;
+.has-focused > code {
+  @apply z-0 blur-sm hover:blur-none;
+}
+
+.has-focused > code > span > .focused {
+  @apply z-10 blur-none;
 }
 
 .has-focused .focused {

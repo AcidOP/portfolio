@@ -1,8 +1,8 @@
-import { components } from './mdx-components';
+import components from './mdx-components';
 
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 
-import './codeblock.css';
+import '@/styles/codeblock.css';
 
 interface MarkdownProps {
   code: string;

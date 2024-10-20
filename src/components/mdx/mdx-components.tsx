@@ -1,65 +1,138 @@
-import { H1, H2, H3, H4, H5, H6 } from './text-headings';
+import BetterImage from './image';
+import BetterLink from './link';
+import { CustomHeading } from './text-headings';
 
-import NextImage from 'next/image';
-import Link from 'next/link';
+import { cn } from '@/utils/cn';
 
-import type { HTMLProps } from 'react';
+type ComponentProps = React.HTMLAttributes<HTMLElement>;
 
-const BetterLink = (props: HTMLProps<HTMLAnchorElement>) => {
-  const styles =
-    'rounded px-1 py-[2px] font-bold text-violet-600 hover:underline text-nowrap';
-  const href = props.href || '';
-  const isInternalLink = href.startsWith('/') || href.startsWith('#');
-
-  if (isInternalLink)
-    return (
-      <Link href={href} className={styles}>
-        {props.children}
-      </Link>
-    );
-
-  return (
-    <a
-      href={href}
-      target='_blank'
-      rel='noopener noreferrer'
-      className={styles}
-    >
-      {props.children} ↗
-    </a>
-  );
-};
-
-const BetterImage = ({ ...rest }) => {
-  return (
-    <NextImage
-      src={rest.src}
-      alt={rest.alt}
-      {...rest}
-      width={100}
-      height={100}
-      sizes='100vw'
-      className='mx-auto h-auto w-auto border-2 border-black shadow-2xl'
+const components = {
+  h1: ({ className, ...props }: ComponentProps) => (
+    <CustomHeading
+      as='h2'
+      className={cn(
+        'mt-2 scroll-m-20 text-4xl font-black tracking-tight first:mt-0',
+        className,
+      )}
+      {...props}
     />
-  );
-};
-
-const p = (props: HTMLProps<HTMLParagraphElement>) => {
-  return (
-    <div className='not-prose mt-6 leading-[1.5] lg:mt-12'>
-      {props.children}
+  ),
+  h2: ({ className, ...props }: ComponentProps) => (
+    <CustomHeading
+      as='h2'
+      className={cn(
+        'mt-10 scroll-m-20 border-b pb-1 text-4xl font-black tracking-tight first:mt-0',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  h3: ({ className, ...props }: ComponentProps) => (
+    <CustomHeading
+      as='h3'
+      className={cn(
+        'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  h4: ({ className, ...props }: ComponentProps) => (
+    <CustomHeading
+      as='h4'
+      className={cn(
+        'mt-8 scroll-m-20 text-xl font-black tracking-tight',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  h5: ({ className, ...props }: ComponentProps) => (
+    <CustomHeading
+      as='h5'
+      className={cn(
+        'mt-8 scroll-m-20 text-lg font-semibold tracking-tight',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  h6: ({ className, ...props }: ComponentProps) => (
+    <CustomHeading
+      as='h6'
+      className={cn(
+        'mt-8 scroll-m-20 text-base font-semibold tracking-tight',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  p: ({ className, ...props }: ComponentProps) => (
+    <p
+      className={cn('leading-8 [&:not(:first-child)]:mt-16', className)}
+      {...props}
+    />
+  ),
+  ul: ({ className, ...props }: ComponentProps) => (
+    <ul className={cn('my-6 ml-6 list-disc', className)} {...props} />
+  ),
+  ol: ({ className, ...props }: ComponentProps) => (
+    <ol className={cn('my-6 ml-6 list-decimal', className)} {...props} />
+  ),
+  li: ({ className, ...props }: ComponentProps) => (
+    <li className={cn('mt-2', className)} {...props} />
+  ),
+  blockquote: ({ className, ...props }: ComponentProps) => (
+    <blockquote
+      className={cn(
+        '[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  hr: ({ ...props }) => <hr className='my-4 md:my-8' {...props} />,
+  table: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLTableElement>) => (
+    <div className='my-6 w-full overflow-y-auto'>
+      <table className={cn('w-full', className)} {...props} />
     </div>
-  );
-};
-
-export const components = {
-  p,
+  ),
+  tr: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <tr
+      className={cn('even:bg-muted m-0 border-t p-0', className)}
+      {...props}
+    />
+  ),
+  th: ({ className, ...props }: ComponentProps) => (
+    <th
+      className={cn(
+        'border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  td: ({ className, ...props }: ComponentProps) => (
+    <td
+      className={cn(
+        'border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
+        className,
+      )}
+      {...props}
+    />
+  ),
+  div: ({ className, ...props }: ComponentProps) => (
+    <div className={cn('my-6', className)} {...props} />
+  ),
+  // Image,
   a: BetterLink,
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  h4: H4,
-  h5: H5,
-  H6: H6,
   img: BetterImage,
 };
+
+export default components;

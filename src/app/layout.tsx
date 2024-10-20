@@ -1,6 +1,6 @@
 import { inter_500 } from '@/components/fonts';
 
-import './globals.css';
+import '@/styles/globals.css';
 
 import Analytics from '@/components/analytics';
 import Favicon from '@/components/favicon';

@@ -10,11 +10,12 @@ import {
 } from '@shikijs/transformers';
 // Contentlayer
 import { makeSource } from 'contentlayer2/source-files';
-// Rehype Plugins
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypePresetMinify from 'rehype-preset-minify';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSanitize from 'rehype-sanitize';
+// Rehype Plugins
+import rehypeSlug from 'rehype-slug';
 // Remark Plugins
 import remarkBreaks from 'remark-breaks';
 import remarkCodeTitles from 'remark-flexible-code-titles';
@@ -38,7 +39,7 @@ const prettyCodeOptions: Options = {
     }
   },
   onVisitHighlightedLine(node: any) {
-    node.properties.className.push('highlighted');
+    node.properties.className.push('line line--highlighted');
   },
 };
 
@@ -47,6 +48,7 @@ export default makeSource({
   documentTypes: [Blog, Work, PrivacyPolicy],
   mdx: {
     rehypePlugins: [
+      rehypeSlug,
       rehypeSanitize,
       rehypePresetMinify,
       [rehypePrettyCode, prettyCodeOptions],
