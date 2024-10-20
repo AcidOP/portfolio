@@ -3,6 +3,7 @@ import GoBackButton from '@/components/mdx/back-button';
 import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
 import ScrollTop from '@/components/mdx/scroll-top';
+import SharePost from '@/components/mdx/share-post';
 import TOC from '@/components/mdx/toc-mdx';
 import { generateJsonLd } from '@/components/Schema';
 import { generateSeoTags } from '@/components/Seo';
@@ -41,11 +42,12 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <GoBackButton className='ml-auto mt-16 md:text-xl' />
+      <GoBackButton className='mt-16 md:text-xl' />
       <BlogHeader {...blog} />
-      <div className='flex'>
-        <TOC contents={headings} className='hidden pt-14 md:block' />
+      <div className='flex flex-col gap-6 lg:flex-row lg:gap-0'>
+        <TOC contents={headings} />
         <Mdx code={blog.body.code} />
+        <SharePost {...blog} />
       </div>
       <ScrollTop />
     </>

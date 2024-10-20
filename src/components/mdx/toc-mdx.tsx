@@ -39,7 +39,12 @@ const Toc = ({ contents, className }: TOCProps) => {
   if (!contents.length) return null;
 
   return (
-    <div className={cn('sticky top-16 h-min max-w-sm', className)}>
+    <div
+      className={cn(
+        'sticky top-32 hidden h-min max-w-sm md:block',
+        className,
+      )}
+    >
       <nav className='pl-8'>
         <h6 className='pb-4 text-2xl font-bold'>On this page</h6>
 
