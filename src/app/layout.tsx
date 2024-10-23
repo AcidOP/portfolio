@@ -10,7 +10,6 @@ import config from '@/data/config';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { cn } from '@/utils/cn';
 
 export const metadata: Metadata = {
   title: config.title,
