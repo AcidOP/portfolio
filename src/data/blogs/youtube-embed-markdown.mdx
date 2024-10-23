@@ -1,0 +1,94 @@
+---
+title: 'How to embed YouTube Videos in MDX Using Next.js'
+date: '2024-10-24'
+tags: ['development', 'webdev']
+description: 'Learn how to embed YouTube videos in your MDX Nextjs blog with a Custom Component.'
+cover: '/blogs/developer-seo-tips/cover.jpg'
+---
+
+Let's learn how to embed YouTube videos in your MDX Next.js blog with a Custom Component.
+
+## 1) YouTube Component
+
+I store all code related to markdown in `src/components/mdx` folder.
+Let's create a new file called `youtube.tsx` in that folder.
+
+```jsx
+// src/components/mdx/youtube.tsx
+
+export default function YouTube({ id }: { id: string }) {
+  return (
+    <div className='border-2 border-black'>
+      <iframe
+        className='aspect-video w-full'
+        src={`https://www.youtube.com/embed/${id}`}
+        title='YouTube Video Player'
+      />
+    </div>
+  );
+}
+```
+
+Let's understand the above code:
+
+- Takes a **required** single prop `id` which is the YouTube video ID.
+- Returns a div with a border and an iframe that embeds the YouTube video.
+- The [IFrame](https://www.geeksforgeeks.org/html-iframes/) URL is constructed using the video ID.
+
+<Callout variant='tip' className='mt-16'>
+  To make the IFrame responsive, add the `aspect-video w-full` classnames
+  to the IFrame within a div.
+</Callout>
+
+## 2) Add Component to MDX Provider
+
+Next, we need to add the YouTube component to the MDX Provider.
+I am using Contentlayer for my blog, so I will use the `getMDXComponent` function to create the MDX component.
+
+```jsx
+import { getMDXComponent } from 'next-contentlayer2/hooks';
+import YouTube from './youtube'; // [!code highlight]
+
+interface MarkdownProps { code: string }
+
+const Mdx = ({ code }: MarkdownProps) => {
+  const MDXContent = getMDXComponent(code);
+  return (
+    <article className='prose mx-auto w-full'>
+      <MDXContent components={{YouTube}} /> // [!code highlight]
+    </article>
+  );
+};
+
+export default Mdx;
+```
+
+Breakdown of the above code:
+
+- We import the newly created YouTube component.
+- We create an MDX component using the `getMDXComponent` function.
+- We pass the YouTube component to the MDXContent component.
+
+How you use the component may differ based on your MDX setup.
+Check below to find documentation for your setup:
+
+- [@next/mdx](https://nextjs.org/docs/app/building-your-application/configuring/mdx#add-an-mdx-componentstsx-file)
+- [next-mdx-remote](https://www.dhiwise.com/post/comprehensive-guide-to-using-next-mdx-remote-in-nextjs#custom-components-and-data-handling)
+- [mdx-bundler](https://github.com/kentcdodds/mdx-bundler?tab=readme-ov-file#component-substitution)
+
+## 3) Usage in MDX
+
+Now you can use the YouTube component in your MDX files.
+
+```jsx
+<YouTube id='dQw4w9WgXcQ' />
+```
+
+Above code will create the following result:
+
+<YouTube id='dQw4w9WgXcQ' />
+
+<Callout className='mt-16'>
+  You can find the video ID in the YouTube video URL.
+  eg:`https://www.youtube.com/watch?v=dQw4w9WgXcQ` -> ID: dQw4w9WgXcQ
+</Callout>
