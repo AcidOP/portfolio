@@ -52,7 +52,7 @@ export default function SharePost({ title, url, className }: IProps) {
   return (
     <div
       className={cn(
-        'sticky top-32 flex h-min items-center justify-between gap-3 rounded bg-violet-200 px-4 py-3 lg:flex-col lg:px-2 lg:py-4',
+        'sticky top-32 flex h-min items-center justify-between gap-3 rounded border-2 border-black bg-white px-4 py-3 lg:flex-col lg:px-2 lg:py-4 shadow-xl',
         className,
       )}
     >
@@ -68,7 +68,7 @@ export default function SharePost({ title, url, className }: IProps) {
           >
             <Icon
               size={30}
-              className='transform text-gray-600 duration-150 hover:scale-125 hover:text-violet-800'
+              className='transform text-gray-600 duration-150 hover:scale-125 hover:text-violet-700'
             />
           </a>
         );
