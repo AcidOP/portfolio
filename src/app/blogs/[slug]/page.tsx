@@ -33,8 +33,6 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
 
   const jsonLd = generateJsonLd(blog);
 
-  const headings = blog.headings;
-
   return (
     <>
       <script
@@ -42,10 +40,14 @@ const BlogPage = ({ params: { slug } }: PageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <GoBackButton className='mt-16 md:text-xl' />
       <BlogHeader {...blog} />
+
       <div className='flex flex-col gap-6 lg:flex-row lg:gap-0'>
-        <TOC contents={headings} />
+        <div className='sticky top-32 h-min space-y-8'>
+          <GoBackButton className='md:text-xl' />
+          <TOC contents={blog.headings} />
+        </div>
+
         <Mdx code={blog.body.code} />
         <SharePost {...blog} />
       </div>
