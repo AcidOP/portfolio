@@ -58,12 +58,13 @@ export default function SharePost({ title, url, className }: IProps) {
     >
       {links.map(link => {
         const Icon = link.icon;
+        const siteUrl = process.env.NEXT_PUBLIC_SITE_URL + url;
         return (
           <a
             key={link.site}
             target='_blank'
             rel='noopener noreferrer'
-            href={link.url}
+            href={siteUrl}
             aria-label={`Share on ${link.site}`}
           >
             <Icon
