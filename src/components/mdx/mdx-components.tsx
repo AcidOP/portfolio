@@ -1,6 +1,8 @@
+import Button from './button';
 import BetterImage from './image';
 import BetterLink from './link';
 import { CustomHeading } from './text-headings';
+import YouTube from './youtube';
 
 import { cn } from '@/utils/cn';
 
@@ -132,6 +134,8 @@ const components = {
   ),
   // Image,
   a: BetterLink,
+  YouTube,
+  Button,
   img: BetterImage,
 };
 

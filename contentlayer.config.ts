@@ -49,7 +49,7 @@ export default makeSource({
   mdx: {
     rehypePlugins: [
       rehypeSlug,
-      rehypeSanitize,
+      // rehypeSanitize,
       rehypePresetMinify,
       [rehypePrettyCode, prettyCodeOptions],
       rehypeExternalLinks,

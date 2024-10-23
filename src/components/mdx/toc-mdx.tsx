@@ -41,7 +41,7 @@ const Toc = ({ contents, className }: TOCProps) => {
   return (
     <div
       className={cn(
-        'sticky top-32 hidden h-min max-w-sm md:block',
+        'sticky top-32 hidden h-min max-w-sm lg:block',
         className,
       )}
     >
