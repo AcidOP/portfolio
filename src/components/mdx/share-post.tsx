@@ -52,7 +52,7 @@ export default function SharePost({ title, url, className }: IProps) {
   return (
     <div
       className={cn(
-        'sticky top-32 flex h-min items-center justify-between gap-3 rounded border-2 border-black bg-white px-4 py-3 lg:flex-col lg:px-2 lg:py-4 shadow-xl',
+        'sticky top-32 flex h-min items-center justify-between gap-3 rounded border-2 border-black bg-white px-4 py-3 shadow-xl lg:flex-col lg:px-2 lg:py-4',
         className,
       )}
     >
