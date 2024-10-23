@@ -1,6 +1,7 @@
 import DarkFavicon from './dark';
 import LightFavicon from './light';
 
+{/* https://www.logoshaper.co/ */ }
 const Favicon = () => {
   return (
     <>

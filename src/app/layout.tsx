@@ -10,6 +10,7 @@ import config from '@/data/config';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { cn } from '@/utils/cn';
 
 export const metadata: Metadata = {
   title: config.title,
@@ -49,9 +50,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='scroll-pt-20 lg:scroll-pt-28'>
       <head>
-        {/* https://www.logoshaper.co/ */}
         <Favicon />
         <Analytics />
       </head>
