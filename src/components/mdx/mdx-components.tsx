@@ -1,4 +1,5 @@
 import Button from './button';
+import Callout from './callout';
 import BetterImage from './image';
 import BetterLink from './link';
 import { CustomHeading } from './text-headings';
@@ -137,6 +138,7 @@ const components = {
   YouTube,
   Button,
   img: BetterImage,
+  Callout,
 };
 
 export default components;
