@@ -16,35 +16,36 @@ interface IProps {
 }
 
 export default function SharePost({ title, url, className }: IProps) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL + url;
   const links = [
     {
       site: 'X',
-      url: `https://x.com/share?text=${title}&url=${url}`,
+      url: `https://x.com/share?text=${title}&url=${siteUrl}`,
       icon: FaTwitter,
     },
     {
       site: 'Reddit',
-      url: `https://www.reddit.com/submit?title=${title}&url=${url}`,
+      url: `https://www.reddit.com/submit?title=${title}&url=${siteUrl}`,
       icon: FaReddit,
     },
     {
       site: 'LinkedIn',
-      url: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+      url: `https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}`,
       icon: FaLinkedin,
     },
     {
       site: 'Facebook',
-      url: `https://www.facebook.com/sharer/sharer.php?t=${title}&u=${url}`,
+      url: `https://www.facebook.com/sharer/sharer.php?t=${title}&u=${siteUrl}`,
       icon: FaFacebookSquare,
     },
     {
       site: 'WhatsApp',
-      url: `whatsapp://send?text=${title}%0A${url}`,
+      url: `whatsapp://send?text=${title}%0A${siteUrl}`,
       icon: IoLogoWhatsapp,
     },
     {
       site: 'Email',
-      url: `mailto:?subject=${title}&body=Hi there,%0Ahere is an interesting article: %0A%0A${url}%0A%0AEnjoy reading!`,
+      url: `mailto:?subject=${title}&body=Hi there,%0Ahere is an interesting article: %0A%0A${siteUrl}%0A%0AEnjoy reading!`,
       icon: MdEmail,
     },
   ];
@@ -58,13 +59,13 @@ export default function SharePost({ title, url, className }: IProps) {
     >
       {links.map(link => {
         const Icon = link.icon;
-        const siteUrl = process.env.NEXT_PUBLIC_SITE_URL + url;
+        console.log(link.url);
         return (
           <a
             key={link.site}
             target='_blank'
             rel='noopener noreferrer'
-            href={siteUrl}
+            href={link.url}
             aria-label={`Share on ${link.site}`}
           >
             <Icon
