@@ -7,7 +7,6 @@ const BLOGS = allBlogs.sort((a, b) => {
 
 export const POSTS_PER_PAGE = 6;
 export const TOTAL_BLOGS = BLOGS.length;
-
 export const TOTAL_PAGES = Math.ceil(TOTAL_BLOGS / POSTS_PER_PAGE);
 
 export const getBlogBySlug = (slug: string) => {
@@ -23,7 +22,7 @@ export const getBlogTags = () => {
   );
 
   tags.forEach(item => {
-    item!.forEach(tag => {
+    item.forEach(tag => {
       if (tagCounts[tag]) {
         tagCounts[tag]++;
       } else {

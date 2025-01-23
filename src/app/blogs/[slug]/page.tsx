@@ -1,6 +1,5 @@
 import BlogHeader from '@/components/blog-header';
 import GoBackButton from '@/components/mdx/back-button';
-import Header from '@/components/mdx/header';
 import Mdx from '@/components/mdx/mdx';
 import ScrollTop from '@/components/mdx/scroll-top';
 import SharePost from '@/components/mdx/share-post';
