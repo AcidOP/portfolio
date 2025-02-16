@@ -34,7 +34,7 @@ const components = {
     <CustomHeading
       as='h3'
       className={cn(
-        'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight',
+        'not-prose mt-8 scroll-m-20 text-5xl font-semibold tracking-tight',
         className,
       )}
       {...props}
@@ -72,7 +72,7 @@ const components = {
   ),
   p: ({ className, ...props }: ComponentProps) => (
     <p
-      className={cn('leading-8 [&:not(:first-child)]:mt-16', className)}
+      className={cn('leading-8 [&:not(:first-child)]:my-16', className)}
       {...props}
     />
   ),

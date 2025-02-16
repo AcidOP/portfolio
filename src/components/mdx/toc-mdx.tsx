@@ -45,7 +45,7 @@ const Toc = ({ contents, className }: TOCProps) => {
 
         <ul>
           {contents.map(content => {
-            if (content.depth > 2) return;
+            if (content.depth > 1) return;
             const isActive = active === content.slug;
             return (
               <li key={content.slug}>
