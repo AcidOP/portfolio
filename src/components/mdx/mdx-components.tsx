@@ -72,18 +72,18 @@ const components = {
   ),
   p: ({ className, ...props }: ComponentProps) => (
     <p
-      className={cn('leading-8 [&:not(:first-child)]:my-16', className)}
+      className={cn('leading-8 [&:not(:first-child)]:my-12', className)}
       {...props}
     />
   ),
   ul: ({ className, ...props }: ComponentProps) => (
-    <ul className={cn('my-6 ml-6 list-disc', className)} {...props} />
+    <ul className={cn('list-disc', className)} {...props} />
   ),
   ol: ({ className, ...props }: ComponentProps) => (
-    <ol className={cn('my-6 ml-6 list-decimal', className)} {...props} />
+    <ol className={cn('list-decimal', className)} {...props} />
   ),
   li: ({ className, ...props }: ComponentProps) => (
-    <li className={cn('mt-2', className)} {...props} />
+    <li className={cn('', className)} {...props} />
   ),
   blockquote: ({ className, ...props }: ComponentProps) => (
     <blockquote
