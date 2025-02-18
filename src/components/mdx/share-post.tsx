@@ -59,7 +59,6 @@ export default function SharePost({ title, url, className }: IProps) {
     >
       {links.map(link => {
         const Icon = link.icon;
-        console.log(link.url);
         return (
           <a
             key={link.site}
